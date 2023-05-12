@@ -14,7 +14,7 @@
     <main>
         <nav>
             <header>
-                <a href="produk.html">
+                <a href="produk.php">
                     <div class="garis-bawah-gambar">
                         <img src="assets/image/Logo Pareanom.png" alt="Logo Pareanom">
                     </div>
