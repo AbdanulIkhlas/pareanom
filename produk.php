@@ -14,7 +14,7 @@
     <main>
         <nav>
             <header>
-                <a href="index.html">
+                <a href="produk.html">
                     <div class="garis-bawah-gambar">
                         <img src="assets/image/Logo Pareanom.png" alt="Logo Pareanom">
                     </div>
@@ -23,7 +23,7 @@
                 <h1>CHICKEN BAR</h1>
             </header>
             <ul>
-                <a href="halamanProduk.html">
+                <a href="halamanProduk.php">
                     <li>
                         <div class="kotak-ikon">
                             <img src="assets/image/Produk.png">
@@ -31,7 +31,7 @@
                         <p>PRODUK</p>
                     </li>
                 </a>
-                <a href="halamanBahan.html">
+                <a href="halamanBahan.php">
                     <li>
                         <div class="kotak-ikon">
                             <img src="assets/image/Bahan.png">
@@ -39,7 +39,7 @@
                         <p>BAHAN</p>
                     </li>
                 </a>
-                <a href="halamanRekap.html">
+                <a href="halamanRekap.php">
                     <li>
                         <div class="kotak-ikon">
                             <img src="assets/image/Rekap.png">
@@ -47,7 +47,7 @@
                         <p>REKAP</p>
                     </li>
                 </a>
-                <a href="halamanReject.html">
+                <a href="halamanReject.php">
                     <li>
                         <div class="kotak-ikon">
                             <img src="assets/image/Reject.png">
