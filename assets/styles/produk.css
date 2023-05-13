@@ -166,10 +166,10 @@ nav header {
 	font-size: 20pt;
 	font-weight: 900;
 	line-height: 32px;
-	-webkit-text-stroke: 0.5px #ffee98;
 	/*? Untuk browser WebKit (Chrome, Safari) */
-	text-stroke: 0.5px #ffee98;
+	-webkit-text-stroke: 0.5px #ffee98;
 	/*? Untuk browser yang mendukung standar CSS */
+	text-stroke: 0.5px #ffee98;
 }
 
 
@@ -223,7 +223,16 @@ nav ul li:hover {
 	background-color: #ffee98;
 }
 
-nav ul li:hover .kotak-ikon {
+nav ul li:hover .kotak-ikon{
+	background-color: #ffde38;
+}
+
+/*? Menu Produk Blok Kuning */
+nav ul a:nth-child(1) li {
+	background-color: #ffee98;
+}
+
+nav ul a:nth-child(1) li .kotak-ikon{
 	background-color: #ffde38;
 }
 
@@ -288,7 +297,6 @@ section.produk a {
 	float: right;
 	text-decoration: none;
 	font-size: 20px;
-	font-weight: bold;
 	cursor: pointer;
 }
 
@@ -299,7 +307,13 @@ section.produk button {
 	border: 2px solid white;
 	border-radius: 5px;
 	margin: 5px 20px 0px 0;
+	font-weight: 800;
 	cursor: pointer;
+}
+
+section.produk button:hover{
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
 }
 
 .container-button-tambahProduk {
@@ -319,12 +333,55 @@ section.produk button {
 
 .card-produk {
 	width: 186px;
-	height: 200px;
+	height: 240px;
 	padding: 10px;
 	border: 2px solid white;
 	border-radius: 10px;
 	margin-bottom: 13px;
 	box-sizing: border-box;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(1, 1fr);
+}
+
+.card-produk .gambar-produk{
+	width: 110px;
+	height: 110px;
+	border: 1px solid transparent;
+}
+
+.card-produk .gambar-produk img{
+	width: 110px;
+	height: 110px;
+}
+
+.card-produk .nama-produk{
+	width: 160px;
+	min-height: 80px;
+	border: 1px solid transparent;
+	/*? membuat text berada di tengah div */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.card-produk .nama-produk p{
+	font-size: 19px;
+	font-weight: 800;
+	color: white;
+}
+
+.card-produk .harga-produk{
+	width: 160px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 19px;
+	font-weight: 800;
+	color: #1b9046;
+	-webkit-text-stroke: 0.5px #fff;
+	text-stroke: 0.5px #fff;
+	border: 1px solid transparent;
 }
 
 
@@ -379,18 +436,23 @@ section.addOns a {
 	float: right;
 	text-decoration: none;
 	font-size: 12px;
-	font-weight: bold;
 	cursor: pointer;
 }
 
 section.addOns button {
 	color: white;
 	background-color: #1b9046;
-	padding: 2px 11px;
+	padding: 2px 15px;
 	border: 2px solid white;
 	border-radius: 5px;
-	margin: 3px 23px 0px 0;
+	margin: 3px 20px 0px 0;
+	font-weight: 800;
 	cursor: pointer;
+}
+
+section.addOns button:hover{
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
 }
 
 .container-button-tambahAddOns {
@@ -405,20 +467,61 @@ section.addOns button {
 	box-sizing: border-box;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
+	gap: 8px;
 }
 
 .card-addOns {
-	width: 70px;
-	height: 100px;
-	padding: 6px;
+	width: 80px;
+	height: 130px;
+	padding: 5px 6px 6px 6px;
 	border: 1px solid white;
 	border-radius: 8px;
-	margin-bottom: 10px;
+	margin-bottom: 7px;
 	box-sizing: border-box;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(1, 1fr);
 }
 
+.card-produk .gambar-addOns{
+	width: 68px;
+	height: 70px;
+}
 
+.card-addOns .gambar-addOns img{
+	border: 1px solid transparent;
+	width: 68px;
+	height: 70px;
+}
+
+.card-addOns .nama-addOns{
+	width: 68px;
+	min-height: 28px;
+	border: 1px solid transparent;
+	/*? membuat text berada di tengah div */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.card-addOns .nama-addOns p{
+	font-size: 11px;
+	font-weight: 700;
+	color: white;
+}
+
+.card-addOns .harga-addOns{
+	width: 68px;
+	height: 15px;
+	line-height: 15px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #1b9046;
+	-webkit-text-stroke: 0.2px #fff;
+	text-stroke: 0.2px #fff;
+	border: 1px solid transparent;
+}
 /** ---------- SECTION TOTAL ------------  */
 .container-kanan .total {
 	width: 100%;
@@ -453,8 +556,14 @@ section.addOns button {
 section.total .container-total{
 	border: 1px solid black;
 	width: 93%;
-	min-height: 140px;
+	min-height: 150px;
 	margin-left: 13px;
+	margin-top: -10px;
+	padding-bottom: 6px;
+}
+
+.produk-dibeli{
+	border: 1px solid black;
 }
 
 .card-produk-dibeli{
@@ -465,64 +574,73 @@ section.total .container-total{
 	border: 2px solid white;
 	border-radius: 10px;
 	margin-bottom: 8px;
+	place-items: center;
 }
 
-.total-harga{
-	color:  white;
-	font-weight: 800;
-	font-size: 15px;
-}
-
-.foto{
-	border: 1px solid black;
+.card-produk-dibeli .foto{
+	border: 1px solid transparent;
 	width: 40px;
 	height: 40px;
-	line-height: 40px;
 }
 
-.nama-produk{
+.card-produk-dibeli .foto img{
+	width: 40px;
+	height: 40px;
+}
+
+.card-produk-dibeli .nama-produk{
 	color:  white;
 	font-weight: 800;
 	font-size: 15px;
 	width: 160px;
-	height: 40px;
-	border: 1px solid black;
-	line-height: 40px;
-}
-
-.stok{
-	color:  white;
-	font-weight: 800;
-	font-size: 15px;
-	width: 35px;
-	height: 40px;
-	border: 1px solid black;
-	line-height: 40px;
-}
-
-.total-harga{
-	margin-top: 32px;
+	border: 1px solid transparent;
 }
 
 .container-total footer{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 10px;
-	border: 2px solid white;
+	gap: 8px;
+	border: 2px solid black;
+	margin-top: 50px;
 }
 
+.card-produk-dibeli .jumlah{
+	color: #1b9046;
+	-webkit-text-stroke: 0.5px #fff;
+	text-stroke: 0.5px #fff;
+	font-weight: 800;
+	font-size: 15px;
+	width: 42px;
+	height: 40px;
+	border: 1px solid transparent;
+	line-height: 40px;
+}
+
+
+
 .total-harga{
-	border: 1px solid black;
+	color:  white;
+	font-weight: 800;
+	font-size: 13px;
 	height: 35px;
 	width: 180px;
+	line-height: 35px;
+	border: 2px solid white;
+	border-radius: 10px;
 }
 
 button.confirm{
-	border: 1px solid black;
 	background-color: #1b9046;
 	height: 35px;
-	width: 80px;
+	width: 85px;
 	color: white;
 	font-size: 15px;
 	font-weight: 800;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+
+button.confirm:hover{
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
 }

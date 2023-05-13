@@ -69,24 +69,49 @@
                 </div>
                 <div class="container-card-produk">
                     <div class="card-produk">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab aspernatur deleniti illo
-                        minus dignissimos id culpa recusandae accusamus blanditiis.
+                        <div class="gambar-produk">
+                            <img src="assets/image/PareanomPuas.png" alt="Pareanom Puas">
+                        </div>
+                        <div class="nama-produk">
+                            <p>PAREANOM PUAS</p>
+                        </div>
+                        <div class="harga-produk">Rp 10000</div>
                     </div>
                     <div class="card-produk">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab aspernatur deleniti illo
-                        minus dignissimos id culpa recusandae accusamus blanditiis.
+                        <div class="gambar-produk">
+                            <img src="assets/image/PareanomMantapKecil.png" alt="Pareanom Mantap Kecil">
+                        </div>
+                        <div class="nama-produk">
+                            <p>PAREANOM MANTAP KECIL</p>
+                        </div>
+                        <div class="harga-produk">Rp 16000</div>
                     </div>
                     <div class="card-produk">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab aspernatur deleniti illo
-                        minus dignissimos id culpa recusandae accusamus blanditiis.
+                        <div class="gambar-produk">
+                            <img src="assets/image/PareanomMantapBesar.png" alt="Pareanom Mantap Besar">
+                        </div>
+                        <div class="nama-produk">
+                            <p>PAREANOM MANTAP BESAR</p>
+                        </div>
+                        <div class="harga-produk">Rp 18000</div>
                     </div>
                     <div class="card-produk">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab aspernatur deleniti illo
-                        minus dignissimos id culpa recusandae accusamus blanditiis.
+                        <div class="gambar-produk">
+                            <img src="assets/image/PareanomKomplitKecil.png" alt="Pareanom Komplit Kecil">
+                        </div>
+                        <div class="nama-produk">
+                            <p>PAREANOM KOMPLIT KECIL</p>
+                        </div>
+                        <div class="harga-produk">Rp 18000</div>
                     </div>
                     <div class="card-produk">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab aspernatur deleniti illo
-                        minus dignissimos id culpa recusandae accusamus blanditiis.
+                        <div class="gambar-produk">
+                            <img src="assets/image/PareanomKomplitBesar.png" alt="Pareanom Komplit Besar">
+                        </div>
+                        <div class="nama-produk">
+                            <p>PAREANOM KOMPLIT BESAR</p>
+                        </div>
+                        <div class="harga-produk">Rp 20000</div>
                     </div>
                 </div>
             </section>
@@ -100,23 +125,60 @@
                     </div>
                     <div class="container-card-addOns">
                         <div class="card-addOns">
-                            Lorem ipsum, dolor sit amet 
+                            <div class="gambar-addOns">
+                                <img src="assets/image/Nasi.png">
+                            </div>
+                            <div class="nama-addOns">
+                                <p>NASI</p>
+                            </div>
+                            <div class="harga-addOns">Rp 3000</div>
                         </div>
                         <div class="card-addOns">
-                            Lorem ipsum, dolor sit amet 
+                            <div class="gambar-addOns">
+                                <img src="assets/image/AirMineral.png">
+                            </div>
+                            <div class="nama-addOns">
+                                <p>AIR MINERAL</p>
+                            </div>
+                            <div class="harga-addOns">Rp 3000</div>
                         </div>
                         <div class="card-addOns">
-                            Lorem ipsum, dolor sit amet 
+                            <div class="gambar-addOns">
+                                <img src="assets/image/Dada.png">
+                            </div>
+                            <div class="nama-addOns">
+                                <p>DADA</p>
+                            </div>
+                            <div class="harga-addOns">Rp 12000</div>
                         </div>
                         <div class="card-addOns">
-                            Lorem ipsum, dolor sit amet 
+                            <div class="gambar-addOns">
+                                <img src="assets/image/TehKotak.png">
+                            </div>
+                            <div class="nama-addOns">
+                                <p>TEH KOTAK</p>
+                            </div>
+                            <div class="harga-addOns">Rp 3000</div>
                         </div>
                         <div class="card-addOns">
-                            Lorem ipsum, dolor sit amet 
+                            <div class="gambar-addOns">
+                                <img src="assets/image/VeggieCrumbs.png">
+                            </div>
+                            <div class="nama-addOns">
+                                <p>VEGGIE CRUMBS</p>
+                            </div>
+                            <div class="harga-addOns">Rp 3000</div>
                         </div>
                         <div class="card-addOns">
-                            Lorem ipsum, dolor sit amet 
+                            <div class="gambar-addOns">
+                                <img src="assets/image/PahaAtas.png">
+                            </div>
+                            <div class="nama-addOns">
+                                <p>PAHA ATAS</p>
+                            </div>
+                            <div class="harga-addOns">Rp 12000</div>
                         </div>
+                        
                         
                         
                     </div>
@@ -126,14 +188,23 @@
                     <div class="container-total">
                         <div class="produk-dibeli">
                             <div class="card-produk-dibeli">
-                                <div class="foto">GGG</div>
+                                <div class="foto">
+                                    <img src="assets/image/PareanomPuas.png" >
+                                </div>
                                 <div class="nama-produk">PAREANOM PUAS</div>
-                                <div class="stok">99</div>
+                                <div class="jumlah">1</div>
+                            </div>
+                            <div class="card-produk-dibeli">
+                                <div class="foto">
+                                    <img src="assets/image/PareanomKomplitBesar.png" >
+                                </div>
+                                <div class="nama-produk">PAREANOM KOMPLIT BESAR</div>
+                                <div class="jumlah">1</div>
                             </div>
                         </div>
                         <footer>
                             <div class="total-harga">
-                                <p>TOTAL HARGA : xxxxxxx </p>
+                                <p>TOTAL HARGA : Rp 30000 </p>
                             </div>
                             <button class="confirm">CONFIRM</button>
                         </footer>
