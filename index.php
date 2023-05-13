@@ -10,11 +10,10 @@
 </head>
 
 <body>
-
     <main>
         <nav>
-            <header>
-                <a href="produk.php">
+            <header>               
+                <a href="index.php">  <!--? Halaman Produk  -->
                     <div class="garis-bawah-gambar">
                         <img src="assets/image/Logo Pareanom.png" alt="Logo Pareanom">
                     </div>
