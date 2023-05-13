@@ -134,7 +134,6 @@ table {
 
 
 /*! CSS Halaman Home/produk */
-
 body {
 	background-color: #1b9046;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -150,6 +149,7 @@ main {
 	box-sizing: border-box;
 }
 
+/** ---------- MENU -----------------  */
 nav {
 	float: left;
 	font-weight: bold;
@@ -240,6 +240,8 @@ article {
 	height: 100%;
 }
 
+
+/** ---------- SECTION PRODUK ------------  */
 section.produk {
 	float: left;
 	width: 70%;
@@ -325,6 +327,8 @@ section.produk button {
 	box-sizing: border-box;
 }
 
+
+/** ---------- SECTION ADDONS ------------  */
 .container-kanan {
 	float: right;
 	width: 29%;
@@ -358,15 +362,6 @@ section.produk button {
 /*? Mengubah warna thumb saat dihover */
 .container-kanan .addOns::-webkit-scrollbar-thumb:hover {
 	background-color: transparent;
-}
-
-.container-kanan .total {
-	width: 100%;
-	height: 38%;
-	margin-top: 7px;
-	background-color: #1b9046;
-	border: 1px solid white;
-	border-bottom-right-radius: 20px;
 }
 
 section.addOns h2,
@@ -421,4 +416,24 @@ section.addOns button {
 	border-radius: 8px;
 	margin-bottom: 10px;
 	box-sizing: border-box;
+}
+
+
+/** ---------- SECTION TOTAL ------------  */
+.container-kanan .total {
+	width: 100%;
+	height: 38%;
+	margin-top: 7px;
+	background-color: #1b9046;
+	border: 1px solid white;
+	border-bottom-right-radius: 20px;
+	box-sizing: border-box;
+}
+
+
+section.total .container-total{
+	border: 1px solid black;
+	width: 90%;
+	margin-left: 13px;
+	position: relative;
 }

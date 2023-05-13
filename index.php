@@ -123,7 +123,19 @@
                 </section>
                 <section class="total">
                     <h2>TOTAL</h2>
-
+                    <div class="container-total">
+                        <div class="produk-dibeli">
+                            <div class="card-produk-dibeli">
+                                <div class="foto">GGG</div>
+                                <div class="nama-produk">PAREANOM PUAS</div>
+                                <div class="stok">1</div>
+                            </div>
+                        </div>
+                        <div class="total-harga">
+                            <p>TOTAL HARGA : xxxxxxx </p>
+                        </div>
+                        <button class="confirm">CONFIRM</button>
+                    </div>
                 </section>
             </div>
         </article>
