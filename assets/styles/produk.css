@@ -67,7 +67,7 @@ nav{
 	float: left;
 	font-weight: bold;
 	font-size: large;
-	width: 25%;
+	width: 23%;
 	height: 100%;
 	text-align: center;
 	color: #1b9046;
@@ -145,7 +145,7 @@ nav .kotak-ikon img{
 
 section{
 	float: right;
-	width: 72%;
+	width: 75%;
 	height: 100%;
 	border: 1px solid black;
 }
