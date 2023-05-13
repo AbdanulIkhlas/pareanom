@@ -128,13 +128,15 @@
                             <div class="card-produk-dibeli">
                                 <div class="foto">GGG</div>
                                 <div class="nama-produk">PAREANOM PUAS</div>
-                                <div class="stok">1</div>
+                                <div class="stok">99</div>
                             </div>
                         </div>
-                        <div class="total-harga">
-                            <p>TOTAL HARGA : xxxxxxx </p>
-                        </div>
-                        <button class="confirm">CONFIRM</button>
+                        <footer>
+                            <div class="total-harga">
+                                <p>TOTAL HARGA : xxxxxxx </p>
+                            </div>
+                            <button class="confirm">CONFIRM</button>
+                        </footer>
                     </div>
                 </section>
             </div>

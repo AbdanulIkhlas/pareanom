@@ -428,12 +428,101 @@ section.addOns button {
 	border: 1px solid white;
 	border-bottom-right-radius: 20px;
 	box-sizing: border-box;
+	overflow: auto;
+}
+
+/*? Mengubah warna latar belakang scroll */
+.container-kanan .total::-webkit-scrollbar {
+	background-color: transparent;
+	width: 1px;
+}
+
+/*? Mengubah warna thumb (bagian yang dapat digeser) scroll */
+.container-kanan .total::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	width: 1px;
+	border-radius: 2px;
+}
+
+/*? Mengubah warna thumb saat dihover */
+.container-kanan .total::-webkit-scrollbar-thumb:hover {
+	background-color: transparent;
 }
 
 
 section.total .container-total{
 	border: 1px solid black;
-	width: 90%;
+	width: 93%;
+	min-height: 140px;
 	margin-left: 13px;
-	position: relative;
+}
+
+.card-produk-dibeli{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+	padding: 5px;
+	border: 2px solid white;
+	border-radius: 10px;
+	margin-bottom: 8px;
+}
+
+.total-harga{
+	color:  white;
+	font-weight: 800;
+	font-size: 15px;
+}
+
+.foto{
+	border: 1px solid black;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.nama-produk{
+	color:  white;
+	font-weight: 800;
+	font-size: 15px;
+	width: 160px;
+	height: 40px;
+	border: 1px solid black;
+	line-height: 40px;
+}
+
+.stok{
+	color:  white;
+	font-weight: 800;
+	font-size: 15px;
+	width: 35px;
+	height: 40px;
+	border: 1px solid black;
+	line-height: 40px;
+}
+
+.total-harga{
+	margin-top: 32px;
+}
+
+.container-total footer{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+	border: 2px solid white;
+}
+
+.total-harga{
+	border: 1px solid black;
+	height: 35px;
+	width: 180px;
+}
+
+button.confirm{
+	border: 1px solid black;
+	background-color: #1b9046;
+	height: 35px;
+	width: 80px;
+	color: white;
+	font-size: 15px;
+	font-weight: 800;
 }
