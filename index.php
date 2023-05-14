@@ -75,7 +75,9 @@
                         <div class="nama-produk">
                             <p>PAREANOM PUAS</p>
                         </div>
-                        <div class="harga-produk">Rp 10000</div>
+                        <div class="harga-produk">
+                            <p>Rp 10000</p>
+                        </div>
                     </div>
                     <div class="card-produk">
                         <div class="gambar-produk">
@@ -84,7 +86,9 @@
                         <div class="nama-produk">
                             <p>PAREANOM MANTAP KECIL</p>
                         </div>
-                        <div class="harga-produk">Rp 16000</div>
+                        <div class="harga-produk">
+                            <p>Rp 16000</p>
+                        </div>
                     </div>
                     <div class="card-produk">
                         <div class="gambar-produk">
@@ -93,7 +97,9 @@
                         <div class="nama-produk">
                             <p>PAREANOM MANTAP BESAR</p>
                         </div>
-                        <div class="harga-produk">Rp 18000</div>
+                        <div class="harga-produk">
+                            <p>Rp 18000</p>
+                        </div>
                     </div>
                     <div class="card-produk">
                         <div class="gambar-produk">
@@ -102,7 +108,9 @@
                         <div class="nama-produk">
                             <p>PAREANOM KOMPLIT KECIL</p>
                         </div>
-                        <div class="harga-produk">Rp 18000</div>
+                        <div class="harga-produk">
+                            <p>Rp 18000</p>
+                        </div>
                     </div>
                     <div class="card-produk">
                         <div class="gambar-produk">
@@ -111,7 +119,9 @@
                         <div class="nama-produk">
                             <p>PAREANOM KOMPLIT BESAR</p>
                         </div>
-                        <div class="harga-produk">Rp 20000</div>
+                        <div class="harga-produk">
+                            <p>Rp 20000</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -131,7 +141,9 @@
                             <div class="nama-addOns">
                                 <p>NASI</p>
                             </div>
-                            <div class="harga-addOns">Rp 3000</div>
+                            <div class="harga-addOns">
+                                <p>Rp 3000 </p>
+                            </div>
                         </div>
                         <div class="card-addOns">
                             <div class="gambar-addOns">
@@ -140,7 +152,9 @@
                             <div class="nama-addOns">
                                 <p>AIR MINERAL</p>
                             </div>
-                            <div class="harga-addOns">Rp 3000</div>
+                            <div class="harga-addOns">
+                                <p>Rp 3000 </p>
+                            </div>
                         </div>
                         <div class="card-addOns">
                             <div class="gambar-addOns">
@@ -149,7 +163,9 @@
                             <div class="nama-addOns">
                                 <p>DADA</p>
                             </div>
-                            <div class="harga-addOns">Rp 12000</div>
+                            <div class="harga-addOns">
+                                <p>Rp 12000 </p>
+                            </div>
                         </div>
                         <div class="card-addOns">
                             <div class="gambar-addOns">
@@ -158,7 +174,9 @@
                             <div class="nama-addOns">
                                 <p>TEH KOTAK</p>
                             </div>
-                            <div class="harga-addOns">Rp 3000</div>
+                            <div class="harga-addOns">
+                                <p>Rp 3000 </p>
+                            </div>
                         </div>
                         <div class="card-addOns">
                             <div class="gambar-addOns">
@@ -167,7 +185,9 @@
                             <div class="nama-addOns">
                                 <p>VEGGIE CRUMBS</p>
                             </div>
-                            <div class="harga-addOns">Rp 3000</div>
+                            <div class="harga-addOns">
+                                <p>Rp 3000 </p>
+                            </div>
                         </div>
                         <div class="card-addOns">
                             <div class="gambar-addOns">
@@ -176,11 +196,13 @@
                             <div class="nama-addOns">
                                 <p>PAHA ATAS</p>
                             </div>
-                            <div class="harga-addOns">Rp 12000</div>
+                            <div class="harga-addOns">
+                                <p>Rp 12000 </p>
+                            </div>
                         </div>
-                        
-                        
-                        
+
+
+
                     </div>
                 </section>
                 <section class="total">
@@ -189,22 +211,41 @@
                         <div class="produk-dibeli">
                             <div class="card-produk-dibeli">
                                 <div class="foto">
-                                    <img src="assets/image/PareanomPuas.png" >
+                                    <img src="assets/image/PareanomPuas.png">
                                 </div>
-                                <div class="nama-produk">PAREANOM PUAS</div>
-                                <div class="jumlah">1</div>
+                                <div class="nama-produk">
+                                    <p>PAREANOM PUAS</p>
+                                </div>
+                                <div class="jumlah">
+                                    <p>1</p>
+                                </div>
                             </div>
                             <div class="card-produk-dibeli">
                                 <div class="foto">
-                                    <img src="assets/image/PareanomKomplitBesar.png" >
+                                    <img src="assets/image/PareanomKomplitBesar.png">
                                 </div>
-                                <div class="nama-produk">PAREANOM KOMPLIT BESAR</div>
-                                <div class="jumlah">1</div>
+                                <div class="nama-produk">
+                                    <p>PAREANOM KOMPLIT BESAR</p>
+                                </div>
+                                <div class="jumlah">
+                                    <p>1</p>
+                                </div>
+                            </div>
+                            <div class="card-produk-dibeli">
+                                <div class="foto">
+                                    <img src="assets/image/Nasi.png">
+                                </div>
+                                <div class="nama-produk">
+                                    <p>NASI</p>
+                                </div>
+                                <div class="jumlah">
+                                    <p>10</p>
+                                </div>
                             </div>
                         </div>
                         <footer>
                             <div class="total-harga">
-                                <p>TOTAL HARGA : Rp 30000 </p>
+                                <p>TOTAL HARGA : Rp 60000 </p>
                             </div>
                             <button class="confirm">CONFIRM</button>
                         </footer>
@@ -213,6 +254,20 @@
             </div>
         </article>
     </main>
+    <article class="container-popUp">
+        <section>
+            <div class="foto">
+                <img src="assets/image/Nasi.png">
+            </div>
+            <div class="nama-produk">
+                <p>NASI</p>
+            </div>
+            <div class="jumlah">
+                <p>10</p>
+            </div>
+        </section>
+    </article>
+    <script src="assets/scripts/produk.js"></script>
 </body>
 
 </html>

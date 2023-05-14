@@ -223,7 +223,7 @@ nav ul li:hover {
 	background-color: #ffee98;
 }
 
-nav ul li:hover .kotak-ikon{
+nav ul li:hover .kotak-ikon {
 	background-color: #ffde38;
 }
 
@@ -232,7 +232,7 @@ nav ul a:nth-child(1) li {
 	background-color: #ffee98;
 }
 
-nav ul a:nth-child(1) li .kotak-ikon{
+nav ul a:nth-child(1) li .kotak-ikon {
 	background-color: #ffde38;
 }
 
@@ -309,11 +309,17 @@ section.produk button {
 	margin: 5px 20px 0px 0;
 	font-weight: 800;
 	cursor: pointer;
+	box-shadow: 2px 3px 2px black;
 }
 
-section.produk button:hover{
+section.produk button:hover {
 	background-color: rgba(255, 255, 255, 0.649);
 	color: #1b9046;
+	box-shadow: 3px 4px 2.5px black;
+}
+
+section.produk button:active {
+	box-shadow: 2px 1.5px 2px black;
 }
 
 .container-button-tambahProduk {
@@ -342,20 +348,25 @@ section.produk button:hover{
 	display: grid;
 	place-items: center;
 	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 3px 3px 2px black;
 }
 
-.card-produk .gambar-produk{
+.card-produk:hover {
+	cursor: pointer;
+}
+
+.card-produk .gambar-produk {
 	width: 110px;
 	height: 110px;
 	border: 1px solid transparent;
 }
 
-.card-produk .gambar-produk img{
+.card-produk .gambar-produk img {
 	width: 110px;
 	height: 110px;
 }
 
-.card-produk .nama-produk{
+.card-produk .nama-produk {
 	width: 160px;
 	min-height: 80px;
 	border: 1px solid transparent;
@@ -366,13 +377,13 @@ section.produk button:hover{
 	height: 100%;
 }
 
-.card-produk .nama-produk p{
+.card-produk .nama-produk p {
 	font-size: 19px;
 	font-weight: 800;
 	color: white;
 }
 
-.card-produk .harga-produk{
+.card-produk .harga-produk {
 	width: 160px;
 	height: 25px;
 	line-height: 25px;
@@ -445,14 +456,20 @@ section.addOns button {
 	padding: 2px 15px;
 	border: 2px solid white;
 	border-radius: 5px;
-	margin: 3px 20px 0px 0;
+	margin: 3px 18px 0px 0;
 	font-weight: 800;
 	cursor: pointer;
+	box-shadow: 2px 3px 2px black;
 }
 
-section.addOns button:hover{
+section.addOns button:hover {
 	background-color: rgba(255, 255, 255, 0.649);
 	color: #1b9046;
+	box-shadow: 2px 5px 3px black;
+}
+
+section.addOns button:active {
+	box-shadow: 2px 2px 2px black;
 }
 
 .container-button-tambahAddOns {
@@ -468,6 +485,7 @@ section.addOns button:hover{
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 8px;
+
 }
 
 .card-addOns {
@@ -481,20 +499,25 @@ section.addOns button:hover{
 	display: grid;
 	place-items: center;
 	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 3px 3px 2px black;
 }
 
-.card-produk .gambar-addOns{
+.card-addOns:hover {
+	cursor: pointer;
+}
+
+.card-addOns .gambar-addOns {
 	width: 68px;
 	height: 70px;
 }
 
-.card-addOns .gambar-addOns img{
+.card-addOns .gambar-addOns img {
 	border: 1px solid transparent;
 	width: 68px;
 	height: 70px;
 }
 
-.card-addOns .nama-addOns{
+.card-addOns .nama-addOns {
 	width: 68px;
 	min-height: 28px;
 	border: 1px solid transparent;
@@ -505,13 +528,13 @@ section.addOns button:hover{
 	height: 100%;
 }
 
-.card-addOns .nama-addOns p{
+.card-addOns .nama-addOns p {
 	font-size: 11px;
 	font-weight: 700;
 	color: white;
 }
 
-.card-addOns .harga-addOns{
+.card-addOns .harga-addOns {
 	width: 68px;
 	height: 15px;
 	line-height: 15px;
@@ -522,6 +545,7 @@ section.addOns button:hover{
 	text-stroke: 0.2px #fff;
 	border: 1px solid transparent;
 }
+
 /** ---------- SECTION TOTAL ------------  */
 .container-kanan .total {
 	width: 100%;
@@ -553,8 +577,8 @@ section.addOns button:hover{
 }
 
 
-section.total .container-total{
-	border: 1px solid black;
+section.total .container-total {
+	border: 1px solid transparent;
 	width: 93%;
 	min-height: 150px;
 	margin-left: 13px;
@@ -562,11 +586,12 @@ section.total .container-total{
 	padding-bottom: 6px;
 }
 
-.produk-dibeli{
-	border: 1px solid black;
+.produk-dibeli {
+	border: 1px solid transparent;
+	min-height: 90px;
 }
 
-.card-produk-dibeli{
+.card-produk-dibeli {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 15px;
@@ -575,36 +600,41 @@ section.total .container-total{
 	border-radius: 10px;
 	margin-bottom: 8px;
 	place-items: center;
+	box-shadow: 1.5px 2px 2px black;
 }
 
-.card-produk-dibeli .foto{
+.card-produk-dibeli:hover {
+	cursor: pointer;
+}
+
+.card-produk-dibeli .foto {
 	border: 1px solid transparent;
 	width: 40px;
 	height: 40px;
 }
 
-.card-produk-dibeli .foto img{
+.card-produk-dibeli .foto img {
 	width: 40px;
 	height: 40px;
 }
 
-.card-produk-dibeli .nama-produk{
-	color:  white;
+.card-produk-dibeli .nama-produk {
+	color: white;
 	font-weight: 800;
 	font-size: 15px;
 	width: 160px;
 	border: 1px solid transparent;
 }
 
-.container-total footer{
+.container-total footer {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 8px;
-	border: 2px solid black;
-	margin-top: 50px;
+	border: 2px solid transparent;
+	margin-top: 20px;
 }
 
-.card-produk-dibeli .jumlah{
+.card-produk-dibeli .jumlah {
 	color: #1b9046;
 	-webkit-text-stroke: 0.5px #fff;
 	text-stroke: 0.5px #fff;
@@ -618,8 +648,8 @@ section.total .container-total{
 
 
 
-.total-harga{
-	color:  white;
+.total-harga {
+	color: white;
 	font-weight: 800;
 	font-size: 13px;
 	height: 35px;
@@ -629,7 +659,7 @@ section.total .container-total{
 	border-radius: 10px;
 }
 
-button.confirm{
+button.confirm {
 	background-color: #1b9046;
 	height: 35px;
 	width: 85px;
@@ -638,9 +668,28 @@ button.confirm{
 	font-weight: 800;
 	border: 2px solid white;
 	border-radius: 10px;
+	box-shadow: 2px 3px 2px black;
 }
 
-button.confirm:hover{
+button.confirm:hover {
 	background-color: rgba(255, 255, 255, 0.649);
 	color: #1b9046;
+	box-shadow: 2px 5px 3px black;
+}
+
+button.confirm:active {
+	box-shadow: 2px 2px 2px black;
+}
+
+
+/*! PopUp Setelah card d klik  */
+/** Card Produk */
+
+.container-popUp {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #145c2e8b;
 }
