@@ -208,77 +208,41 @@
                 <section class="total">
                     <h2>TOTAL</h2>
                     <div class="container-total">
-                        <div class="produk-dibeli">
-                            <div class="card-produk-dibeli">
-                                <div class="foto">
-                                    <img src="assets/image/PareanomPuas.png">
-                                </div>
-                                <div class="nama-produk">
-                                    <p>PAREANOM PUAS</p>
-                                </div>
-                                <div class="jumlah">
-                                    <p>1</p>
-                                </div>
-                                <div class="tombol-delete">
-                                    <div class="minus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white"
-                                            class="bi bi-dash-circle" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                                        </svg>
+                        <!--? Container Pembelian  -->
+                        <form action="#" method="POST">
+                            <div class="produk-dibeli">
+                                <!-- <div class="card-produk-dibeli">
+                                    <div class="foto">
+                                        <img src="assets/image/PareanomKomplitBesar.png">
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-produk-dibeli">
-                                <div class="foto">
-                                    <img src="assets/image/PareanomKomplitBesar.png">
-                                </div>
-                                <div class="nama-produk">
-                                    <p>PAREANOM KOMPLIT BESAR</p>
-                                </div>
-                                <div class="jumlah">
-                                    <p>1</p>
-                                </div>
-                                <div class="tombol-delete">
-                                    <div class="minus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white"
-                                            class="bi bi-dash-circle" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                                        </svg>
+                                    <div class="nama-produk">
+                                        <input type="hidden" name="namaProduk" value="#">
+                                        <p>PAREANOM KOMPLIT BESAR</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="card-produk-dibeli">
-                                <div class="foto">
-                                    <img src="assets/image/Nasi.png">
-                                </div>
-                                <div class="nama-produk">
-                                    <p>NASI</p>
-                                </div>
-                                <div class="jumlah">
-                                    <p>10</p>
-                                </div>
-                                <div class="tombol-delete">
-                                    <div class="minus">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white"
-                                            class="bi bi-dash-circle" viewBox="0 0 16 16">
-                                            <path
-                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                                        </svg>
+                                    <div class="jumlah">
+                                        <input type="hidden" name="jumlahPembelian" value="#">
+                                        <p>1</p>
                                     </div>
+                                    <div class="tombol-delete">
+                                        <div class="minus">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white"
+                                                class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <footer>
+                                <div class="total-harga">
+                                    <input type="hidden" name="totalHarga" value="#">
+                                    <p>TOTAL HARGA : Rp 60000 </p>
                                 </div>
-                            </div>
-                        </div>
-                        <footer>
-                            <div class="total-harga">
-                                <p>TOTAL HARGA : Rp 60000 </p>
-                            </div>
-                            <button class="confirm">CONFIRM</button>
-                        </footer>
+                                <button class="confirm" type="submit">CONFIRM</button>
+                            </footer>
+                        </form>
                     </div>
                 </section>
             </div>

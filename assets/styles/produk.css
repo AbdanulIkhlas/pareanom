@@ -587,7 +587,7 @@ section.total .container-total {
 }
 
 .produk-dibeli {
-	border: 1px solid transparent;
+	border: 1px solid yellow;
 	position: relative;
 	min-height: 90px;
 }
