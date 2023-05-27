@@ -79,50 +79,7 @@
                             <p>Rp 10000</p>
                         </div>
                     </div>
-                    <div class="card-produk">
-                        <div class="gambar-produk">
-                            <img src="assets/image/PareanomMantapKecil.png" alt="Pareanom Mantap Kecil">
-                        </div>
-                        <div class="nama-produk">
-                            <p>PAREANOM MANTAP KECIL</p>
-                        </div>
-                        <div class="harga-produk">
-                            <p>Rp 16000</p>
-                        </div>
-                    </div>
-                    <div class="card-produk">
-                        <div class="gambar-produk">
-                            <img src="assets/image/PareanomMantapBesar.png" alt="Pareanom Mantap Besar">
-                        </div>
-                        <div class="nama-produk">
-                            <p>PAREANOM MANTAP BESAR</p>
-                        </div>
-                        <div class="harga-produk">
-                            <p>Rp 18000</p>
-                        </div>
-                    </div>
-                    <div class="card-produk">
-                        <div class="gambar-produk">
-                            <img src="assets/image/PareanomKomplitKecil.png" alt="Pareanom Komplit Kecil">
-                        </div>
-                        <div class="nama-produk">
-                            <p>PAREANOM KOMPLIT KECIL</p>
-                        </div>
-                        <div class="harga-produk">
-                            <p>Rp 18000</p>
-                        </div>
-                    </div>
-                    <div class="card-produk">
-                        <div class="gambar-produk">
-                            <img src="assets/image/PareanomKomplitBesar.png" alt="Pareanom Komplit Besar">
-                        </div>
-                        <div class="nama-produk">
-                            <p>PAREANOM KOMPLIT BESAR</p>
-                        </div>
-                        <div class="harga-produk">
-                            <p>Rp 20000</p>
-                        </div>
-                    </div>
+
                 </div>
             </section>
             <div class="container-kanan">
