@@ -1,19 +1,87 @@
 /*! CSS Reset */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -21,25 +89,44 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
 	list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
 	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
 	content: '';
 	content: none;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -47,13 +134,12 @@ table {
 
 
 /*! CSS Halaman Home/produk */
-
-body{
+body {
 	background-color: #1b9046;
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-main{
+main {
 	margin: 50px auto;
 	padding: 30px;
 	width: 95%;
@@ -63,7 +149,8 @@ main{
 	box-sizing: border-box;
 }
 
-nav{
+/** ---------- MENU -----------------  */
+nav {
 	float: left;
 	font-weight: bold;
 	font-size: large;
@@ -73,18 +160,21 @@ nav{
 	color: #1b9046;
 }
 
-nav header{
+nav header {
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-size: 20pt;
 	font-weight: 900;
 	line-height: 32px;
-	-webkit-text-stroke: 0.5px #ffee98; /*? Untuk browser WebKit (Chrome, Safari) */
-	text-stroke: 0.5px #ffee98; /*? Untuk browser yang mendukung standar CSS */
+	/*? Untuk browser WebKit (Chrome, Safari) */
+	-webkit-text-stroke: 0.5px #ffee98;
+	/*? Untuk browser yang mendukung standar CSS */
+	text-stroke: 0.5px #ffee98;
 }
 
 
-nav ul li{  /*? CSS untuk sideMenu  */
+nav ul li {
+	/*? CSS untuk sideMenu  */
 	border: 2px solid #ffee98;
 	border-radius: 15px;
 	margin: 20px 40px;
@@ -92,17 +182,17 @@ nav ul li{  /*? CSS untuk sideMenu  */
 	font-weight: 700;
 }
 
-nav ul li p{
+nav ul li p {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-nav a{
+nav a {
 	text-decoration: none;
 	color: #1b9046;
 }
 
-nav .kotak-ikon{
+nav .kotak-ikon {
 	float: left;
 	background-color: #ffee98;
 	border-radius: 15px;
@@ -112,7 +202,7 @@ nav .kotak-ikon{
 }
 
 
-nav img{
+nav img {
 	width: 105px;
 	position: relative;
 	left: -9px;
@@ -120,7 +210,8 @@ nav img{
 }
 
 
-nav .garis-bawah-gambar{  /*? CSS untuk membuat bottom-line pada gambar*/
+nav .garis-bawah-gambar {
+	/*? CSS untuk membuat bottom-line pada gambar*/
 	margin: -10px auto 10px;
 	width: 90px;
 	border-bottom: 14px solid #1b9046;
@@ -128,24 +219,725 @@ nav .garis-bawah-gambar{  /*? CSS untuk membuat bottom-line pada gambar*/
 	border-bottom-right-radius: 80px;
 }
 
-nav ul li:hover{
+nav ul li:hover {
 	background-color: #ffee98;
 }
 
-nav ul li:hover .kotak-ikon{
+nav ul li:hover .kotak-ikon {
 	background-color: #ffde38;
 }
 
-nav .kotak-ikon img{
+/*? Menu Produk Blok Kuning */
+nav ul a:nth-child(1) li {
+	background-color: #ffee98;
+}
+
+nav ul a:nth-child(1) li .kotak-ikon {
+	background-color: #ffde38;
+}
+
+nav .kotak-ikon img {
 	width: 27px;
 	position: relative;
 	top: 5px;
 	left: 2px;
 }
 
-section{
+article {
 	float: right;
 	width: 75%;
 	height: 100%;
+}
+
+
+/** ---------- SECTION PRODUK ------------  */
+section.produk {
+	float: left;
+	width: 70%;
+	height: 100%;
+	background-color: #1b9046;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding: 10px 40px 30px 40px;
+	box-sizing: border-box;
+	text-align: center;
+	border: 1px solid white;
+	overflow: auto;
+}
+
+/*? Mengubah warna latar belakang scroll */
+section.produk::-webkit-scrollbar {
+	background-color: #18371599;
+	width: 10px;
+}
+
+/*? Mengubah warna thumb (bagian yang dapat digeser) scroll */
+section.produk::-webkit-scrollbar-thumb {
+	background-color: rgb(40, 163, 40);
+	width: 10px;
+	border-radius: 5px;
+}
+
+/*? Mengubah warna thumb saat dihover */
+section.produk::-webkit-scrollbar-thumb:hover {
+	background-color: rgb(20, 127, 26);
+}
+
+section.produk h2 {
+	margin: 10px auto 20px;
+	letter-spacing: -1px;
+	font-size: 3em;
+	font-weight: 900;
+	color: #1b9046;
+	-webkit-text-stroke: 2.5px #fff;
+	text-stroke: 2.5px #fff;
+}
+
+section.produk a {
+	float: right;
+	text-decoration: none;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+section.produk button {
+	color: white;
+	background-color: #1b9046;
+	padding: 2px 54px 2px 56px;
+	border: 2px solid white;
+	border-radius: 5px;
+	margin: 5px 20px 0px 0;
+	font-weight: 800;
+	cursor: pointer;
+	box-shadow: 2px 3px 2px black;
+}
+
+section.produk button:hover {
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
+	box-shadow: 3px 4px 2.5px black;
+}
+
+section.produk button:active {
+	box-shadow: 2px 1.5px 2px black;
+}
+
+.container-button-tambahProduk {
+	border: 1px solid transparent;
+	height: 30px;
+}
+
+.container-card-produk {
+	width: 100%;
+	margin-top: 10px;
+	padding: 0 20px 20px 30px;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+}
+
+.card-produk section {
+	width: 186px;
+	height: 240px;
+	padding: 10px;
+	border: 2px solid white;
+	border-radius: 10px;
+	margin-bottom: 13px;
+	box-sizing: border-box;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 3px 3px 2px black;
+}
+
+.card-produk:hover {
+	cursor: pointer;
+}
+
+.card-produk .gambar-produk {
+	width: 110px;
+	height: 110px;
+	border: 1px solid transparent;
+}
+
+.card-produk .gambar-produk img {
+	width: 110px;
+	height: 110px;
+}
+
+.card-produk .nama-produk {
+	width: 160px;
+	min-height: 80px;
+	border: 1px solid transparent;
+	/*? membuat text berada di tengah div */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.card-produk .nama-produk p {
+	font-size: 17px;
+	font-weight: 800;
+	color: white;
+}
+
+.card-produk .harga-produk {
+	width: 160px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 19px;
+	font-weight: 800;
+	color: #1b9046;
+	-webkit-text-stroke: 0.5px #fff;
+	text-stroke: 0.5px #fff;
+	border: 1px solid transparent;
+}
+
+
+/** ---------- SECTION ADDONS ------------  */
+.container-kanan {
+	float: right;
+	width: 29%;
+	height: 100%;
+	text-align: center;
+}
+
+.container-kanan .addOns {
+	width: 100%;
+	height: 60%;
+	background-color: #1b9046;
+	border: 1px solid white;
+	border-top-right-radius: 20px;
+	direction: ltr;
+	overflow: auto;
+}
+
+/*? Mengubah warna latar belakang scroll */
+.container-kanan .addOns::-webkit-scrollbar {
+	background-color: transparent;
+	width: 1px;
+}
+
+/*? Mengubah warna thumb (bagian yang dapat digeser) scroll */
+.container-kanan .addOns::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	width: 1px;
+	border-radius: 2px;
+}
+
+/*? Mengubah warna thumb saat dihover */
+.container-kanan .addOns::-webkit-scrollbar-thumb:hover {
+	background-color: transparent;
+}
+
+section.addOns h2,
+section.total h2 {
+	margin: 17px auto 20px;
+	letter-spacing: -1px;
+	font-size: 24px;
+	font-weight: 900;
+	color: #1b9046;
+	-webkit-text-stroke: 1.5px #fff;
+	text-stroke: 1.5px #fff;
+}
+
+section.addOns a {
+	float: right;
+	text-decoration: none;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+section.addOns button {
+	color: white;
+	background-color: #1b9046;
+	padding: 2px 15px;
+	border: 2px solid white;
+	border-radius: 5px;
+	margin: 3px 18px 0px 0;
+	font-weight: 800;
+	cursor: pointer;
+	box-shadow: 2px 3px 2px black;
+}
+
+section.addOns button:hover {
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
+	box-shadow: 2px 5px 3px black;
+}
+
+section.addOns button:active {
+	box-shadow: 2px 2px 2px black;
+}
+
+.container-button-tambahAddOns {
+	border: 1px solid transparent;
+	height: 20px;
+}
+
+.container-card-addOns {
+	width: 100%;
+	margin-top: 10px;
+	padding: 0 10px 10px 20px;
+	box-sizing: border-box;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 8px;
+
+}
+
+.card-addOns section {
+	width: 80px;
+	height: 130px;
+	padding: 5px 6px 6px 6px;
+	border: 1px solid white;
+	border-radius: 8px;
+	margin-bottom: 7px;
+	box-sizing: border-box;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 3px 3px 2px black;
+}
+
+.card-addOns:hover {
+	cursor: pointer;
+}
+
+.card-addOns .gambar-addOns {
+	width: 68px;
+	height: 70px;
+}
+
+.card-addOns .gambar-addOns img {
+	border: 1px solid transparent;
+	width: 68px;
+	height: 70px;
+}
+
+.card-addOns .nama-addOns {
+	width: 68px;
+	min-height: 28px;
+	border: 1px solid transparent;
+	/*? membuat text berada di tengah div */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.card-addOns .nama-addOns p {
+	font-size: 10px;
+	font-weight: 700;
+	color: white;
+}
+
+.card-addOns .harga-addOns {
+	width: 68px;
+	height: 15px;
+	line-height: 15px;
+	font-size: 10px;
+	font-weight: 700;
+	color: #1b9046;
+	-webkit-text-stroke: 0.2px #fff;
+	text-stroke: 0.2px #fff;
+	border: 1px solid transparent;
+}
+
+/** ---------- SECTION TOTAL ------------  */
+.container-kanan .total {
+	width: 100%;
+	height: 39%;
+	margin-top: 7px;
+	background-color: #1b9046;
+	border: 1px solid white;
+	border-bottom-right-radius: 20px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+/*? Mengubah warna latar belakang scroll */
+.container-kanan .total::-webkit-scrollbar {
+	background-color: transparent;
+	width: 1px;
+}
+
+/*? Mengubah warna thumb (bagian yang dapat digeser) scroll */
+.container-kanan .total::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	width: 1px;
+	border-radius: 2px;
+}
+
+/*? Mengubah warna thumb saat dihover */
+.container-kanan .total::-webkit-scrollbar-thumb:hover {
+	background-color: transparent;
+}
+
+
+section.total .container-total {
 	border: 1px solid black;
+	width: 90%;
+	min-height: 150px;
+	margin-left: 13px;
+	margin-top: -10px;
+	padding-bottom: 6px;
+}
+
+.produk-dibeli {
+	border: 1px solid yellow;
+	position: relative;
+	min-height: 90px;
+}
+
+.card-produk-dibeli {
+	display: grid;
+	position: relative;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 12px;
+	padding: 5px;
+	border: 2px solid white;
+	border-radius: 10px;
+	margin-bottom: 8px;
+	place-items: center;
+	box-shadow: 1.5px 2px 2px black;
+}
+
+.card-produk-dibeli .foto {
+	border: 1px solid transparent;
+	width: 40px;
+	height: 40px;
+}
+
+.card-produk-dibeli .foto img {
+	width: 40px;
+	height: 40px;
+}
+
+.card-produk-dibeli .nama-produk {
+	color: white;
+	font-weight: 800;
+	font-size: 15px;
+	width: 160px;
+	border: 1px solid transparent;
+}
+
+.container-total footer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 8px;
+	border: 2px solid transparent;
+	margin-top: 20px;
+}
+
+.card-produk-dibeli .jumlah {
+	color: #1b9046;
+	-webkit-text-stroke: 0.5px #fff;
+	text-stroke: 0.5px #fff;
+	font-weight: 800;
+	font-size: 15px;
+	width: 42px;
+	height: 40px;
+	margin-right: 15px;
+	border: 1px solid transparent;
+	line-height: 40px;
+}
+
+.card-produk-dibeli .tombol-delete {
+	position: absolute;
+	top: 0.7px;
+	right: 2.5px;
+	cursor: pointer;
+}
+
+
+
+.total-harga {
+	color: white;
+	font-weight: 800;
+	font-size: 13px;
+	height: 35px;
+	width: 180px;
+	line-height: 35px;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+
+button.confirm {
+	background-color: #1b9046;
+	height: 35px;
+	width: 85px;
+	color: white;
+	font-size: 15px;
+	font-weight: 800;
+	border: 2px solid white;
+	border-radius: 10px;
+	box-shadow: 2px 3px 2px black;
+}
+
+button.confirm:hover {
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
+	box-shadow: 2px 5px 3px black;
+}
+
+button.confirm:active {
+	box-shadow: 2px 2px 2px black;
+}
+
+
+/*! PopUp Setelah card d klik  */
+/** Card Produk */
+
+.container-popUp-produk {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #145c2e8b;
+}
+
+.container-popUp-produk section {
+	width: 300px;
+	height: 450px;
+	margin: 160px auto;
+	padding: 20px;
+	background-color: #1b9046;
+	border-radius: 25px;
+	border: 3px solid white;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 4px 4px 3px black;
+	text-align: center;
+	position: relative;
+}
+
+.container-popUp-produk .foto-produk {
+	border: 1px solid transparent;
+	width: 150px;
+	height: 150px;
+}
+
+.container-popUp-produk .foto-produk img {
+	width: 150px;
+	height: 150px;
+}
+
+.container-popUp-produk .nama-produk {
+	color: white;
+	font-weight: 800;
+	font-size: 23px;
+	width: 100%;
+	border: 1px solid transparent;
+}
+
+
+
+.container-popUp-produk section .harga-produk {
+	width: 100%;
+	font-size: 25px;
+	font-weight: 800;
+	color: #1b9046;
+	-webkit-text-stroke: 1px #fff;
+	text-stroke: 1px #fff;
+	border: 1px solid transparent;
+}
+
+.jumlah-pembelian-produk {
+	display: flex;
+	text-align: center;
+	justify-items: center;
+	border: 1px solid transparent;
+	padding-top: 10px;
+}
+
+.container-popUp-produk .label-jumlah-produk {
+	color: white;
+	font-weight: 800;
+	font-size: 17px;
+	margin-left: 35px;
+	margin-right: 30px;
+
+}
+
+.jumlah-pembelian-produk p {
+	font-size: 25px;
+	font-weight: 700;
+	width: 50px;
+	margin: 0 10px;
+	border: 1px solid transparent;
+	color: white;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.jumlah-pembelian-produk .minus,
+.jumlah-pembelian-produk .plus {
+	cursor: pointer;
+}
+
+.container-popUp-produk section .close-produk {
+	border: 1px solid transparent;
+	position: absolute;
+	top: 2.5px;
+	right: 2.5px;
+	cursor: pointer;
+}
+
+.container-popUp-produk section button {
+	width: 90px;
+	height: 35px;
+	font-size: 20px;
+	font-weight: 800;
+	padding: 5px;
+	background-color: #1b9046;
+	border: 2px solid white;
+	box-shadow: 3px 3px 2px black;
+	color: white;
+	transition: transform 0.3s ease;
+}
+
+.container-popUp-produk section button:hover {
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
+	transform: translateY(-2px);
+	box-shadow: 3px 5px 2px black;
+}
+
+.container-popUp-produk section button:active {
+	transform: translateY(2px);
+	box-shadow: 3px 3px 2px black;
+}
+
+
+
+
+/** Card AddOns */
+
+.container-popUp-addOns {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #145c2e8b;
+}
+
+.container-popUp-addOns section {
+	width: 300px;
+	height: 450px;
+	margin: 160px auto;
+	padding: 20px;
+	background-color: #1b9046;
+	border-radius: 25px;
+	border: 3px solid white;
+	display: grid;
+	place-items: center;
+	grid-template-columns: repeat(1, 1fr);
+	box-shadow: 4px 4px 3px black;
+	text-align: center;
+	position: relative;
+}
+
+.container-popUp-addOns .foto-addOns {
+	border: 1px solid transparent;
+	width: 150px;
+	height: 150px;
+}
+
+.container-popUp-addOns .foto-addOns img {
+	width: 150px;
+	height: 150px;
+}
+
+.container-popUp-addOns .nama-addOns {
+	color: white;
+	font-weight: 800;
+	font-size: 23px;
+	width: 100%;
+	border: 1px solid transparent;
+}
+
+
+
+.container-popUp-addOns section .harga-addOns {
+	width: 100%;
+	font-size: 25px;
+	font-weight: 800;
+	color: #1b9046;
+	-webkit-text-stroke: 1px #fff;
+	text-stroke: 1px #fff;
+	border: 1px solid transparent;
+}
+
+.jumlah-pembelian-addOns {
+	display: flex;
+	text-align: center;
+	justify-items: center;
+	border: 1px solid transparent;
+	padding-top: 10px;
+}
+
+.container-popUp-addOns .label-jumlah-addOns {
+	color: white;
+	font-weight: 800;
+	font-size: 17px;
+	margin-left: 35px;
+	margin-right: 30px;
+
+}
+
+.jumlah-pembelian-addOns p {
+	font-size: 25px;
+	font-weight: 700;
+	width: 50px;
+	margin: 0 10px;
+	border: 1px solid transparent;
+	color: white;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.jumlah-pembelian-addOns .minus,
+.jumlah-pembelian-addOns .plus {
+	cursor: pointer;
+}
+
+.container-popUp-addOns section .close-addOns {
+	border: 1px solid transparent;
+	position: absolute;
+	top: 2.5px;
+	right: 2.5px;
+	cursor: pointer;
+}
+
+.container-popUp-addOns section button {
+	width: 90px;
+	height: 35px;
+	font-size: 20px;
+	font-weight: 800;
+	padding: 5px;
+	background-color: #1b9046;
+	border: 2px solid white;
+	box-shadow: 3px 3px 2px black;
+	color: white;
+	transition: transform 0.3s ease;
+}
+
+.container-popUp-addOns section button:hover {
+	background-color: rgba(255, 255, 255, 0.649);
+	color: #1b9046;
+	transform: translateY(-2px);
+	box-shadow: 3px 5px 2px black;
+}
+
+.container-popUp-addOns section button:active {
+	transform: translateY(2px);
+	box-shadow: 3px 3px 2px black;
 }

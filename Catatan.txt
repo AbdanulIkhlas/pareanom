@@ -1,0 +1,1 @@
+menampilkan nama yg banyak sama nya tetapi di tampilkan hanya 1 : SELECT DISTINCT nama_produk, harga, jumlah, foto FROM `produk`;
