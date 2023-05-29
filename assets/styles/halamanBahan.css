@@ -1,0 +1,316 @@
+/*! CSS Reset */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*! CSS Halaman Home/produk */
+
+body {
+  background-color: #1b9046;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+main {
+  margin: 50px auto;
+  padding: 30px;
+  width: 95%;
+  height: 610px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+nav {
+  float: left;
+  font-weight: bold;
+  font-size: large;
+  width: 23%;
+  height: 100%;
+  text-align: center;
+  color: #1b9046;
+}
+
+nav header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 20pt;
+  font-weight: 900;
+  line-height: 32px;
+  -webkit-text-stroke: 0.5px #ffee98; /*? Untuk browser WebKit (Chrome, Safari) */
+  text-stroke: 0.5px #ffee98; /*? Untuk browser yang mendukung standar CSS */
+}
+
+nav ul li {
+  /*? CSS untuk sideMenu  */
+  border: 2px solid #ffee98;
+  border-radius: 15px;
+  margin: 20px 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav ul li p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1b9046;
+}
+
+nav .kotak-ikon {
+  float: left;
+  background-color: #ffee98;
+  border-radius: 15px;
+  width: 50px;
+  height: 40px;
+  border: 1px solid #ffee98;
+}
+
+nav img {
+  width: 105px;
+  position: relative;
+  left: -9px;
+  top: 24px;
+}
+
+nav .garis-bawah-gambar {
+  /*? CSS untuk membuat bottom-line pada gambar*/
+  margin: -10px auto 10px;
+  width: 90px;
+  border-bottom: 14px solid #1b9046;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+
+nav ul li:hover {
+  background-color: #ffee98;
+}
+
+nav ul li:hover .kotak-ikon {
+  background-color: #ffde38;
+}
+
+nav .kotak-ikon img {
+  width: 27px;
+  position: relative;
+  top: 5px;
+  left: 2px;
+}
+
+article {
+  float: right;
+  width: 75%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #1b9046;
+}
+
+article .judul {
+  /* border: white 3px solid; */
+  margin: 10px auto 20px;
+  text-align: center;
+  width: 93%;
+  padding: 0;
+  letter-spacing: -1px;
+  font-size: 3em;
+  font-weight: 900;
+  color: #1b9046;
+  -webkit-text-stroke: 2.5px #fff;
+}
+
+section {
+  margin: 50px auto;
+  width: 93%;
+  height: 75%;
+  /* border: 1px solid white; */
+  border-radius: 20px;
+  padding: 30px 25px 10px;
+  font-weight: bold;
+}
+
+section .tabel {
+  width: 100%;
+  height: 103%;
+  border-radius: 5px;
+  overflow: scroll;
+}
+
+section .tabel table {
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  border: 1px solid #1b9046;
+}
+
+section .tabel table thead {
+  background-color: #ffde38;
+  border-bottom: 2px solid #1b9046;
+}
+
+section .tabel table thead tr th {
+  border: 2px solid #1b9046;
+}
+
+section .tabel table tbody tr td {
+  border-left: 2px solid #1b9046;
+  border-right: 2px solid #1b9046;
+}
+
+section .tabel table tbody tr td a {
+  border: 1px solid #ffde38;
+  text-decoration: none;
+  background-color: #1b9046;
+  color: white;
+  padding: 1px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  margin: 0px -15px;
+}
+
+section .tabel table tbody tr td a:hover {
+  border: 1px solid #1b9046;
+  background-color: white;
+  color: #1b9046;
+}
+
+article button {
+  float: right;
+  margin: 15px 63px 0;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+}
+
+article button:hover {
+  color: #1b9046;
+  background-color: white;
+}

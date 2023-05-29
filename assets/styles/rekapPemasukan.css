@@ -1,0 +1,421 @@
+/*! CSS Reset */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*! CSS Halaman Home/produk */
+
+body {
+  background-color: #1b9046;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+main {
+  margin: 50px auto;
+  padding: 30px;
+  width: 95%;
+  height: 610px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+nav {
+  float: left;
+  font-weight: bold;
+  font-size: large;
+  width: 23%;
+  height: 100%;
+  text-align: center;
+  color: #1b9046;
+}
+
+nav header {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 20pt;
+  font-weight: 900;
+  line-height: 32px;
+  -webkit-text-stroke: 0.5px #ffee98; /*? Untuk browser WebKit (Chrome, Safari) */
+  text-stroke: 0.5px #ffee98; /*? Untuk browser yang mendukung standar CSS */
+}
+
+nav ul li {
+  /*? CSS untuk sideMenu  */
+  border: 2px solid #ffee98;
+  border-radius: 15px;
+  margin: 20px 40px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav ul li p {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1b9046;
+}
+
+nav .kotak-ikon {
+  float: left;
+  background-color: #ffee98;
+  border-radius: 15px;
+  width: 50px;
+  height: 40px;
+  border: 1px solid #ffee98;
+}
+
+nav img {
+  width: 105px;
+  position: relative;
+  left: -9px;
+  top: 24px;
+}
+
+nav .garis-bawah-gambar {
+  /*? CSS untuk membuat bottom-line pada gambar*/
+  margin: -10px auto 10px;
+  width: 90px;
+  border-bottom: 14px solid #1b9046;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+
+nav ul li:hover {
+  background-color: #ffee98;
+}
+
+nav ul li:hover .kotak-ikon {
+  background-color: #ffde38;
+}
+
+nav .kotak-ikon img {
+  width: 27px;
+  position: relative;
+  top: 5px;
+  left: 2px;
+}
+
+article {
+  margin-left: 25%;
+  width: 60%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #1b9046;
+}
+
+section {
+  margin-left: 101.7%;
+  width: 25%;
+  height: 100%;
+  border-radius: 20px;
+  /* background-color: #ffde38; */
+}
+
+.tengah {
+  position: fixed;
+}
+
+.kanan {
+  position: fixed;
+}
+
+article .tengah {
+  /* border: white 3px solid; */
+  margin: 10px auto 20px;
+  text-align: center;
+  width: 55%;
+  padding: 0;
+  letter-spacing: -1px;
+  font-size: 3em;
+  font-weight: 900;
+  color: #1b9046;
+  -webkit-text-stroke: 2.5px #fff;
+}
+
+article .tengah .navbar {
+  width: 96%;
+  margin: 20px auto -15px;
+  border: 2px solid transparent;
+}
+
+article .tengah .navbar .container-button {
+  width: 100%;
+  margin: -5px auto -10px;
+  border: 2px solid transparent;
+  color: white;
+  -webkit-text-stroke: 0px #fff;
+  background-color: transparent;
+  font-size: medium;
+}
+
+article .tengah .navbar .container-button button {
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+article .tengah .navbar .container-button a:nth-child(1) {
+  margin-right: 480px;
+}
+
+article .tengah .navbar .container-button button:hover {
+  background-color: white;
+  color: #1b9046;
+  border: 2px solid white;
+}
+
+article .tabel {
+  margin: 20px auto;
+  width: 95%;
+  height: 430px;
+  /* background-color: #ffde38; */
+  /* border: 1px solid transparent; */
+  /* border-radius: 5px; */
+  overflow: scroll;
+}
+
+article .tabel table {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  -webkit-text-stroke: 0 transparent;
+  background-color: white;
+}
+
+article .tabel table th {
+  border: 2px solid #1b9046;
+  background-color: #ffde38;
+}
+
+article .tabel table td {
+  border-left: 2px solid #1b9046;
+  border-right: 2px solid #1b9046;
+}
+
+section .kanan {
+  /* border: white 3px solid; */
+  margin: 10px auto 20px;
+  text-align: center;
+  width: 13.5%;
+  padding: 0;
+  letter-spacing: -1px;
+  /* -webkit-text-stroke: 1px #ffde38; */
+}
+
+section .kanan .judul {
+  font-size: 25px;
+  font-weight: 900;
+  color: #1b9046;
+}
+
+section .kanan .saldo {
+  margin: 25px auto;
+  width: 100%;
+  border: 1px solid black;
+}
+
+section .kanan .saldo img {
+  width: 100%;
+  margin: -30px 0;
+}
+
+section .kanan .saldo .bg-kuning img {
+  position: relative;
+  width: 200px;
+  margin: -30px 0;
+}
+
+section .kanan .saldo .uang {
+  position: absolute;
+  top: 18%;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  min-height: 100px;
+  /* background-color: #1b9046; */
+}
+
+section .kanan .saldo .uang .nominal {
+  margin: 40px auto 0px;
+  width: 100%;
+  /* border: 1px solid black; */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section .kanan .saldo .uang .nominal .bg-edit {
+  width: 100%;
+  float: right;
+  /* border: 1px solid black; */
+  margin-top: -60px;
+}
+section .kanan .saldo .uang .nominal .bg-edit img {
+  width: 20px;
+  margin-left: 145px;
+}
+
+section .kanan .saldo .uang .nominal .bg-edit img:hover {
+  content: url(../image/Edit\ Hover.png);
+}
+
+section .kanan .menu-kanan {
+  margin: -5px auto;
+  width: 100%;
+  height: 290px;
+  /* border: 1px solid black; */
+}
+
+section .kanan .menu-kanan ul {
+  margin: 20px auto;
+  color: #1b9046;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+section .kanan .menu-kanan button {
+  color: #1b9046;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid #ffde38;
+  border-radius: 13px;
+  padding: 10px 0;
+  font-size: 17px;
+  width: 175px;
+  height: 40px;
+}
+
+section .kanan .menu-kanan button:hover {
+  background-color: #ffde38;
+}

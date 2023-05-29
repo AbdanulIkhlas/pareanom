@@ -68,51 +68,63 @@
                     </a>
                 </div>
                 <div class="container-card-produk">
+                    <?php 
+                    include 'database.php';
+                    $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, jumlah, foto FROM produk");
+                    while($data = mysqli_fetch_array($query)) :
+                    ?>
                     <div class="card-produk">
                         <section>
                             <div class="gambar-produk">
-                                <img src="assets/image/PareanomPuas.png" alt="Pareanom Puas">
+                                <img src="assets/image/<?php echo $data['foto'] ?>">
                             </div>
                             <div class="nama-produk">
-                                <p>PAREANOM PUAS KOMPLIT BANYAK</p>
+                                <p><?php echo $data['nama_produk'] ?></p>
                             </div>
                             <div class="harga-produk">
-                                <p>Rp 10000</p>
+                                <p><?php echo $data['harga'] ?></p>
                             </div>
                         </section>
                     </div>
                     <div class="container-popUp-produk">
-                        <section>
-                            <div class="close-produk">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
-                                    class="bi bi-x-circle" viewBox="0 0 16 16">
-                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                    <path
-                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                                </svg>
-                            </div>
-                            <div class="foto-produk">
-                                <img src="assets/image/PareanomPuas.png">
-                            </div>
-                            <div class="nama-produk">
-                                <p>PAREANOM PUAS</p>
-                            </div>
-                            <div class="harga-produk">
-                                <p>Rp 10000</p>
-                            </div>
-                            <div class="jumlah-pembelian-produk">
-                                <div class="row mb-3">
-                                    <label for="colFormLabelSm"
-                                        class="col-sm-2 col-form-label col-form-label-sm label-jumlah-produk">Jumlah</label>
-                                    <div class="col-sm-6">
-                                        <input type="number" class="form-control form-control-sm" id="colFormLabelSm">
+                        <form action="dbInput_temp_produk.php" method="post">
+                            <section>
+                                <div class="close-produk">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
+                                        class="bi bi-x-circle" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                        <path
+                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                    </svg>
+                                </div>
+                                <div class="foto-produk">
+                                    <img src="assets/image/<?php echo $data['foto'] ?>">
+                                </div>
+                                <div class="nama-produk">
+                                    <p><?php echo $data['nama_produk'] ?></p>
+                                </div>
+                                <div class="harga-produk">
+                                    <p><?php echo $data['harga'] ?></p>
+                                </div>
+                                <input type="hidden" name="foto" value="<?php echo $data['foto'] ?>">
+                                <input type="hidden" name="nama_produk" value="<?php echo $data['nama_produk'] ?>">
+                                <input type="hidden" name="harga" value="<?php echo $data['harga'] ?>">
+                                <div class="jumlah-pembelian-produk">
+                                    <div class="row mb-3">
+                                        <label for="colFormLabelSm"
+                                            class="col-sm-2 col-form-label col-form-label-sm label-jumlah-produk">Jumlah</label>
+                                        <div class="col-sm-6">
+                                            <input type="number" name="jumlah" class="form-control form-control-sm"
+                                                id="colFormLabelSm">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <button>OK</button>
-                        </section>
+                                <button type="submit">OK</button>
+                            </section>
+                        </form>
                     </div>
-
+                    <?php endwhile ?>
                 </div>
             </section>
             <div class="container-kanan">
@@ -124,91 +136,126 @@
                         </a>
                     </div>
                     <div class="container-card-addOns">
+                        <?php 
+                        $queryAddOns = mysqli_query($connect, "SELECT DISTINCT nama_add_ons, harga, jumlah, foto FROM add_ons");
+                        while($data = mysqli_fetch_array($queryAddOns)) :
+                        ?>
                         <div class="card-addOns">
                             <section>
                                 <div class="gambar-addOns">
-                                    <img src="assets/image/Nasi.png">
+                                    <img src="assets/image/<?php echo $data['foto'] ?>">
                                 </div>
                                 <div class="nama-addOns">
-                                    <p>NASI</p>
+                                    <p><?php echo $data['nama_add_ons'] ?></p>
                                 </div>
                                 <div class="harga-addOns">
-                                    <p>Rp 3000 </p>
+                                    <p><?php echo $data['harga'] ?></p>
                                 </div>
                             </section>
                         </div>
 
                         <div class="container-popUp-addOns">
-                            <section>
-                                <div class="close-addOns">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
-                                        class="bi bi-x-circle" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                                    </svg>
-                                </div>
-                                <div class="foto-addOns">
-                                    <img src="assets/image/Nasi.png">
-                                </div>
-                                <div class="nama-addOns">
-                                    <p>NASI</p>
-                                </div>
-                                <div class="harga-addOns">
-                                    <p>Rp 3000</p>
-                                </div>
-                                <div class="jumlah-pembelian-addOns">
-                                    <div class="row mb-3">
-                                        <label for="colFormLabelSm"
-                                            class="col-sm-2 col-form-label col-form-label-sm label-jumlah-addOns">Jumlah</label>
-                                        <div class="col-sm-6">
-                                            <input type="number" class="form-control form-control-sm"
-                                                id="colFormLabelSm">
+                            <form action="dbInput_temp_produk.php" method="post">
+                                <section>
+                                    <div class="close-addOns">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
+                                            class="bi bi-x-circle" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            <path
+                                                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                        </svg>
+                                    </div>
+                                    <div class="foto-addOns">
+                                        <img src="assets/image/<?php echo $data['foto'] ?>">
+                                    </div>
+                                    <div class="nama-addOns">
+                                        <p><?php echo $data['nama_add_ons'] ?></p>
+                                    </div>
+                                    <div class="harga-addOns">
+                                        <p><?php echo $data['harga'] ?></p>
+                                    </div>
+                                    <input type="hidden" name="foto" value="<?php echo $data['foto'] ?>">
+                                    <input type="hidden" name="nama_produk" value="<?php echo $data['nama_add_ons'] ?>">
+                                    <input type="hidden" name="harga" value="<?php echo $data['harga'] ?>">
+                                    <div class="jumlah-pembelian-addOns">
+                                        <div class="row mb-3">
+                                            <label for="colFormLabelSm"
+                                                class="col-sm-2 col-form-label col-form-label-sm label-jumlah-addOns">Jumlah</label>
+                                            <div class="col-sm-6">
+                                                <input type="number" name="jumlah" class="form-control form-control-sm"
+                                                    id="colFormLabelSm">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <button>OK</button>
-                            </section>
+                                    <button type="submit">OK</button>
+                                </section>
+                            </form>
                         </div>
-
+                        <?php endwhile ?>
                     </div>
                 </section>
                 <section class="total">
                     <h2>TOTAL</h2>
                     <div class="container-total">
                         <!--? Container Pembelian  -->
-                        <form action="#" method="POST">
-                            <div class="produk-dibeli">
-                                <!-- <div class="card-produk-dibeli">
-                                    <div class="foto">
-                                        <img src="assets/image/PareanomKomplitBesar.png">
-                                    </div>
-                                    <div class="nama-produk">
-                                        <input type="hidden" name="namaProduk" value="#">
-                                        <p>PAREANOM KOMPLIT BESAR</p>
-                                    </div>
-                                    <div class="jumlah">
-                                        <input type="hidden" name="jumlahPembelian" value="#">
-                                        <p>1</p>
-                                    </div>
-                                    <div class="tombol-delete">
-                                        <div class="minus">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white"
-                                                class="bi bi-dash-circle" viewBox="0 0 16 16">
-                                                <path
-                                                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                                            </svg>
+                        <form action="dbInput_produk_terjual.php" method="POST">
+                            <div class="box-awal-total">
+                                <?php 
+                                $query2 = mysqli_query($connect, "SELECT * FROM temp_produk");
+                                $dataArray = array(); //! Array kosong untuk menyimpan data dari database
+                                $totalHarga = 0; //! Variabel total harga
+                                if($totalHarga == 0){
+                                    echo `<div class="div-kosong"></div>`;
+                                }
+                                while($data = mysqli_fetch_array($query2)) :
+                                
+                                    $dataArray[] = $data; //! Menyimpan data dalam array
+    
+                                    //! Menampilkan data produk
+                                ?>
+                                <div class="produk-dibeli">
+                                    <div class="card-produk-dibeli">
+                                        <div class="foto">
+                                            <img src="assets/image/<?php echo $data['foto'] ?>">
+                                        </div>
+                                        <div class="nama-produk">
+                                            <p><?php echo $data['nama_produk'] ?></p>
+                                        </div>
+                                        <div class="jumlah">
+                                            <p><?php echo $data['jumlah'] ?></p>
+                                        </div>
+                                        <div class="tombol-delete">
+                                            <div class="minus">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                                    fill="white" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                    <path
+                                                        d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                                </svg>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
+                                <?php 
+                                    //! Menjumlahkan total harga
+                                    $totalHarga += $data['harga'] * $data['jumlah'];
+                                endwhile ;
+                                ?>
                             </div>
                             <footer>
                                 <div class="total-harga">
-                                    <input type="hidden" name="totalHarga" value="#">
-                                    <p>TOTAL HARGA : Rp 60000 </p>
+                                    <p>TOTAL HARGA: <?php echo $totalHarga; ?></p>
                                 </div>
+                                <?php $tanggalSekarang = date("Y-m-d"); ?>
+                                <input type="hidden" name="tanggal" value="<?php echo $tanggalSekarang ?>">
+                                <?php
+                                    //! Mengirimkan data dalam $dataArray sebagai input tersembunyi
+                                    foreach ($dataArray as $data) {
+                                        echo '<input type="hidden" name="dataArray[]" value="' . htmlspecialchars(json_encode($data)) . '">';
+                                    }
+                                    ?>
                                 <button class="confirm" type="submit">CONFIRM</button>
                             </footer>
                         </form>
