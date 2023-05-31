@@ -351,7 +351,7 @@ section.produk button:active {
 	box-shadow: 3px 3px 2px black;
 }
 
-.card-produk:hover {
+.card-produk section:hover {
 	cursor: pointer;
 }
 
@@ -502,7 +502,7 @@ section.addOns button:active {
 	box-shadow: 3px 3px 2px black;
 }
 
-.card-addOns:hover {
+.card-addOns section:hover {
 	cursor: pointer;
 }
 
@@ -712,6 +712,10 @@ button.confirm:active {
 	background-color: #145c2e8b;
 }
 
+.container-popUp-produk section:hover {
+	cursor: default;
+}
+
 .container-popUp-produk section {
 	width: 300px;
 	height: 450px;
@@ -739,7 +743,7 @@ button.confirm:active {
 	height: 150px;
 }
 
-.container-popUp-produk .nama-produk {
+.container-popUp-produk #nama-produk {
 	color: white;
 	font-weight: 800;
 	font-size: 23px;
@@ -856,6 +860,10 @@ button.confirm:active {
 	position: relative;
 }
 
+.container-popUp-addOns section:hover {
+	cursor: default;
+}
+
 .container-popUp-addOns .foto-addOns {
 	border: 1px solid transparent;
 	width: 150px;
@@ -867,10 +875,10 @@ button.confirm:active {
 	height: 150px;
 }
 
-.container-popUp-addOns .nama-addOns {
+.container-popUp-addOns #nama-addOns {
 	color: white;
 	font-weight: 800;
-	font-size: 23px;
+	font-size: 25px;
 	width: 100%;
 	border: 1px solid transparent;
 }

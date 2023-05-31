@@ -1,5 +1,5 @@
-const cardProduk = document.querySelectorAll(".container-card-produk");
-const cardAddOns = document.querySelectorAll(".container-card-addOns");
+const cardProduk = document.querySelectorAll(".card-produk");
+const cardAddOns = document.querySelectorAll(".card-addOns");
 
 cardProduk.forEach(function (card) {
     const containerPopUpProduk = card.querySelector(".container-popUp-produk");
