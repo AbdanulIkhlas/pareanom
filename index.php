@@ -246,8 +246,13 @@
                             <footer>
                                 <div class="total-harga">
                                     <p>TOTAL HARGA: <?php echo $totalHarga; ?></p>
+                                    <input type="hidden" name="total_harga" value="<?php echo $totalHarga ?>">
                                 </div>
-                                <?php $tanggalSekarang = date("Y-m-d"); ?>
+                                <?php 
+                                //! Set Tanggal sekarang
+                                date_default_timezone_set('Asia/Jakarta');
+                                $tanggalSekarang = date("Y-m-d"); 
+                                ?>
                                 <input type="hidden" name="tanggal" value="<?php echo $tanggalSekarang ?>">
                                 <?php
                                     //! Mengirimkan data dalam $dataArray sebagai input tersembunyi
