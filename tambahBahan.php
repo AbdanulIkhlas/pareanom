@@ -66,40 +66,36 @@
 
       <section>
 
-        <form>
+        <form method="POST" action="dbinsert_tambahBahan.php">
 
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Nama Bahan</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="namaBahan" class="form-label">Nama Bahan</label>
+            <input type="text" class="form-control" id="namaBahan" name="nama_bahan">
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Stok</label>
-            <input type="text" class="form-control" id="exampleInputPassword1">
+            <label for="stokBahan" class="form-label">Stok</label>
+            <input type="text" class="form-control" id="stokBahan" name="stok_bahan">
           </div>
 
           <div class="mb-3">
-            <div class="dropdown">
-              <label for="exampleInputEmail1" class="form-label">Satuan</label>
-              <select class="form-select form-select-mb-3" aria-label=".form-select-mb example" style=" padding: 7.5px;">
-                <option selected hidden>Pilih satuan stok pada bahan</option>
-                <option value="Kg">Kg</option>
-                <option value="Pcs">Pcs</option>
-                <option value="Pack">Pack</option>
-                <option value="Liter">Liter</option>
-              </select>
-            </div>
+            <label for="satuanStok" class="form-label">Satuan Stok</label>
+            <select class="form-select form-select-mb-3" id="satuanStok" name="satuan_stok">
+              <option selected hidden>Pilih satuan stok pada bahan</option>
+              <option value="Kg">Kg</option>
+              <option value="Pcs">Pcs</option>
+              <option value="Pack">Pack</option>
+              <option value="Liter">Liter</option>
+            </select>
           </div>
 
           <div class="mb-3">
-            <div class="dropdown">
-              <label for="exampleInputEmail1" class="form-label">Satuan</label>
-              <select class="form-select form-select-mb-3" aria-label=".form-select-mb example" style=" padding: 7.5px;">
-                <option selected hidden>Pilih jenis pada bahan</option>
-                <option value="Otomatis">Otomatis</option>
-                <option value="Manual">Manual</option>
-              </select>
-            </div>
+            <label for="jenisBahan" class="form-label">Jenis Bahan</label>
+            <select class="form-select form-select-mb-3" id="jenisBahan" name="jenis_bahan">
+              <option selected hidden>Pilih jenis pada bahan</option>
+              <option value="Otomatis">Otomatis</option>
+              <option value="Manual">Manual</option>
+            </select>
           </div>
 
           <button type="submit">Tambah</button>

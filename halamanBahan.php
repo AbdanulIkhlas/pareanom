@@ -82,113 +82,32 @@
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Sayap</td>
-                <td>10</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Cup 15 ml</td>
-                <td>35</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td><a href="">Edit</a></td>
-              </tr>
-            </tbody>
+            <?php
+
+            include('database.php');
+
+            $sql = "SELECT * FROM bahan_baku ORDER BY nama_bahan ASC";
+            $query = mysqli_query($connect, $sql);
+
+            $id = 1;
+
+            while ($data = mysqli_fetch_array($query)) {
+
+            ?>
+
+              <tbody>
+                <tr>
+                  <td><?php echo $id ?></td>
+                  <td><?php echo $data['nama_bahan'] ?></td>
+                  <td><?php echo $data['satuan_bahan'] ?></td>
+                  <td><?php echo $data['stok_bahan'] ?></td>
+                  <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
+                </tr>
+              </tbody>
+
+            <?php
+              $id++;
+            } ?>
 
           </table>
 
