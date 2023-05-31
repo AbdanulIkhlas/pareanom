@@ -230,15 +230,10 @@
                                             <p><?php echo $data['jumlah'] ?></p>
                                         </div>
                                         <div class="tombol-delete">
-                                            <div class="minus">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                                    fill="white" class="bi bi-dash-circle" viewBox="0 0 16 16">
-                                                    <path
-                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                                    <path
-                                                        d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                                                </svg>
-                                            </div>
+                                            <a
+                                                href="dbDelete_temp_produk.php?id_temp_produk=<?php echo $data['id_temp_produk']; ?>">
+                                                <p>-</p>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -251,8 +246,13 @@
                             <footer>
                                 <div class="total-harga">
                                     <p>TOTAL HARGA: <?php echo $totalHarga; ?></p>
+                                    <input type="hidden" name="total_harga" value="<?php echo $totalHarga ?>">
                                 </div>
-                                <?php $tanggalSekarang = date("Y-m-d"); ?>
+                                <?php 
+                                //! Set Tanggal sekarang
+                                date_default_timezone_set('Asia/Jakarta');
+                                $tanggalSekarang = date("Y-m-d"); 
+                                ?>
                                 <input type="hidden" name="tanggal" value="<?php echo $tanggalSekarang ?>">
                                 <?php
                                     //! Mengirimkan data dalam $dataArray sebagai input tersembunyi
