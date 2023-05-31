@@ -40,11 +40,22 @@ foreach ($dataArray as $data) {
 
         
     }
+
+    //! menampilkan semua isi tabel produk
+    $queryTampilProduk = mysqli_query($connect, "SELECT DISTINCT nama_produk,jumlah FROM `produk` WHERE nama_produk = '$nama_produk_terjual'");
+    
+    //! menangkap data produk
+    $dataProduk = mysqli_fetch_array($queryTampilProduk);
+    $dataProduk['jumlah'] = $dataProduk['jumlah'] - $jumlah_produk_terjual;
+
+    //! update jumlah produk yang sudah berkurang
+    $queryUpdateJumlahProduk = mysqli_query($connect, "UPDATE produk SET jumlah = 10 WHERE nama_produk = '$nama_produk_terjual'");
 }
 
 if ($checked) {
     //! menghapus semua isi tabel temp_produk
     $queryDeleteTempProduk = mysqli_query($connect, "DELETE FROM temp_produk");
+
     header("location:index.php?pesan=pembelian_berhasil");
 } else {
     header("location:index.php?pesan=pembelian_gagal");

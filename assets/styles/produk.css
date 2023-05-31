@@ -387,8 +387,8 @@ section.produk button:active {
 	width: 160px;
 	height: 25px;
 	line-height: 25px;
-	font-size: 19px;
-	font-weight: 800;
+	font-size: 22px;
+	font-weight: 900;
 	color: #1b9046;
 	-webkit-text-stroke: 0.5px #fff;
 	text-stroke: 0.5px #fff;
@@ -526,6 +526,7 @@ section.addOns button:active {
 	align-items: center;
 	justify-content: center;
 	height: 100%;
+	font-size: 30px;
 }
 
 .card-addOns .nama-addOns p {
@@ -538,8 +539,8 @@ section.addOns button:active {
 	width: 68px;
 	height: 15px;
 	line-height: 15px;
-	font-size: 10px;
-	font-weight: 700;
+	font-size: 13px;
+	font-weight: 800;
 	color: #1b9046;
 	-webkit-text-stroke: 0.2px #fff;
 	text-stroke: 0.2px #fff;
@@ -648,19 +649,38 @@ section.total .container-total .box-awal-total {
 	-webkit-text-stroke: 0.5px #fff;
 	text-stroke: 0.5px #fff;
 	font-weight: 800;
-	font-size: 15px;
+	font-size: 18px;
 	width: 42px;
 	height: 40px;
 	margin-right: 15px;
 	border: 1px solid transparent;
 	line-height: 40px;
+	text-align: left;
 }
 
 .card-produk-dibeli .tombol-delete {
 	position: absolute;
-	top: 0.7px;
-	right: 2.5px;
+	top: 1.5px;
+	right: 1.8px;
 	cursor: pointer;
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 17px;
+	height: 17px;
+}
+
+.card-produk-dibeli .tombol-delete a {
+	position: relative;
+	text-decoration: none;
+	color: white;
+}
+
+.card-produk-dibeli .tombol-delete a p {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	font-size: 20px;
+	font-weight: 900;
 }
 
 
