@@ -195,8 +195,6 @@
                                     </section>
                                 </div>
                             </div>
-
-
                         </form>
                         <?php endwhile ?>
                     </div>
