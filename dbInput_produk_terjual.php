@@ -24,15 +24,11 @@ foreach ($dataArray as $data) {
     FROM produk p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku
     WHERE p.nama_produk = '$nama_produk_terjual'");
 
-    //! variabel untuk mengecek apakah ini produk atau addons (produk = true || addOns = false)
-    $produkOrAddons = true;
-
     //! jika queryProduk diatas gagal, berarti data adalah add ons dan masuk ke dalam if
     if(!$queryProduk || mysqli_num_rows($queryProduk) == 0){
         $queryProduk = mysqli_query($connect, "SELECT a.id_add_ons, a.nama_add_ons, b.id_bahan_baku, b.nama_bahan
         FROM add_ons a INNER JOIN bahan_baku b ON a.id_bahan_baku = b.id_bahan_baku
         WHERE a.nama_add_ons = '$nama_produk_terjual'");
-        $produkOrAddons = false;
     }
 
     while($row = mysqli_fetch_array($queryProduk)){
@@ -59,28 +55,6 @@ foreach ($dataArray as $data) {
             $checked = false;
         }
         
-    }
-
-    if($produkOrAddons){
-        //! menampilkan semua isi tabel produk
-        $queryTampilProduk = mysqli_query($connect, "SELECT DISTINCT nama_produk,jumlah FROM `produk` WHERE nama_produk = '$nama_produk_terjual'");
-        
-        //! menangkap data produk
-        $dataProduk = mysqli_fetch_array($queryTampilProduk);
-        
-        //! update jumlah produk yang sudah berkurang
-        $jumlahProduk = $dataProduk['jumlah'] - $jumlah_produk_terjual;
-        $queryUpdateJumlahProduk = mysqli_query($connect, "UPDATE produk SET jumlah = '$jumlahProduk' WHERE nama_produk = '$nama_produk_terjual'");
-    }else{
-        //! menampilkan semua isi tabel addOns
-        $queryTampilAddOns = mysqli_query($connect, "SELECT nama_add_ons, jumlah FROM `add_ons` WHERE nama_add_ons = '$nama_produk_terjual'");
-        
-        //! menangkap data addOns
-        $dataAddOns = mysqli_fetch_array($queryTampilAddOns);
-        
-        //! update jumlah addOns yang sudah berkurang
-        $jumlahAddOns = $dataAddOns['jumlah'] - $jumlah_produk_terjual;
-        $queryUpdateJumlahProduk = mysqli_query($connect, "UPDATE add_ons SET jumlah = '$jumlahAddOns' WHERE nama_add_ons = '$nama_produk_terjual'");
     }
 }
 
