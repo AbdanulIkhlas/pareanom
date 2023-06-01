@@ -128,9 +128,23 @@
             <div class="uang">
               <div class="nominal">
                 <div class="bg-edit">
-                  <a href="rekapPengeluaran.php"><img src="assets/image/Edit.png" alt="Edit Saldo"></a>
+                  <a href="rekapKeuangan.php"><img src="assets/image/Edit.png" alt="Edit Saldo"></a>
                 </div>
-                <h1>Rp.610.000.000</h1>
+
+                <?php
+                $sql = "SELECT total_saldo FROM total_saldo";
+                $query = mysqli_query($connect, $sql);
+
+                if ($query) {
+                  $data = mysqli_fetch_array($query);
+                  $saldo = $data['total_saldo'];
+                } else {
+                  // Jika terjadi kesalahan saat menjalankan kueri
+                  $saldo = "Error !";
+                }
+                ?>
+
+                <h1>Rp. <?php echo $saldo ?></h1>
               </div>
             </div>
           </div>
