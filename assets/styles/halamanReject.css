@@ -498,8 +498,8 @@ section.addOns h2 {
 
 .container-popUp-produk section {
     width: 300px;
-    height: 450px;
-    margin: 160px auto;
+    height: 500px;
+    margin: 130px auto;
     padding: 20px;
     background-color: #1b9046;
     border-radius: 25px;
@@ -510,6 +510,7 @@ section.addOns h2 {
     box-shadow: 4px 4px 3px black;
     text-align: center;
     position: relative;
+    box-sizing: border-box;
 }
 
 .container-popUp-produk .foto-produk {
@@ -595,6 +596,7 @@ section.addOns h2 {
     box-shadow: 3px 3px 2px black;
     color: white;
     transition: transform 0.3s ease;
+    margin-top: 15px;
 }
 
 .container-popUp-produk section button:hover {
@@ -626,8 +628,8 @@ section.addOns h2 {
 
 .container-popUp-addOns section {
     width: 300px;
-    height: 450px;
-    margin: 160px auto;
+    height: 500px;
+    margin: 130px auto;
     padding: 20px;
     background-color: #1b9046;
     border-radius: 25px;

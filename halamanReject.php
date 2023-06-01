@@ -115,14 +115,11 @@
                                                     id="colFormLabelSm">
                                             </div>
                                         </div>
-                                        <div class="row mb-3">
-                                            <label for="colFormLabelSm"
-                                                class="col-sm-2 col-form-label col-form-label-sm label-jumlah-produk">Keterangan</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="keterangan"
-                                                    class="form-control form-control-sm" id="colFormLabelSm">
-                                            </div>
-                                        </div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" name="keterangan" placeholder="Input Catatan"
+                                            id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Catatan</label>
                                     </div>
                                     <button type="submit">OK</button>
                                 </section>
@@ -188,6 +185,11 @@
                                                         class="form-control form-control-sm" id="colFormLabelSm">
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="form-floating">
+                                            <textarea class="form-control" name="keterangan" placeholder="Input Catatan"
+                                                id="floatingTextarea"></textarea>
+                                            <label for="floatingTextarea">Catatan</label>
                                         </div>
                                         <button type="submit">OK</button>
                                     </section>
