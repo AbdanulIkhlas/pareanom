@@ -75,23 +75,21 @@
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Nama Produk</label>
                         <input type="text" name="nama_produk" class="form-control" id="exampleInputEmail1"
-                            aria-describedby="emailHelp"
+                            aria-describedby="emailHelp" placeholder="Input Nama Produk"
                             oninvalid="this.setCustomValidity('Silahkan Masukkan Nama Produk Terlebih Dahulu')"
                             oninput="setCustomValidity('')" required>
                     </div>
                     <div class="mb-3">
                         <div class="dropdown">
                             <label for="exampleInputEmail1" class="form-label">Bahan</label>
-                            <select class="form-select form-select-mb-1 " name="select" multiple
+                            <select class="form-select form-select-mb-1 " name="bahan_baku[]" multiple
                                 multiselect-search="true" multiselect-max-items="8" aria-label=".form-select-mb example"
-                                style=" padding: 7.5px;"
-                                oninvalid="this.setCustomValidity('Silahkan Pilih Bahan Baku Terlebih Dahulu')"
-                                oninput="setCustomValidity('')" required>
+                                style=" padding: 7.5px;">
                                 <?php 
-                                $queryBahanBaku = mysqli_query($connect, "SELECT * FROM bahan_baku");
+                                $queryBahanBaku = mysqli_query($connect, "SELECT * FROM bahan_baku WHERE jenis_bahan = 'Otomatis'");
                                 while($bahanBaku = mysqli_fetch_array($queryBahanBaku)) :
                                 ?>
-                                <option value="<?php echo $bahanBaku['nama_bahan'] ?>" name="bahan_baku[]">
+                                <option value="<?php echo $bahanBaku['nama_bahan'] ?>">
                                     <?php echo $bahanBaku['nama_bahan'] ?>
                                 </option>
                                 <?php endwhile ?>
@@ -100,13 +98,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Harga</label>
-                        <input type="text" name="harga" class="form-control" id="exampleInputPassword1"
+                        <input type="text" name="harga" placeholder="Input Harga Produk" class="form-control"
+                            id="exampleInputPassword1"
                             oninvalid="this.setCustomValidity('Silahkan Masukkan Harga Produk Terlebih Dahulu')"
                             oninput="setCustomValidity('')" required>
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Gambar</label>
-                        <select name="gambar" class="form-select form-select-mb-1" multiple multiselect-search="true"
+                        <select name="gambar" class="form-select form-select-mb-1"
                             oninvalid="this.setCustomValidity('Silahkan Upload Gambar Produk Terlebih Dahulu')"
                             oninput="setCustomValidity('')" required>
                             <option value="selected">Silahkan Pilih Foto Yang Sesuai</option>
@@ -116,18 +115,17 @@
                             <option value="KulitAyam.png">Kulit Ayam</option>
                             <option value="Nasi.png">Nasi</option>
                             <option value="PahaAtas.png">PahaBawah</option>
+                            <option value="PareanomCombo.png">Pareanom Combo</option>
+                            <option value="PareanomKomplitBesar.png">Pareanom Komplit Besar</option>
+                            <option value="PareanomKomplitKecil.png">Pareanom Komplit Kecil</option>
+                            <option value="PareanomMantapBesar.png">Pareanom Mantap Besar</option>
+                            <option value="PareanomMantapKecil.png">Pareanom Mantap Kecil</option>
                             <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
-                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="Sauce.png">Sauce</option>
+                            <option value="Sayap.png">Sayap</option>
+                            <option value="TehKotak.png">Teh Kotak</option>
+                            <option value="Telur.png">Telur</option>
+                            <option value="VeggieCrumbs.png">Veggie Crumbs</option>
                         </select>
 
                     </div>
