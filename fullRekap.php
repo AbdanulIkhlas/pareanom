@@ -164,18 +164,33 @@
               <thead>
                 <tr style="background-color: #ffde38;">
                   <th scope="col">No</th>
-                  <th scope="col">Bahan</th>
+                  <th scope="col">Nama Bahan / Add Ons</th>
                   <th scope="col">Jumlah</th>
+                  <th scope="col">keterangan</th>
                 </tr>
               </thead>
 
-              <tbody>
-                <tr>
-                  <td>-</td>
-                  <td>-</td>
-                  <td>-</td>
-                </tr>
-              </tbody>
+              <?php
+              $sql = "SELECT bahan_baku.nama_bahan, SUM(reject.jumlah_reject) AS jumlah_reject, reject.keterangan FROM reject INNER JOIN produk_terjual ON reject.id_produk_terjual = produk_terjual.id_produk_terjual INNER JOIN bahan_baku ON produk_terjual.id_bahan_baku = bahan_baku.id_bahan_baku WHERE reject.tanggal_reject = '$tanggalDB' GROUP BY reject.id_produk_terjual, reject.keterangan";
+              $query = mysqli_query($connect, $sql);
+
+              $id = 1;
+
+              while ($data = mysqli_fetch_array($query)) {
+
+              ?>
+
+                <tbody>
+                  <tr style="background-color: #ff4434;">
+                    <td style="color: white;"><?php echo $id ?></td>
+                    <td style="color: white;"><?php echo $data['nama_bahan'] ?></td>
+                    <td style="color: white;"><?php echo $data['jumlah_reject'] ?></td>
+                    <td style="color: white;"><?php echo $data['keterangan'] ?></td>
+                  </tr>
+                </tbody>
+
+              <?php $id++;
+              } ?>
 
             </table>
 

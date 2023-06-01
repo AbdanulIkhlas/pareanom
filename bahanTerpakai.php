@@ -75,7 +75,7 @@
             </thead>
 
             <?php
-            // date_default_timezone_set('Asia/Jakarta');
+            date_default_timezone_set('Asia/Jakarta');
             $tanggalSekarang = date("d/m/Y");
             $tanggalDB = date("Y-m-d");
             include('database.php');
