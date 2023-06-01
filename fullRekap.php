@@ -61,17 +61,24 @@
 
     <article>
 
+      <?php
+      date_default_timezone_set('Asia/Jakarta');
+      $tanggalSekarang = date("d/m/Y");
+      $tanggalDB = date("Y-m-d");
+      include('database.php');
+      ?>
+
       <!-- Bagian hijau yang di tengah -->
       <section class="container-tengah">
         <div class="container-rekap">
           <div class="isi-rekap">
-            <h1>REKAP 23/03/2023</h1>
+            <h1>REKAP <?php echo $tanggalSekarang ?></h1>
             <h2>PENJUALAN PRODUK :</h2>
 
             <table class="table table-striped">
 
               <thead>
-                <tr>
+                <tr style="background-color: #ffde38;">
                   <th scope="col">No</th>
                   <th scope="col">Nama Produk / Add Ons</th>
                   <th scope="col">Jumlah</th>
@@ -79,65 +86,74 @@
                 </tr>
               </thead>
 
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Pareanom Mantap Kecil (Paha)</td>
-                  <td>10</td>
-                  <td>10.000</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Pareanom Mantap Kecil (Paha)</td>
-                  <td>10</td>
-                  <td>10.000</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Pareanom Mantap Kecil (Paha)</td>
-                  <td>10</td>
-                  <td>10.000</td>
-                </tr>
-              </tbody>
+              <?php
+              $sql = "SELECT DISTINCT nama_produk_terjual, harga_satuan, SUM(jumlah_produk_terjual) AS jumlah_produk_terjual FROM produk_terjual WHERE tanggal_terjual = '$tanggalDB' GROUP BY nama_produk_terjual,id_bahan_baku";
+              $query = mysqli_query($connect, $sql);
+
+              $id = 1;
+              $TOTAL = 0;
+
+              while ($data = mysqli_fetch_array($query)) {
+
+                $harga_satuan = $data['harga_satuan'];
+                $jumlah_produk_terjual = $data['jumlah_produk_terjual'];
+
+                $total = $harga_satuan * $jumlah_produk_terjual;
+
+              ?>
+
+                <tbody>
+                  <tr>
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $data['nama_produk_terjual'] ?></td>
+                    <td><?php echo $data['jumlah_produk_terjual'] ?></td>
+                    <td><?php echo $total ?></td>
+                  </tr>
+                </tbody>
+
+              <?php $id++;
+
+                $TOTAL += $total;
+              }
+              ?>
 
             </table>
 
-            <h3>TOTAL : Rp.61.000.000</h3>
+            <h3 style="border: 1px solid transparent;">TOTAL : Rp. <?php echo $TOTAL ?></h3>
 
             <h2>BAHAN TERPAKAI :</h2>
 
             <table class="table table-striped">
 
               <thead>
-                <tr>
+                <tr style="background-color: #ffde38;">
                   <th scope="col">No</th>
                   <th scope="col">Bahan</th>
                   <th scope="col">Jumlah</th>
                 </tr>
               </thead>
 
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
-                </tr>
-              </tbody>
+              <?php
+              $sql = "SELECT p.id_bahan_baku,b.nama_bahan,  SUM(p.jumlah_produk_terjual) as total_jumlah FROM produk_terjual p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku WHERE p.tanggal_terjual = '$tanggalDB' GROUP BY p.id_bahan_baku";
+              $query = mysqli_query($connect, $sql);
+
+              $id = 1;
+
+              while ($data = mysqli_fetch_array($query)) {
+
+              ?>
+
+                <tbody>
+                  <tr>
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $data['nama_bahan'] ?></td>
+                    <td><?php echo $data['total_jumlah'] ?></td>
+                  </tr>
+                </tbody>
+
+              <?php $id++;
+              }
+              ?>
 
             </table>
 
@@ -146,7 +162,7 @@
             <table class="table table-striped">
 
               <thead>
-                <tr>
+                <tr style="background-color: #ffde38;">
                   <th scope="col">No</th>
                   <th scope="col">Bahan</th>
                   <th scope="col">Jumlah</th>
@@ -155,19 +171,9 @@
 
               <tbody>
                 <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Sayap</td>
-                  <td>10</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
                 </tr>
               </tbody>
 
@@ -209,7 +215,7 @@
 
         <div class="menu-kanan">
 
-          <h1 class="mb-3">REKAP 23/03/2023</h1>
+          <h1 class="mb-3">REKAP <?php echo $tanggalSekarang ?></h1>
 
           <ul class="mb-3">
             <li><a href="halamanRekap.php"><button>PENJUALAN</button></a></li>
