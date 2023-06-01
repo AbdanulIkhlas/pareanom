@@ -76,208 +76,41 @@
               </tr>
             </thead>
 
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Sayap</td>
-                <td>10</td>
-                <td>Pcs</td>
-                <td>Rp.15.000</a></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Cup 15 ml</td>
-                <td>35</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Paha Atas</td>
-                <td>9</td>
-                <td>Pcs</td>
-                <td>Edit</a></td>
-              </tr>
-            </tbody>
+            <?php
+            // date_default_timezone_set('Asia/Jakarta');
+            $tanggalSekarang = date("d/m/Y");
+            $tanggalDB = date("Y-m-d");
+            include('database.php');
 
+            // $sql = "SELECT p.id_bahan_baku,b.nama_bahan,  SUM(p.jumlah_produk_terjual) as total_jumlah FROM produk_terjual p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku WHERE p.tanggal_terjual = '$tanggalDB' GROUP BY p.id_bahan_baku";
+
+            $sql = "SELECT DISTINCT nama_produk_terjual, harga_satuan, SUM(jumlah_produk_terjual) AS jumlah_produk_terjual FROM produk_terjual WHERE tanggal_terjual = '$tanggalDB' GROUP BY nama_produk_terjual,id_bahan_baku";
+            $query = mysqli_query($connect, $sql);
+
+            $id = 1;
+
+            while ($data = mysqli_fetch_array($query)) {
+
+              $harga_satuan = $data['harga_satuan'];
+              $jumlah_produk_terjual = $data['jumlah_produk_terjual'];
+
+              $total = $harga_satuan * $jumlah_produk_terjual;
+
+            ?>
+
+              <tbody>
+                <tr>
+                  <td><?php echo $id ?></td>
+                  <td><?php echo $data['nama_produk_terjual'] ?></td>
+                  <td><?php echo $data['jumlah_produk_terjual'] ?></td>
+                  <td><?php echo $data['harga_satuan'] ?></td>
+                  <td><?php echo $total ?></td>
+                </tr>
+              </tbody>
+            <?php $id++;
+            } ?>
           </table>
         </div>
-
       </div>
 
       <section>
@@ -303,8 +136,7 @@
           </div>
 
           <div class="menu-kanan">
-
-            <ul class="mb-3">REKAP 23/03/2023</ul>
+            <ul class="mb-3">REKAP <?php echo $tanggalSekarang ?></ul>
 
             <ul class="mb-3">
               <li><a href="halamanRekap.php"><button style="background-color: #ffde38;">PENJUALAN</button></a></li>
