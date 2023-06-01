@@ -132,7 +132,7 @@ table {
   border-spacing: 0;
 }
 
-/*! CSS Halaman Home/produk */
+/*! CSS Halaman Tambah Produk */
 
 body {
   background-color: #1b9046;
@@ -183,6 +183,15 @@ nav ul li {
 nav ul li p {
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+/*? Menu Produk Blok Kuning */
+nav ul a:nth-child(1) li {
+  background-color: #ffee98;
+}
+
+nav ul a:nth-child(1) li .kotak-ikon {
+  background-color: #ffde38;
 }
 
 nav a {
@@ -263,8 +272,6 @@ section {
 
 section .dropdown {
   margin: 5px 0;
-  width: 945px;
-  border: 1px solid transparent;
 }
 
 section label {
@@ -286,4 +293,10 @@ section form button:hover {
   background-color: white;
   border-color: white;
   color: #1b9046;
+}
+
+
+form-select form-select-mb-1 {
+  background: #12582b;
+  color: white;
 }
