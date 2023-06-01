@@ -1,7 +1,7 @@
 <?php 
 include 'database.php';
 
-$namaProduk = $_POST['nama_produk'];
+$namaAddOns = $_POST['nama_add_ons'];
 $bahanBaku = isset($_POST['bahan_baku']) ? $_POST['bahan_baku'] : array();
 if (empty($bahanBaku)) {
     header("location:tambahProduk.php?pesan=bahanBakuKosong");
@@ -19,16 +19,16 @@ foreach ($bahanBaku as $bahan) {
     $id_bahan_baku = $bahanBaku['id_bahan_baku'];
     
     //! memasukkan data ke tabel produk
-    $queryInsertProduk = mysqli_query($connect, "INSERT INTO produk VALUES
-    ( '','$id_bahan_baku','$namaProduk', '$harga','$gambar')")
+    $queryInsertProduk = mysqli_query($connect, "INSERT INTO add_ons VALUES
+    ( '','$id_bahan_baku','$namaAddOns', '$harga','$gambar')")
     or die(mysqli_error($connect));
 }
 
 if ($queryInsertProduk) {
-    echo "<script>alert('Berhasil Menambahkan Produk');</script>";
-    header("location:index.php?pesan=input_produk_berhasil");
+    echo "<script>alert('Berhasil Menambahkan Add Ons');</script>";
+    header("location:index.php?pesan=input-add-ons-berhasil");
 } else {
-    header("location:index.php?pesan=input_produk_gagal");
+    header("location:index.php?pesan=input-add-ons-gagal");
 }
 
 ?>
