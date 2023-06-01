@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jun 2023 pada 06.55
+-- Waktu pembuatan: 01 Jun 2023 pada 07.13
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.23
 
@@ -32,7 +32,6 @@ CREATE TABLE `add_ons` (
   `id_bahan_baku` int(11) NOT NULL,
   `nama_add_ons` varchar(30) NOT NULL,
   `harga` double NOT NULL,
-  `jumlah` int(11) NOT NULL,
   `foto` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,9 +39,9 @@ CREATE TABLE `add_ons` (
 -- Dumping data untuk tabel `add_ons`
 --
 
-INSERT INTO `add_ons` (`id_add_ons`, `id_bahan_baku`, `nama_add_ons`, `harga`, `jumlah`, `foto`) VALUES
-(1, 54, 'Nasi', 3000, 10, 'Nasi.png'),
-(3, 24, 'Air Mineral', 3000, 5, 'AirMineral.png');
+INSERT INTO `add_ons` (`id_add_ons`, `id_bahan_baku`, `nama_add_ons`, `harga`, `foto`) VALUES
+(1, 54, 'Nasi', 3000, 'Nasi.png'),
+(3, 24, 'Air Mineral', 3000, 'AirMineral.png');
 
 -- --------------------------------------------------------
 
@@ -124,7 +123,6 @@ CREATE TABLE `produk` (
   `id_bahan_baku` int(11) NOT NULL,
   `nama_produk` varchar(50) NOT NULL,
   `harga` double NOT NULL,
-  `jumlah` int(11) NOT NULL,
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -132,14 +130,14 @@ CREATE TABLE `produk` (
 -- Dumping data untuk tabel `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `id_bahan_baku`, `nama_produk`, `harga`, `jumlah`, `foto`) VALUES
-(1, 12, 'Pareanom Puas', 10000, 10, 'PareanomPuas.png'),
-(2, 54, 'Pareanom Puas', 10000, 10, 'PareanomPuas.png'),
-(5, 55, 'Pareanom Puas', 10000, 10, 'PareanomPuas.png'),
-(7, 9, 'Pareanom Mantap Kecil', 16000, 10, 'PareanomMantapKecil.png'),
-(8, 55, 'Pareanom Mantap Kecil', 16000, 10, 'PareanomMantapKecil.png'),
-(9, 54, 'Pareanom Mantap Besar', 18000, 8, 'PareanomMantapBesar.png'),
-(10, 58, 'Pareanom Mantap Besar', 18000, 8, 'PareanomMantapBesar.png');
+INSERT INTO `produk` (`id_produk`, `id_bahan_baku`, `nama_produk`, `harga`, `foto`) VALUES
+(1, 12, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(2, 54, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(5, 55, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(7, 9, 'Pareanom Mantap Kecil', 16000, 'PareanomMantapKecil.png'),
+(8, 55, 'Pareanom Mantap Kecil', 16000, 'PareanomMantapKecil.png'),
+(9, 54, 'Pareanom Mantap Besar', 18000, 'PareanomMantapBesar.png'),
+(10, 58, 'Pareanom Mantap Besar', 18000, 'PareanomMantapBesar.png');
 
 -- --------------------------------------------------------
 
@@ -187,7 +185,7 @@ INSERT INTO `produk_terjual` (`id_produk_terjual`, `id_bahan_baku`, `nama_produk
 
 CREATE TABLE `reject` (
   `id_reject` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL,
+  `id_produk_terjual` int(11) NOT NULL,
   `jumlah_reject` int(25) NOT NULL,
   `tanggal_reject` date NOT NULL,
   `keterangan` varchar(50) NOT NULL
@@ -290,7 +288,7 @@ ALTER TABLE `produk_terjual`
 --
 ALTER TABLE `reject`
   ADD PRIMARY KEY (`id_reject`),
-  ADD KEY `id_produk` (`id_produk`);
+  ADD KEY `id_produk` (`id_produk_terjual`);
 
 --
 -- Indeks untuk tabel `rekap`
@@ -401,7 +399,7 @@ ALTER TABLE `produk_terjual`
 -- Ketidakleluasaan untuk tabel `reject`
 --
 ALTER TABLE `reject`
-  ADD CONSTRAINT `fk_reject_produk` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_reject_produk_terjual` FOREIGN KEY (`id_produk_terjual`) REFERENCES `produk_terjual` (`id_produk_terjual`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `saldo`
