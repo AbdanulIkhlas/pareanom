@@ -194,6 +194,62 @@
 
             </table>
 
+            <h2>KEUANGAN :</h2>
+
+            <table class="table table-striped">
+
+              <thead>
+                <tr style="background-color: #ffde38;">
+                  <th scope="col">No</th>
+                  <th scope="col">Jumlah</th>
+                  <th scope="col">Tanggal</th>
+                  <th scope="col">Catatan</th>
+                  <th scope="col">Jenis</th>
+                </tr>
+              </thead>
+
+              <?php
+              $sql = "SELECT * FROM saldo WHERE tanggal_update = '$tanggalDB'";
+              $query = mysqli_query($connect, $sql);
+              $id = 1;
+
+              while ($data = mysqli_fetch_array($query)) {
+
+                $tanggal_update = date("d - F - Y", strtotime($data['tanggal_update']));
+
+              ?>
+
+                <?php if ($data['jenis'] == "Pemasukan") { ?>
+
+                  <tbody>
+                    <tr>
+                      <td style="background-color: cornflowerblue; color: white;"><?php echo $id ?></td>
+                      <td style="background-color: cornflowerblue; color: white;"><?php echo $data['nominal_saldo'] ?></td>
+                      <td style="background-color: cornflowerblue; color: white;"><?php echo $tanggal_update ?></td>
+                      <td style="background-color: cornflowerblue; color: white;"><?php echo $data['keterangan'] ?></td>
+                      <td style="background-color: cornflowerblue; color: white;"><?php echo $data['jenis'] ?></td>
+                    </tr>
+                  </tbody>
+
+                <?php } else { ?>
+
+                  <tbody>
+                    <tr>
+                      <td style="background-color: #ff4434; color: white;"><?php echo $id ?></td>
+                      <td style="background-color: #ff4434; color: white;"><?php echo $data['nominal_saldo'] ?></td>
+                      <td style="background-color: #ff4434; color: white;"><?php echo $tanggal_update ?></td>
+                      <td style="background-color: #ff4434; color: white;"><?php echo $data['keterangan'] ?></td>
+                      <td style="background-color: #ff4434; color: white;"><?php echo $data['jenis'] ?></td>
+                    </tr>
+                  </tbody>
+
+                <?php } ?>
+
+
+              <?php $id++;
+              } ?>
+            </table>
+
             <h2> CATATAN </h2>
             <div class="form-catatan">
               <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
@@ -216,10 +272,24 @@
           <div class="bg-kuning">
             <div class="tombol-ubah">
               <div class="constaint-ubah">
-                <a href="rekapPengeluaran.php"><img src="assets/image/Edit.png" alt="Edit Button"></a>
+                <a href="rekapKeuangan.php"><img src="assets/image/Edit.png" alt="Edit Button"></a>
               </div>
               <div class="saldo-uang">
-                <h1>Rp.610.000.000</h1>
+
+                <?php
+                $sql = "SELECT total_saldo FROM total_saldo";
+                $query = mysqli_query($connect, $sql);
+
+                if ($query) {
+                  $data = mysqli_fetch_array($query);
+                  $saldo = $data['total_saldo'];
+                } else {
+                  // Jika terjadi kesalahan saat menjalankan kueri
+                  $saldo = "Error !";
+                }
+                ?>
+
+                <h1>Rp. <?php echo $saldo ?></h1>
               </div>
             </div>
             <img src="assets/image/Bg Saldo.png" alt="Background Saldo">

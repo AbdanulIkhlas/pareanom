@@ -307,7 +307,7 @@ section .kanan .judul {
 section .kanan .saldo {
   margin: 25px auto;
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid transparent;
 }
 
 section .kanan .saldo img {

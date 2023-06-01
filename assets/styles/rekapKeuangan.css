@@ -175,6 +175,7 @@ nav ul li {
 nav ul li p {
   padding-top: 10px;
   padding-bottom: 10px;
+  border-radius: 15px;
 }
 
 nav a {
@@ -223,18 +224,34 @@ nav .kotak-ikon img {
 }
 
 article {
-  float: right;
-  width: 75%;
+  margin-left: 25%;
+  width: 60%;
   height: 100%;
   border-radius: 20px;
   background-color: #1b9046;
 }
 
-article .judul {
+section {
+  margin-left: 101.7%;
+  width: 25%;
+  height: 100%;
+  border-radius: 20px;
+  /* background-color: #ffde38; */
+}
+
+.tengah {
+  position: fixed;
+}
+
+.kanan {
+  position: fixed;
+}
+
+article .tengah {
   /* border: white 3px solid; */
   margin: 10px auto 20px;
   text-align: center;
-  width: 93%;
+  width: 55%;
   padding: 0;
   letter-spacing: -1px;
   font-size: 3em;
@@ -243,36 +260,159 @@ article .judul {
   -webkit-text-stroke: 2.5px #fff;
 }
 
-section {
-  margin: 50px auto;
-  width: 93%;
-  height: 75%;
-  /* border: 1px solid white; */
-  border-radius: 20px;
-  padding: 30px 25px 10px;
+article .tengah .navbar {
+  width: 96%;
+  margin: 20px auto -15px;
+  border: 2px solid transparent;
+}
+
+article .tengah .navbar .container-button {
+  width: 100%;
+  margin: -5px 0px -10px 2px;
+  border: 2px solid transparent;
+  color: white;
+  -webkit-text-stroke: 0px #fff;
+  background-color: transparent;
+  font-size: medium;
+  text-align: left;
+}
+
+article .tengah .navbar .container-button button {
+  padding: 5px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 5px;
   font-weight: bold;
 }
 
-section .dropdown {
-  margin: 5px 0;
-}
-section label {
-  color: white;
-}
-
-section form button {
-  margin: 25px 5px 0;
-  float: right;
-  border-color: white;
-  background-color: transparent;
-  width: 10%;
-  padding: 7px;
-  color: white;
-  border-radius: 5px;
-}
-
-section form button:hover {
+article .tengah .navbar .container-button button:hover {
   background-color: white;
-  border-color: white;
   color: #1b9046;
+  border: 2px solid white;
+}
+
+article .tabel {
+  margin: 20px auto;
+  width: 95%;
+  height: 430px;
+  /* background-color: #ffde38; */
+  /* border: 1px solid transparent; */
+  /* border-radius: 5px; */
+  overflow: scroll;
+}
+
+article .tabel table {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0;
+  -webkit-text-stroke: 0 transparent;
+}
+
+article .tabel table th {
+  border: 1px solid black;
+  background-color: #ffde38;
+}
+
+article .tabel table td {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  color: white;
+}
+
+section .kanan {
+  /* border: white 3px solid; */
+  margin: 10px auto 20px;
+  text-align: center;
+  width: 13.5%;
+  padding: 0;
+  letter-spacing: -1px;
+  /* -webkit-text-stroke: 1px #ffde38; */
+}
+
+section .kanan .judul {
+  font-size: 25px;
+  font-weight: 900;
+  color: #1b9046;
+}
+
+section .kanan .saldo {
+  margin: 25px auto;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+section .kanan .saldo img {
+  width: 100%;
+  margin: -30px 0;
+}
+
+section .kanan .saldo .bg-kuning img {
+  position: relative;
+  width: 200px;
+  margin: -30px 0;
+}
+
+section .kanan .saldo .uang {
+  position: absolute;
+  top: 18%;
+  margin: auto;
+  width: 100%;
+  height: 100px;
+  min-height: 100px;
+  /* background-color: #1b9046; */
+}
+
+section .kanan .saldo .uang .nominal {
+  margin: 40px auto 0px;
+  width: 100%;
+  /* border: 1px solid black; */
+  font-size: 20px;
+  font-weight: bold;
+}
+
+section .kanan .saldo .uang .nominal .bg-edit {
+  width: 100%;
+  float: right;
+  /* border: 1px solid black; */
+  margin-top: -60px;
+}
+section .kanan .saldo .uang .nominal .bg-edit img {
+  width: 20px;
+  margin-left: 145px;
+}
+
+section .kanan .saldo .uang .nominal .bg-edit img:hover {
+  content: url(../image/Edit\ Hover.png);
+}
+
+section .kanan .menu-kanan {
+  margin: -5px auto;
+  width: 100%;
+  height: 290px;
+  /* border: 1px solid black; */
+}
+
+section .kanan .menu-kanan ul {
+  margin: 20px auto;
+  color: #1b9046;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+section .kanan .menu-kanan button {
+  color: #1b9046;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid #ffde38;
+  border-radius: 13px;
+  padding: 10px 0;
+  font-size: 17px;
+  width: 175px;
+  height: 40px;
+}
+
+section .kanan .menu-kanan button:hover {
+  background-color: #ffde38;
 }
