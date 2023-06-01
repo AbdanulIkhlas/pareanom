@@ -82,7 +82,7 @@
                     <div class="mb-3">
                         <div class="dropdown">
                             <label for="exampleInputEmail1" class="form-label">Bahan</label>
-                            <select class="form-select form-select-mb-1 dropdown-bahan" name="select" multiple
+                            <select class="form-select form-select-mb-1 " name="select" multiple
                                 multiselect-search="true" multiselect-max-items="8" aria-label=".form-select-mb example"
                                 style=" padding: 7.5px;"
                                 oninvalid="this.setCustomValidity('Silahkan Pilih Bahan Baku Terlebih Dahulu')"
@@ -106,9 +106,30 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Gambar</label>
-                        <input class="form-control" name="foto" type="file" id="formFile"
+                        <select name="gambar" class="form-select form-select-mb-1" multiple multiselect-search="true"
                             oninvalid="this.setCustomValidity('Silahkan Upload Gambar Produk Terlebih Dahulu')"
                             oninput="setCustomValidity('')" required>
+                            <option value="selected">Silahkan Pilih Foto Yang Sesuai</option>
+                            <option value="AirMineral.png">Air Mineral</option>
+                            <option value="ChickenPops.png">Chicken Pops</option>
+                            <option value="Dada.png">Dada</option>
+                            <option value="KulitAyam.png">Kulit Ayam</option>
+                            <option value="Nasi.png">Nasi</option>
+                            <option value="PahaAtas.png">PahaBawah</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                            <option value="PareanomPuas.png">Pareanom Puas</option>
+                        </select>
+
                     </div>
                     <button type="submit">Tambah</button>
                 </form>
