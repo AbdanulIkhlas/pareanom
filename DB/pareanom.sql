@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Bulan Mei 2023 pada 19.45
+-- Waktu pembuatan: 01 Jun 2023 pada 06.55
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.23
 
@@ -201,10 +201,6 @@ CREATE TABLE `reject` (
 
 CREATE TABLE `rekap` (
   `id_rekap` int(11) NOT NULL,
-  `id_bahan_baku` int(11) NOT NULL,
-  `id_reject` int(11) NOT NULL,
-  `id_produk_terjual` int(11) NOT NULL,
-  `id_saldo` int(11) NOT NULL,
   `tanggal_rekap` date NOT NULL,
   `catatan_rekap` varchar(100) NOT NULL,
   `hasil_rekap` varchar(50) NOT NULL
@@ -300,11 +296,7 @@ ALTER TABLE `reject`
 -- Indeks untuk tabel `rekap`
 --
 ALTER TABLE `rekap`
-  ADD PRIMARY KEY (`id_rekap`),
-  ADD KEY `id_bahan_baku` (`id_bahan_baku`),
-  ADD KEY `id_reject` (`id_reject`),
-  ADD KEY `id_produk_terjual` (`id_produk_terjual`),
-  ADD KEY `id_saldo` (`id_saldo`);
+  ADD PRIMARY KEY (`id_rekap`);
 
 --
 -- Indeks untuk tabel `saldo`
@@ -375,7 +367,7 @@ ALTER TABLE `saldo`
 -- AUTO_INCREMENT untuk tabel `temp_produk`
 --
 ALTER TABLE `temp_produk`
-  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT untuk tabel `total_saldo`
@@ -410,15 +402,6 @@ ALTER TABLE `produk_terjual`
 --
 ALTER TABLE `reject`
   ADD CONSTRAINT `fk_reject_produk` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id_produk`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `rekap`
---
-ALTER TABLE `rekap`
-  ADD CONSTRAINT `fk_rekap_bahan_baku` FOREIGN KEY (`id_bahan_baku`) REFERENCES `bahan_baku` (`id_bahan_baku`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_rekap_produk_terjual` FOREIGN KEY (`id_produk_terjual`) REFERENCES `produk_terjual` (`id_produk_terjual`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_rekap_reject` FOREIGN KEY (`id_reject`) REFERENCES `reject` (`id_reject`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_rekap_saldo` FOREIGN KEY (`id_saldo`) REFERENCES `saldo` (`id_saldo`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ketidakleluasaan untuk tabel `saldo`
