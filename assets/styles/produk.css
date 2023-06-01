@@ -663,8 +663,6 @@ section.total .container-total .box-awal-total {
 	top: 1.5px;
 	right: 1.8px;
 	cursor: pointer;
-	border: 2px solid white;
-	border-radius: 50%;
 	width: 17px;
 	height: 17px;
 }
