@@ -68,7 +68,7 @@
                     $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, foto FROM produk ORDER BY harga ASC");
                     while($data = mysqli_fetch_array($query)) :
                     ?>
-                    <form action="dbInput_temp_produk.php" method="post">
+                    <form action="DBInsert_reject.php" method="post">
                         <div class="card-produk">
                             <section>
                                 <div class="gambar-produk">
@@ -80,7 +80,6 @@
                                 <div class="harga-produk">
                                     <p><?php echo $data['harga'] ?></p>
                                 </div>
-                                <input type="hidden" name="foto" value="<?php echo $data['foto'] ?>">
                                 <input type="hidden" name="nama_produk" value="<?php echo $data['nama_produk'] ?>">
                                 <input type="hidden" name="harga" value="<?php echo $data['harga'] ?>">
                             </section>
@@ -121,6 +120,12 @@
                                             id="floatingTextarea"></textarea>
                                         <label for="floatingTextarea">Catatan</label>
                                     </div>
+                                    <?php 
+                                    //! Set Tanggal sekarang
+                                    date_default_timezone_set('Asia/Jakarta');
+                                    $tanggalSekarang = date("Y-m-d"); 
+                                    ?>
+                                    <input type="hidden" name="tanggal" value="<?php echo $tanggalSekarang ?>">
                                     <button type="submit">OK</button>
                                 </section>
                             </div>
@@ -136,7 +141,7 @@
                         <?php 
                         $queryAddOns = mysqli_query($connect, "SELECT DISTINCT nama_add_ons, harga, foto FROM add_ons ORDER BY harga ASC");
                         while($data = mysqli_fetch_array($queryAddOns)) :
-                            ?>
+                        ?>
                         <form action="DBInsert_reject.php" method="post">
                             <div class="card-addOns">
                                 <section>
@@ -172,7 +177,6 @@
                                         <div class=" harga-addOns">
                                                 <p><?php echo $data['harga'] ?></p>
                                         </div>
-                                        <input type="hidden" name="foto" value="<?php echo $data['foto'] ?>">
                                         <input type="hidden" name="nama_produk"
                                             value="<?php echo $data['nama_add_ons'] ?>">
                                         <input type="hidden" name="harga" value="<?php echo $data['harga'] ?>">
@@ -186,6 +190,12 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php 
+                                        //! Set Tanggal sekarang
+                                        date_default_timezone_set('Asia/Jakarta');
+                                        $tanggalSekarang = date("Y-m-d"); 
+                                        ?>
+                                        <input type="hidden" name="tanggal" value="<?php echo $tanggalSekarang ?>">
                                         <div class="form-floating">
                                             <textarea class="form-control" name="keterangan" placeholder="Input Catatan"
                                                 id="floatingTextarea"></textarea>
