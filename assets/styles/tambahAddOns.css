@@ -89,6 +89,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -103,17 +104,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -121,12 +126,13 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/*! CSS Halaman Home/produk */
+/*! CSS Halaman tambah add ons */
 
 body {
   background-color: #1b9046;
@@ -159,8 +165,10 @@ nav header {
   font-size: 20pt;
   font-weight: 900;
   line-height: 32px;
-  -webkit-text-stroke: 0.5px #ffee98; /*? Untuk browser WebKit (Chrome, Safari) */
-  text-stroke: 0.5px #ffee98; /*? Untuk browser yang mendukung standar CSS */
+  -webkit-text-stroke: 0.5px #ffee98;
+  /*? Untuk browser WebKit (Chrome, Safari) */
+  text-stroke: 0.5px #ffee98;
+  /*? Untuk browser yang mendukung standar CSS */
 }
 
 nav ul li {
@@ -256,6 +264,7 @@ section {
 section .dropdown {
   margin: 5px 0;
 }
+
 section label {
   color: white;
 }
