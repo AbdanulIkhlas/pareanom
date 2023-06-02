@@ -23,7 +23,6 @@
         </div>
         <?php } ?>
         <?php
-        //! menampilkan notifikasi (berhasil)
         if (isset($_GET['pesanGagal'])) { ?>
         <?php 
         //! menampilkan notifikasi (gagal) 
