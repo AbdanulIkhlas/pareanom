@@ -111,7 +111,8 @@
                             <option value="Dada.png">Dada</option>
                             <option value="KulitAyam.png">Kulit Ayam</option>
                             <option value="Nasi.png">Nasi</option>
-                            <option value="PahaAtas.png">PahaBawah</option>
+                            <option value="PahaAtas.png">Paha Atas</option>
+                            <option value="PahaBawah.png">Paha Bawah</option>
                             <option value="PareanomCombo.png">Pareanom Combo</option>
                             <option value="PareanomKomplitBesar.png">Pareanom Komplit Besar</option>
                             <option value="PareanomKomplitKecil.png">Pareanom Komplit Kecil</option>

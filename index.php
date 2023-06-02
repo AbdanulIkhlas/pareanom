@@ -70,7 +70,7 @@
                 <div class="container-card-produk">
                     <?php 
                     include 'database.php';
-                    $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, foto FROM produk ORDER BY harga ASC");
+                    $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, foto FROM produk ORDER BY harga ASC, nama_produk ASC");
                     while($data = mysqli_fetch_array($query)) :
                     ?>
                     <form action="dbInput_temp_produk.php" method="post">
@@ -151,7 +151,7 @@
                     </div>
                     <div class="container-card-addOns">
                         <?php 
-                        $queryAddOns = mysqli_query($connect, "SELECT DISTINCT nama_add_ons, harga, foto FROM add_ons ORDER BY harga ASC");
+                        $queryAddOns = mysqli_query($connect, "SELECT DISTINCT nama_add_ons, harga, foto FROM add_ons ORDER BY harga ASC, nama_add_ons ASC");
                         while($data = mysqli_fetch_array($queryAddOns)) :
                             ?>
                         <form action="dbInput_temp_produk.php" method="post">
