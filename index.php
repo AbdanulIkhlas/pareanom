@@ -15,39 +15,41 @@
     <main>
         <?php
         //! menampilkan notifikasi (berhasil)
-        if (isset($_GET['pesan'])) { ?>
+        if (isset($_GET['pesanBerhasil'])) { ?>
         <div class="notif-berhasil">
-            <?php if ($_GET['pesan'] == "input_produk_berhasil") { ?>
+            <?php if ($_GET['pesanBerhasil'] == "input_produk_berhasil") { ?>
             <p>BERHASIL MENAMBAHKAN <br> PRODUK</p>
-            <?php } else if ($_GET['pesan'] == "input_add_ons_berhasil") { ?>
+            <?php } else if ($_GET['pesanBerhasil'] == "input_add_ons_berhasil") { ?>
             <p> BERHASIL MENAMBAHKAN <br> ADD ONS</p>
-            <?php } else if ($_GET['pesan'] == "hapus_card_berhasil") { ?>
+            <?php } else if ($_GET['pesanBerhasil'] == "hapus_card_berhasil") { ?>
             <p> BERHASIL MENGHAPUS <br> CARD</p>
-            <?php } else if ($_GET['pesan'] == "hapusProdukYangAkanDiBeliBerhasil") { ?>
+            <?php } else if ($_GET['pesanBerhasil'] == "hapusProdukYangAkanDiBeliBerhasil") { ?>
             <p> BERHASIL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
-            <?php } else if ($_GET['pesan'] == "pembelian_berhasil") { ?>
+            <?php } else if ($_GET['pesanBerhasil'] == "pembelian_berhasil") { ?>
             <p> PEMBELIAN BERHASIL</p>
             <?php } ?>
         </div>
+        <?php } ?>
+        <?php
+        //! menampilkan notifikasi (berhasil)
+        if (isset($_GET['pesanGagal'])) { ?>
         <?php 
         //! menampilkan notifikasi (gagal) 
         ?>
         <div class="notif-gagal">
-            <?php if ($_GET['pesan'] == "input_produk_gagal") { ?>
+            <?php if ($_GET['pesanGagal'] == "input_produk_gagal") { ?>
             <p> GAGAL MENAMBAHKAN <br> PRODUK</p>
-            <?php } else if ($_GET['pesan'] == "input_add_ons_gagal") { ?>
+            <?php } else if ($_GET['pesanGagal'] == "input_add_ons_gagal") { ?>
             <p> GAGAL MENAMBAHKAN <br> ADD ONS</p>
-            <?php } else if ($_GET['pesan'] == "hapus_card_gagal") { ?>
+            <?php } else if ($_GET['pesanGagal'] == "hapus_card_gagal") { ?>
             <p> GAGAL MENGHAPUS <br> CARD</p>
-            <?php } else if ($_GET['pesan'] == "hapusProdukYangAkanDiBeliGagal") { ?>
+            <?php } else if ($_GET['pesanGagal'] == "hapusProdukYangAkanDiBeliGagal") { ?>
             <p> GAGAL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
-            <?php } else if ($_GET['pesan'] == "pembelian_gagal") { ?>
+            <?php } else if ($_GET['pesanGagal'] == "pembelian_gagal") { ?>
             <p> PEMBELIAN GAGAL</p>
             <?php } ?>
         </div>
-        <?php
-        }
-        ?>
+        <?php } ?>
         <nav>
             <header>
                 <a href="index.php">

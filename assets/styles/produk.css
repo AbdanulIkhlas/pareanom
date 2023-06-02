@@ -1011,7 +1011,7 @@ button.confirm:active {
 	transform: translateX(-50%);
 	text-align: center;
 	padding: 20px;
-	transition: top 1s ease;
+	transition: top 1s ease-in-out;
 	box-sizing: border-box;
 	border-radius: 8px;
 	border: 2px solid white;
@@ -1045,7 +1045,7 @@ button.confirm:active {
 	transform: translateX(-50%);
 	text-align: center;
 	padding: 20px;
-	transition: top 1s ease;
+	transition: top 1s ease-in-out;
 	box-sizing: border-box;
 	border-radius: 8px;
 	border: 2px solid white;

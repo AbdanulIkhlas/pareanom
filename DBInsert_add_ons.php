@@ -25,9 +25,9 @@ foreach ($bahanBaku as $bahan) {
 }
 
 if ($queryInsertProduk) {
-    header("location:index.php?pesan=input_add_ons_berhasil");
+    header("location:index.php?pesanBerhasil=input_add_ons_berhasil");
 } else {
-    header("location:index.php?pesan=input_add_ons_gagal");
+    header("location:index.php?pesanGagal=input_add_ons_gagal");
 }
 
 ?>

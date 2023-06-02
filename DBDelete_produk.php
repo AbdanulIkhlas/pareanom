@@ -18,8 +18,8 @@ if($tanda == 1){
 }
 
 if ($query) {
-    header("location:index.php?pesan=hapus_card_berhasil");
+    header("location:index.php?pesanBerhasil=hapus_card_berhasil");
 } else {
-    header("location:index.php?pesan=hapus_card_gagal");
+    header("location:index.php?pesanGagal=hapus_card_gagal");
 }
 ?>

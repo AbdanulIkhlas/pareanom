@@ -72,9 +72,9 @@ if ($checked) {
     $saldo = $totalSaldo['total_saldo'] + $totalHarga;
     $queryUpdateSaldo = mysqli_query($connect, "UPDATE total_saldo set total_saldo = '$saldo'");
 
-    header("location:index.php?pesan=pembelian_berhasil");
+    header("location:index.php?pesanBerhasil=pembelian_berhasil");
 } else {
-    header("location:index.php?pesan=pembelian_gagal");
+    header("location:index.php?pesanGagal=pembelian_gagal");
 }
 
 //! Menutup connect ke database
