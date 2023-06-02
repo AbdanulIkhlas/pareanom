@@ -13,6 +13,57 @@
 
 <body>
     <main>
+        <?php
+        //! menampilkan notifikasi (berhasil)
+        if (isset($_GET['pesan'])) { ?>
+        <div class="notif-berhasil">
+            <?php if ($_GET['pesan'] == "input_produk_berhasil") { ?>
+            <p>BERHASIL MENAMBAHKAN <br> PRODUK</p>
+            <?php } else if ($_GET['pesan'] == "input_add_ons_berhasil") { ?>
+            <p> BERHASIL MENAMBAHKAN <br> ADD ONS</p>
+            <?php } else if ($_GET['pesan'] == "hapus_card_berhasil") { ?>
+            <p> BERHASIL MENGHAPUS <br> CARD</p>
+            <?php } else if ($_GET['pesan'] == "hapusProdukYangAkanDiBeliBerhasil") { ?>
+            <p> BERHASIL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
+            <?php } else if ($_GET['pesan'] == "pembelian_berhasil") { ?>
+            <p> PEMBELIAN BERHASIL</p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } ?>
+        </div>
+        <?php 
+        //! menampilkan notifikasi (gagal) 
+        ?>
+        <div class="notif-gagal">
+            <?php if ($_GET['pesan'] == "input_produk_gagal") { ?>
+            <p> GAGAL MENAMBAHKAN <br> PRODUK</p>
+            <?php } else if ($_GET['pesan'] == "input_add_ons_gagal") { ?>
+            <p> GAGAL MENAMBAHKAN <br> ADD ONS</p>
+            <?php } else if ($_GET['pesan'] == "hapus_card_gagal") { ?>
+            <p> GAGAL MENGHAPUS <br> CARD</p>
+            <?php } else if ($_GET['pesan'] == "hapusProdukYangAkanDiBeliGagal") { ?>
+            <p> GAGAL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
+            <?php } else if ($_GET['pesan'] == "pembelian_gagal") { ?>
+            <p> PEMBELIAN GAGAL</p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } else if ($_GET['pesan'] == "") { ?>
+            <p> </p>
+            <?php } ?>
+        </div>
+        <?php
+        }
+        ?>
         <nav>
             <header>
                 <a href="index.php">
