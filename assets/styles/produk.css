@@ -822,6 +822,22 @@ button.confirm:active {
 	cursor: pointer;
 }
 
+.delete {
+	/*? css menghapus card produk/addons  */
+	border: 1px solid white;
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	top: 2.5px;
+	left: 2.5px;
+	cursor: pointer;
+	padding: 5px 4.5px;
+	background-color: rgba(209, 0, 0, 0.871);
+	border-radius: 50%;
+	box-sizing: border-box;
+	text-align: center;
+}
+
 .container-popUp-produk section button {
 	width: 90px;
 	height: 35px;
