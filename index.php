@@ -27,14 +27,6 @@
             <p> BERHASIL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
             <?php } else if ($_GET['pesan'] == "pembelian_berhasil") { ?>
             <p> PEMBELIAN BERHASIL</p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
             <?php } ?>
         </div>
         <?php 
@@ -51,14 +43,6 @@
             <p> GAGAL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
             <?php } else if ($_GET['pesan'] == "pembelian_gagal") { ?>
             <p> PEMBELIAN GAGAL</p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
-            <?php } else if ($_GET['pesan'] == "") { ?>
-            <p> </p>
             <?php } ?>
         </div>
         <?php
