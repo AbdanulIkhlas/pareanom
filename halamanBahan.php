@@ -22,6 +22,8 @@
     <div class="notif-berhasil">
       <?php if ($_GET['pesanBerhasil'] == "berhasil_insert_bahanBaku") { ?>
       <p>BERHASIL MENAMBAHKAN <br> BAHAN BAKU</p>
+      <?php } else if ($_GET['pesanBerhasil'] == "berhasil_update_bahanBaku") { ?>
+      <p>BERHASIL MENGEDIT <br> BAHAN BAKU</p>
       <?php } ?>
     </div>
     <?php } ?>
@@ -33,6 +35,8 @@
     <div class="notif-gagal">
       <?php if ($_GET['pesanGagal'] == "gagal_insert_bahanBaku") { ?>
       <p> GAGAL MENAMBAHKAN <br> BAHAN BAKU</p>
+      <?php } else if ($_GET['pesanGagal'] == "gagal_update_bahanBaku") { ?>
+      <p> GAGAL MENGEDIT <br> BAHAN BAKU</p>
       <?php } ?>
     </div>
     <?php } ?>
