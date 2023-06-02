@@ -64,13 +64,54 @@
         <h1>DATA BAHAN</h1>
       </div>
 
-      <a href="tambahBahan.php"><button type="submit"> Tambah </button> </a>
+      <a href="tambahBahan.php" style="float: left;"><button type="submit"> Tambah </button> </a>
 
       <section>
 
-        <div class="tabel">
 
-          <table <table class="table table-striped">
+        <div class="tabel">
+          <h2 style="margin-top: 0px;">BAHAN YANG HAMPIR HABIS :</h2>
+          <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Bahan</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Satuan</th>
+                <th scope="col">Jenis</th>
+              </tr>
+            </thead>
+
+            <?php
+
+            include('database.php');
+
+            $sql = "SELECT * FROM bahan_baku WHERE stok_bahan <= 5 ORDER BY stok_bahan ASC";
+            $query = mysqli_query($connect, $sql);
+
+            $id = 1;
+
+            while ($data = mysqli_fetch_array($query)) {
+
+            ?>
+
+              <tbody>
+                <tr>
+                  <td><?php echo $id ?></td>
+                  <td><?php echo $data['nama_bahan'] ?></td>
+                  <td><?php echo $data['satuan_bahan'] ?></td>
+                  <td><?php echo $data['stok_bahan'] ?></td>
+                  <td><?php echo $data['jenis_bahan'] ?></td>
+                </tr>
+              </tbody>
+            <?php
+              $id++;
+            } ?>
+          </table>
+
+          <h2>JENIS BAHAN OTOMATIS :</h2>
+          <table class="table table-striped">
 
             <thead>
               <tr>
@@ -83,10 +124,7 @@
             </thead>
 
             <?php
-
-            include('database.php');
-
-            $sql = "SELECT * FROM bahan_baku ORDER BY nama_bahan ASC";
+            $sql = "SELECT * FROM bahan_baku WHERE jenis_bahan = 'Otomatis' ORDER BY nama_bahan ASC";
             $query = mysqli_query($connect, $sql);
 
             $id = 1;
@@ -104,11 +142,46 @@
                   <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
                 </tr>
               </tbody>
-
             <?php
               $id++;
             } ?>
+          </table>
 
+          <h2>JENIS BAHAN MANUAL :</h2>
+          <table class="table table-striped">
+
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Bahan</th>
+                <th scope="col">Stok</th>
+                <th scope="col">Satuan</th>
+                <th scope="col">Edit</th>
+              </tr>
+            </thead>
+
+            <?php
+            $sql = "SELECT * FROM bahan_baku WHERE jenis_bahan = 'Manual' ORDER BY nama_bahan ASC";
+            $query = mysqli_query($connect, $sql);
+
+            $id = 1;
+
+            while ($data = mysqli_fetch_array($query)) {
+
+            ?>
+
+              <tbody>
+                <tr>
+                  <td><?php echo $id ?></td>
+                  <td><?php echo $data['nama_bahan'] ?></td>
+                  <td><?php echo $data['satuan_bahan'] ?></td>
+                  <td><?php echo $data['stok_bahan'] ?></td>
+                  <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
+                </tr>
+              </tbody>
+            <?php
+              $id++;
+            } ?>
           </table>
 
         </div>
