@@ -89,6 +89,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -103,17 +104,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -121,12 +126,13 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/*! CSS Halaman Home/produk */
+/*! CSS halaman rekap reject */
 
 body {
   background-color: #1b9046;
@@ -159,8 +165,10 @@ nav header {
   font-size: 20pt;
   font-weight: 900;
   line-height: 32px;
-  -webkit-text-stroke: 0.5px #ffee98; /*? Untuk browser WebKit (Chrome, Safari) */
-  text-stroke: 0.5px #ffee98; /*? Untuk browser yang mendukung standar CSS */
+  -webkit-text-stroke: 0.5px #ffee98;
+  /*? Untuk browser WebKit (Chrome, Safari) */
+  text-stroke: 0.5px #ffee98;
+  /*? Untuk browser yang mendukung standar CSS */
 }
 
 nav ul li {
@@ -267,7 +275,25 @@ article .tabel {
   /* background-color: #ffde38; */
   /* border: 1px solid white; */
   /* border-radius: 5px; */
-  overflow: scroll;
+  overflow: auto;
+}
+
+/*? Mengubah warna latar belakang scroll */
+article .tabel::-webkit-scrollbar {
+  background-color: #18371599;
+  width: 10px;
+}
+
+/*? Mengubah warna thumb (bagian yang dapat digeser) scroll */
+article .tabel::-webkit-scrollbar-thumb {
+  background-color: rgb(40, 163, 40);
+  width: 10px;
+  border-radius: 1px;
+}
+
+/*? Mengubah warna thumb saat dihover */
+article .tabel::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(20, 127, 26);
 }
 
 article .tabel table {
@@ -345,6 +371,7 @@ section .kanan .saldo .uang .nominal .bg-edit {
   /* border: 1px solid black; */
   margin-top: -60px;
 }
+
 section .kanan .saldo .uang .nominal .bg-edit img {
   width: 20px;
   margin-left: 145px;
