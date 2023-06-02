@@ -17,10 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result) {
       // Redirect ke halaman bahan setelah update berhasil
-      header('Location: halamanBahan.php');
+      header('Location: halamanBahan.php?pesanBerhasil=berhasil_update_bahanBaku');
       exit;
     } else {
       echo "Gagal melakukan update data.";
+      header('Location: halamanBahan.php?pesanGagal=gagal_update_bahanBaku');
     }
   } else {
     echo "Mohon lengkapi semua input.";

@@ -9,9 +9,9 @@ $id_temp_produk = $_GET['id_temp_produk'];
 $query = mysqli_query($connect, "DELETE FROM temp_produk where id_temp_produk = $id_temp_produk");
 
 if ($query) {
-    header("location:index.php?pesan=hapusProdukYangAkanDiBeliBerhasil");
+    header("location:index.php?pesanBerhasil=hapusProdukYangAkanDiBeliBerhasil");
 } else {
-    header("location:index.php?pesan=hapusProdukYangAkanDiBeliGagal");
+    header("location:index.php?pesanGagal=hapusProdukYangAkanDiBeliGagal");
 }
 
 ?>

@@ -13,6 +13,42 @@
 
 <body>
     <main>
+        <?php
+        //! menampilkan notifikasi (berhasil)
+        if (isset($_GET['pesanBerhasil'])) { ?>
+        <div class="notif-berhasil">
+            <?php if ($_GET['pesanBerhasil'] == "input_produk_berhasil") { ?>
+            <p>BERHASIL MENAMBAHKAN <br> PRODUK</p>
+            <?php } else if ($_GET['pesanBerhasil'] == "input_add_ons_berhasil") { ?>
+            <p> BERHASIL MENAMBAHKAN <br> ADD ONS</p>
+            <?php } else if ($_GET['pesanBerhasil'] == "hapus_card_berhasil") { ?>
+            <p> BERHASIL MENGHAPUS <br> CARD</p>
+            <?php } else if ($_GET['pesanBerhasil'] == "hapusProdukYangAkanDiBeliBerhasil") { ?>
+            <p> BERHASIL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
+            <?php } else if ($_GET['pesanBerhasil'] == "pembelian_berhasil") { ?>
+            <p> PEMBELIAN BERHASIL</p>
+            <?php } ?>
+        </div>
+        <?php } ?>
+        <?php
+        if (isset($_GET['pesanGagal'])) { ?>
+        <?php 
+        //! menampilkan notifikasi (gagal) 
+        ?>
+        <div class="notif-gagal">
+            <?php if ($_GET['pesanGagal'] == "input_produk_gagal") { ?>
+            <p> GAGAL MENAMBAHKAN <br> PRODUK</p>
+            <?php } else if ($_GET['pesanGagal'] == "input_add_ons_gagal") { ?>
+            <p> GAGAL MENAMBAHKAN <br> ADD ONS</p>
+            <?php } else if ($_GET['pesanGagal'] == "hapus_card_gagal") { ?>
+            <p> GAGAL MENGHAPUS <br> CARD</p>
+            <?php } else if ($_GET['pesanGagal'] == "hapusProdukYangAkanDiBeliGagal") { ?>
+            <p> GAGAL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
+            <?php } else if ($_GET['pesanGagal'] == "pembelian_gagal") { ?>
+            <p> PEMBELIAN GAGAL</p>
+            <?php } ?>
+        </div>
+        <?php } ?>
         <nav>
             <header>
                 <a href="index.php">
@@ -70,7 +106,7 @@
                 <div class="container-card-produk">
                     <?php 
                     include 'database.php';
-                    $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, foto FROM produk ORDER BY harga ASC");
+                    $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, foto FROM produk ORDER BY harga ASC, nama_produk ASC");
                     while($data = mysqli_fetch_array($query)) :
                     ?>
                     <form action="dbInput_temp_produk.php" method="post">
@@ -91,6 +127,18 @@
                             </section>
                             <div class="container-popUp-produk">
                                 <section>
+                                    <div class="delete">
+                                        <a
+                                            href="DBDelete_produk.php?nama_produk=<?php echo $data['nama_produk'] ?>&tanda=1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="white"
+                                                class="bi bi-trash" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                                <path
+                                                    d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                            </svg>
+                                        </a>
+                                    </div>
                                     <div class="close-produk">
                                         <a href="index.php">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" fill="white"
@@ -139,7 +187,7 @@
                     </div>
                     <div class="container-card-addOns">
                         <?php 
-                        $queryAddOns = mysqli_query($connect, "SELECT DISTINCT nama_add_ons, harga, foto FROM add_ons ORDER BY harga ASC");
+                        $queryAddOns = mysqli_query($connect, "SELECT DISTINCT nama_add_ons, harga, foto FROM add_ons ORDER BY harga ASC, nama_add_ons ASC");
                         while($data = mysqli_fetch_array($queryAddOns)) :
                             ?>
                         <form action="dbInput_temp_produk.php" method="post">
@@ -157,6 +205,18 @@
                                 </section>
                                 <div class="container-popUp-addOns">
                                     <section>
+                                        <div class="delete">
+                                            <a
+                                                href="DBDelete_produk.php?nama_produk=<?php echo $data['nama_add_ons'] ?>&tanda=2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27"
+                                                    fill="white" class="bi bi-trash" viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+                                                    <path
+                                                        d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+                                                </svg>
+                                            </a>
+                                        </div>
                                         <div class="close-addOns">
                                             <a href="index.php">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38"
@@ -215,7 +275,6 @@
                                 while($data = mysqli_fetch_array($query2)) :
                                 
                                     $dataArray[] = $data; //! Menyimpan data dalam array
-    
                                     //! Menampilkan data produk
                                 ?>
                                 <div class="produk-dibeli">

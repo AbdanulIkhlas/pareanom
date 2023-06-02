@@ -25,10 +25,9 @@ foreach ($bahanBaku as $bahan) {
 }
 
 if ($queryInsertProduk) {
-    echo "<script>alert('Berhasil Menambahkan Produk');</script>";
-    header("location:index.php?pesan=input_produk_berhasil");
+    header("location:index.php?pesanBerhasil=input_produk_berhasil");
 } else {
-    header("location:index.php?pesan=input_produk_gagal");
+    header("location:index.php?pesanGagal=input_produk_gagal");
 }
 
 ?>

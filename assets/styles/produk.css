@@ -822,6 +822,22 @@ button.confirm:active {
 	cursor: pointer;
 }
 
+.delete {
+	/*? css menghapus card produk/addons  */
+	border: 1px solid white;
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	top: 2.5px;
+	left: 2.5px;
+	cursor: pointer;
+	padding: 5px 4.5px;
+	background-color: rgba(209, 0, 0, 0.871);
+	border-radius: 50%;
+	box-sizing: border-box;
+	text-align: center;
+}
+
 .container-popUp-produk section button {
 	width: 90px;
 	height: 35px;
@@ -977,4 +993,73 @@ button.confirm:active {
 .container-popUp-addOns section button:active {
 	transform: translateY(2px);
 	box-shadow: 3px 3px 2px black;
+}
+
+/*! NOTIF HANDLING  */
+.notif-berhasil {
+	width: 300px;
+	height: 90px;
+	background-color: #1b9046;
+	color: white;
+	position: fixed;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	line-height: 25px;
+	top: -200px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	padding: 20px;
+	transition: top 1s ease-in-out;
+	box-sizing: border-box;
+	border-radius: 8px;
+	border: 2px solid white;
+	box-shadow: 0 0 3px 3px black;
+}
+
+.notif-berhasil.show {
+	top: 50px;
+}
+
+@media (max-width: 600px) {
+	.notif-berhasil {
+		width: 80%;
+		height: 150px;
+		font-size: 14px;
+	}
+}
+
+.notif-gagal {
+	width: 300px;
+	height: 90px;
+	background-color: #ca2929;
+	color: white;
+	position: fixed;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	line-height: 25px;
+	top: -200px;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	padding: 20px;
+	transition: top 1s ease-in-out;
+	box-sizing: border-box;
+	border-radius: 8px;
+	border: 2px solid white;
+	box-shadow: 0 0 5px 3px black;
+}
+
+.notif-gagal.show {
+	top: 50px;
+}
+
+@media (max-width: 600px) {
+	.notif-gagal {
+		width: 80%;
+		height: 150px;
+		font-size: 14px;
+	}
 }

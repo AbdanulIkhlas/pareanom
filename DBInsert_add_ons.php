@@ -25,10 +25,9 @@ foreach ($bahanBaku as $bahan) {
 }
 
 if ($queryInsertProduk) {
-    echo "<script>alert('Berhasil Menambahkan Add Ons');</script>";
-    header("location:index.php?pesan=input-add-ons-berhasil");
+    header("location:index.php?pesanBerhasil=input_add_ons_berhasil");
 } else {
-    header("location:index.php?pesan=input-add-ons-gagal");
+    header("location:index.php?pesanGagal=input_add_ons_gagal");
 }
 
 ?>

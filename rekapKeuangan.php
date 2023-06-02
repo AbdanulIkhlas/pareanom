@@ -6,16 +6,42 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pareanom</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="assets/styles/rekapKeuangan.css">
 </head>
 
 <body>
   <main>
+    <?php
+      //! menampilkan notifikasi (berhasil)
+      if (isset($_GET['pesanBerhasil'])) { ?>
+    <div class="notif-berhasil">
+      <?php if ($_GET['pesanBerhasil'] == "berhasil_update_saldo") { ?>
+      <p>BERHASIL UPDATE SALDO <br> SECARA MANUAL </p>
+      <?php } ?>
+    </div>
+    <?php } ?>
+    <?php
+    if (isset($_GET['pesanGagal'])) { ?>
+    <?php 
+    //! menampilkan notifikasi (gagal) 
+    ?>
+    <div class="notif-gagal">
+      <?php if ($_GET['pesanGagal'] == "gagal_update_saldo") { ?>
+      <p> GAGAL UPDATE SALDO <br> SECARA MANUAL </p>
+      <?php } else if ($_GET['pesanGagal'] == "gagal_insert_saldo") { ?>
+      <p> GAGAL MEMASUKKAN SALDO <br> KE DATABASE</p>
+      <?php } ?>
+    </div>
+    <?php } ?>
     <nav>
       <header>
-        <a href="index.php"> <!--? Halaman Produk  -->
+        <a href="index.php">
+          <!--? Halaman Produk  -->
           <div class="garis-bawah-gambar">
             <img src="assets/image/Logo Pareanom.png" alt="Logo Pareanom">
           </div>
@@ -99,31 +125,31 @@
 
             ?>
 
-              <?php if ($data['jenis'] == "Pemasukan") { ?>
+            <?php if ($data['jenis'] == "Pemasukan") { ?>
 
-                <tbody>
-                  <tr>
-                    <td style="background-color: cornflowerblue; color: white;"><?php echo $id ?></td>
-                    <td style="background-color: cornflowerblue; color: white;"><?php echo $data['nominal_saldo'] ?></td>
-                    <td style="background-color: cornflowerblue; color: white;"><?php echo $tanggal_update ?></td>
-                    <td style="background-color: cornflowerblue; color: white;"><?php echo $data['keterangan'] ?></td>
-                    <td style="background-color: cornflowerblue; color: white;"><?php echo $data['jenis'] ?></td>
-                  </tr>
-                </tbody>
+            <tbody>
+              <tr>
+                <td style="background-color: cornflowerblue; color: white;"><?php echo $id ?></td>
+                <td style="background-color: cornflowerblue; color: white;"><?php echo $data['nominal_saldo'] ?></td>
+                <td style="background-color: cornflowerblue; color: white;"><?php echo $tanggal_update ?></td>
+                <td style="background-color: cornflowerblue; color: white;"><?php echo $data['keterangan'] ?></td>
+                <td style="background-color: cornflowerblue; color: white;"><?php echo $data['jenis'] ?></td>
+              </tr>
+            </tbody>
 
-              <?php } else { ?>
+            <?php } else { ?>
 
-                <tbody>
-                  <tr>
-                    <td style="background-color: #ff4434; color: white;"><?php echo $id ?></td>
-                    <td style="background-color: #ff4434; color: white;"><?php echo $data['nominal_saldo'] ?></td>
-                    <td style="background-color: #ff4434; color: white;"><?php echo $tanggal_update ?></td>
-                    <td style="background-color: #ff4434; color: white;"><?php echo $data['keterangan'] ?></td>
-                    <td style="background-color: #ff4434; color: white;"><?php echo $data['jenis'] ?></td>
-                  </tr>
-                </tbody>
+            <tbody>
+              <tr>
+                <td style="background-color: #ff4434; color: white;"><?php echo $id ?></td>
+                <td style="background-color: #ff4434; color: white;"><?php echo $data['nominal_saldo'] ?></td>
+                <td style="background-color: #ff4434; color: white;"><?php echo $tanggal_update ?></td>
+                <td style="background-color: #ff4434; color: white;"><?php echo $data['keterangan'] ?></td>
+                <td style="background-color: #ff4434; color: white;"><?php echo $data['jenis'] ?></td>
+              </tr>
+            </tbody>
 
-              <?php } ?>
+            <?php } ?>
 
 
             <?php $id++;
@@ -195,6 +221,7 @@
 
 
   </main>
+  <script src="assets/scripts/notifikasi.js"></script>
 </body>
 
 </html>
