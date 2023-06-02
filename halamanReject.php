@@ -13,6 +13,31 @@
 
 <body>
     <main>
+        <?php
+        //! menampilkan notifikasi (berhasil)
+        if (isset($_GET['pesanBerhasil'])) { ?>
+        <div class="notif-berhasil">
+            <?php if ($_GET['pesanBerhasil'] == "reject_berhasil") { ?>
+            <p>BERHASIL REJECT <br> PRODUK</p>
+            <?php } ?>
+        </div>
+        <?php } ?>
+        <?php
+        //! menampilkan notifikasi (berhasil)
+        if (isset($_GET['pesanGagal'])) { ?>
+        <?php 
+        //! menampilkan notifikasi (gagal) 
+        ?>
+        <div class="notif-gagal">
+            <?php if ($_GET['pesanGagal'] == "reject_tidak_sesuai") { ?>
+            <p> REJECT GAGAL!!!<br> PRODUK BELUM DIBELI</p>
+            <?php } else if ($_GET['pesanGagal'] == "reject_gagal") { ?>
+            <p> GAGAL REJECT <br> PRODUK!!!</p>
+            <?php } else if ($_GET['pesanGagal'] == "reject_overflow") { ?>
+            <p> JUMLAH REJECT MELEBIHI <br> PRODUK YANG DIBELI!!!</p>
+            <?php } ?>
+        </div>
+        <?php } ?>
         <nav>
             <header>
                 <a href="index.php">

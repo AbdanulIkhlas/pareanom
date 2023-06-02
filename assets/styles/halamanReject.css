@@ -742,3 +742,72 @@ section.addOns h2 {
     transform: translateY(2px);
     box-shadow: 3px 3px 2px black;
 }
+
+/*! NOTIF HANDLING  */
+.notif-berhasil {
+    width: 300px;
+    height: 90px;
+    background-color: #1b9046;
+    color: white;
+    position: fixed;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 25px;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 20px;
+    transition: top 1s ease-in-out;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid white;
+    box-shadow: 0 0 3px 3px black;
+}
+
+.notif-berhasil.show {
+    top: 50px;
+}
+
+@media (max-width: 600px) {
+    .notif-berhasil {
+        width: 80%;
+        height: 150px;
+        font-size: 14px;
+    }
+}
+
+.notif-gagal {
+    width: 300px;
+    height: 90px;
+    background-color: #ca2929;
+    color: white;
+    position: fixed;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 25px;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 20px;
+    transition: top 1s ease-in-out;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 2px solid white;
+    box-shadow: 0 0 5px 3px black;
+}
+
+.notif-gagal.show {
+    top: 50px;
+}
+
+@media (max-width: 600px) {
+    .notif-gagal {
+        width: 80%;
+        height: 150px;
+        font-size: 14px;
+    }
+}

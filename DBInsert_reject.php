@@ -12,9 +12,10 @@ $keterangan = $_POST['keterangan'];
 $queryReject = mysqli_query($connect, "SELECT * FROM produk_terjual WHERE nama_produk_terjual = '$nama_produk_reject' 
 AND harga_satuan = '$harga_satuan' AND tanggal_terjual = '$tanggal_reject'");
 
-//! jika queryReject diatas gagal, berarti data adalah add ons dan masuk ke dalam if
+//! mengecek apakah produk reject yang di pilih sudah di pilih atau belum
 if((!$queryReject) || (mysqli_num_rows($queryReject) == 0)){
-    header("location:halamanReject.php?pesan=reject_tidak_sesuai");
+    //! jika belum kembali ke halaman reject
+    header("location:halamanReject.php?pesanGagal=reject_tidak_sesuai");
 }else{
     //! melanjutkan proses eksekusi jika reject sesuai dengan data pada tabel produk terjual
     while($row = mysqli_fetch_array($queryReject)){
@@ -57,12 +58,12 @@ if((!$queryReject) || (mysqli_num_rows($queryReject) == 0)){
         //! update saldo yang berkurang karena reject produk
         $saldo = $dataSaldo['total_saldo'] - $harga_satuan;
         $queryUpdateSaldo = mysqli_query($connect, "UPDATE total_saldo set total_saldo = '$saldo'");
-        header("location:halamanReject.php?pesan=reject_berhasil");
+        header("location:halamanReject.php?pesanBerhasil=reject_berhasil");
     } else {
         if($hasil < 0) {
-            header("location:halamanReject.php?pesan=reject_overflow");
+            header("location:halamanReject.php?pesanGagal=reject_overflow");
         }else{
-            header("location:halamanReject.php?pesan=reject_gagal");
+            header("location:halamanReject.php?pesanGagal=reject_gagal");
         }
     }
 }
