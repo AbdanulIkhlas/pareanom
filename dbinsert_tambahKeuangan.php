@@ -24,12 +24,14 @@ if (mysqli_query($connect, $sql)) {
   // Eksekusi query update total_saldo
   if (mysqli_query($connect, $query_update_total_saldo)) {
     // Jika berhasil mengupdate saldo, arahkan pengguna ke halaman rekapKeuangan.php
-    header("Location: rekapKeuangan.php");
+    header("Location: rekapKeuangan.php?pesanBerhasil=berhasil_update_saldo");
     exit();
   } else {
     echo "Gagal mengupdate saldo pada tabel total_saldo: " . mysqli_error($connect);
+    header("Location: rekapKeuangan.php?pesanGagal=gagal_update_saldo");
   }
 } else {
   // Jika terjadi kesalahan, tampilkan pesan error
   echo "Gagal menambahkan data keuangan: " . mysqli_error($connect);
+  header("Location: rekapKeuangan.php?pesanGagal=gagal_insert_saldo");
 }
