@@ -411,3 +411,7 @@ section .kanan .menu-kanan button {
 section .kanan .menu-kanan button:hover {
   background-color: #ffde38;
 }
+
+.bahan-baku-reject {
+  background-color: #ff4434;
+}

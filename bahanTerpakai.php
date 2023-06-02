@@ -6,8 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pareanom</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="assets/styles/bahanTerpakai.css">
 </head>
 
@@ -15,7 +18,8 @@
   <main>
     <nav>
       <header>
-        <a href="index.php"> <!--? Halaman Produk  -->
+        <a href="index.php">
+          <!--? Halaman Produk  -->
           <div class="garis-bawah-gambar">
             <img src="assets/image/Logo Pareanom.png" alt="Logo Pareanom">
           </div>
@@ -80,25 +84,45 @@
             $tanggalDB = date("Y-m-d");
             include('database.php');
 
-            $sql = "SELECT p.id_bahan_baku,b.nama_bahan,  SUM(p.jumlah_produk_terjual) as total_jumlah FROM produk_terjual p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku WHERE p.tanggal_terjual = '$tanggalDB' GROUP BY p.id_bahan_baku";
+            $sql = "SELECT p.id_bahan_baku,b.nama_bahan,  SUM(p.jumlah_produk_terjual) as total_jumlah FROM 
+            produk_terjual p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku WHERE p.tanggal_terjual = '$tanggalDB'
+            GROUP BY p.id_bahan_baku";
             $query = mysqli_query($connect, $sql);
-
             $id = 1;
-
-            while ($data = mysqli_fetch_array($query)) {
-
             ?>
 
-              <tbody>
-                <tr>
-                  <td><?php echo $id ?></td>
-                  <td><?php echo $data['nama_bahan'] ?></td>
-                  <td><?php echo $data['total_jumlah'] ?></td>
-                </tr>
-              </tbody>
+            <tbody>
+              <!-- sql : untuk menampilkan bahan baku berdasarkan produk terjual -->
+              <?php  while ($data = mysqli_fetch_array($query)) { ?>
+              <tr>
+                <td><?php echo $id ?></td>
+                <td><?php echo $data['nama_bahan'] ?></td>
+                <td><?php echo $data['total_jumlah'] ?></td>
+              </tr>
+              <?php 
+                $id++;
+              } 
+              ?>
+              <!-- sql2 : untuk menampilkan bahan baku berdasarkan reject -->
+              <?php 
+              $sql2 = "SELECT bahan_baku.nama_bahan, SUM(reject.jumlah_reject) AS total_jumlah, 
+              reject.keterangan FROM bahan_baku  
+              INNER JOIN reject ON bahan_baku.id_bahan_baku = reject.id_bahan_baku WHERE 
+              reject.tanggal_reject = '$tanggalDB' GROUP BY reject.id_bahan_baku, reject.keterangan;";
+              $query2 = mysqli_query($connect, $sql2);
+              while ($data = mysqli_fetch_array($query2)) { 
+              ?>
+              <tr class="bahan-baku-reject">
+                <td><?php echo $id ?></td>
+                <td><?php echo $data['nama_bahan'] ?> <strong>(REJECT)</strong></td>
+                <td><?php echo $data['total_jumlah'] ?></td>
+              </tr>
+              <?php 
+                $id++;
+              } 
+              ?>
 
-            <?php $id++;
-            } ?>
+            </tbody>
 
           </table>
         </div>
@@ -149,7 +173,8 @@
               <li><a href="halamanRekap.php"><button>PENJUALAN</button></a></li>
             </ul>
             <ul class="mb-3">
-              <li><a href="bahanTerpakai.php"><button style="background-color: #ffde38;">BAHAN TERPAKAI</button></a></li>
+              <li><a href="bahanTerpakai.php"><button style="background-color: #ffde38;">BAHAN TERPAKAI</button></a>
+              </li>
             </ul>
             <ul class="mb-3">
               <li><a href="reject.php"><button>REJECT</button></a></li>

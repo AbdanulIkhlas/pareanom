@@ -6,8 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pareanom</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  </script>
   <link rel="stylesheet" href="assets/styles/reject.css">
 </head>
 
@@ -15,7 +18,8 @@
   <main>
     <nav>
       <header>
-        <a href="index.php"> <!--? Halaman Produk  -->
+        <a href="index.php">
+          <!--? Halaman Produk  -->
           <div class="garis-bawah-gambar">
             <img src="assets/image/Logo Pareanom.png" alt="Logo Pareanom">
           </div>
@@ -81,7 +85,10 @@
             $tanggalDB = date("Y-m-d");
             include('database.php');
 
-            $sql = "SELECT bahan_baku.nama_bahan, SUM(reject.jumlah_reject) AS jumlah_reject, reject.keterangan FROM reject INNER JOIN produk_terjual ON reject.id_produk_terjual = produk_terjual.id_produk_terjual INNER JOIN bahan_baku ON produk_terjual.id_bahan_baku = bahan_baku.id_bahan_baku WHERE reject.tanggal_reject = '$tanggalDB' GROUP BY reject.id_produk_terjual, reject.keterangan";
+            $sql = "SELECT bahan_baku.nama_bahan, SUM(reject.jumlah_reject) AS jumlah_reject, 
+            reject.keterangan FROM bahan_baku  
+            INNER JOIN reject ON bahan_baku.id_bahan_baku = reject.id_bahan_baku WHERE 
+            reject.tanggal_reject = '$tanggalDB' GROUP BY reject.id_bahan_baku, reject.keterangan;";
             $query = mysqli_query($connect, $sql);
 
             $id = 1;
@@ -90,14 +97,14 @@
 
             ?>
 
-              <tbody>
-                <tr>
-                  <td style="color: white;"><?php echo $id ?></td>
-                  <td style="color: white;"><?php echo $data['nama_bahan'] ?></td>
-                  <td style="color: white;"><?php echo $data['jumlah_reject'] ?></td>
-                  <td style="color: white;"><?php echo $data['keterangan'] ?></td>
-                </tr>
-              </tbody>
+            <tbody>
+              <tr>
+                <td style="color: white;"><?php echo $id ?></td>
+                <td style="color: white;"><?php echo $data['nama_bahan'] ?></td>
+                <td style="color: white;"><?php echo $data['jumlah_reject'] ?></td>
+                <td style="color: white;"><?php echo $data['keterangan'] ?></td>
+              </tr>
+            </tbody>
 
             <?php $id++;
             } ?>
