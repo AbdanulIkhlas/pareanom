@@ -214,7 +214,7 @@
 
     </article>
   </main>
-  <script src="assets/scripts/halamanBahan.js"></script>
+  <script src="assets/scripts/notifikasi.js"></script>
 </body>
 
 </html>
