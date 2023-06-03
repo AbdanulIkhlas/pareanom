@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pareanom</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js">
   </script>
   <link rel="stylesheet" href="assets/styles/fullRekap.css">
+  <script src="assets/scripts/gantiTanggal.js"></script>
 </head>
 
 <body>
@@ -68,19 +70,30 @@
       <?php
       date_default_timezone_set('Asia/Jakarta');
       $tanggalSekarang = date("d/m/Y");
-      $tanggalDB = date("Y-m-d");
+
+      //! mengecek apkah ada pergantian tanggal
+      if (isset($_POST['tanggalDB'])) {
+        $tanggalDB = $_POST['tanggalDB'];
+        $tanggalSekarang = date("d/m/Y", strtotime($tanggalDB));
+      } else {
+        $tanggalDB = date("Y-m-d");
+      }
       include('database.php');
       ?>
 
       <!-- Bagian hijau yang di tengah -->
       <section class="container-tengah">
         <div class="container-rekap">
+          <div class="calendar-input">
+            <form id="form-tanggal" action="fullRekap.php?pesan=ngirimTanggal" method="POST">
+              <input type="date" id="tanggalDB" name="tanggalDB" value="<?php echo $tanggalDB; ?>">
+              <input type="submit" value="Ganti Tanggal">
+            </form>
+          </div>
           <div class="isi-rekap">
             <h1>REKAP <?php echo $tanggalSekarang ?></h1>
             <h2>PENJUALAN PRODUK :</h2>
-
             <table class="table table-striped">
-
               <thead>
                 <tr style="background-color: #ffde38;">
                   <th scope="col">No</th>
@@ -91,7 +104,8 @@
               </thead>
 
               <?php
-              $sql = "SELECT DISTINCT nama_produk_terjual, harga_satuan, SUM(jumlah_produk_terjual) AS jumlah_produk_terjual FROM produk_terjual WHERE tanggal_terjual = '$tanggalDB' GROUP BY nama_produk_terjual,id_bahan_baku";
+              $sql = "SELECT DISTINCT nama_produk_terjual, harga_satuan, SUM(jumlah_produk_terjual) AS jumlah_produk_terjual 
+              FROM produk_terjual WHERE tanggal_terjual = '$tanggalDB' GROUP BY nama_produk_terjual,id_bahan_baku";
               $query = mysqli_query($connect, $sql);
 
               $id = 1;
@@ -263,6 +277,7 @@
             </div>
 
           </div>
+
         </div>
 
       </section>
