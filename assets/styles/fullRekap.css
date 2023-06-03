@@ -395,6 +395,8 @@ section .saldo-kanan .bg-kuning .tombol-ubah .saldo-uang {
   margin: auto;
   margin-top: 20%;
   border: 1px solid transparent;
+  font-size: 19px;
+  font-weight: 800;
 }
 
 section .saldo-kanan .bg-kuning {
@@ -460,4 +462,17 @@ section .menu-kanan a :hover {
   margin: 0;
   padding: 4px;
   width: 157px;
+}
+
+/* ! BUTTON DOWNLOAD REKAP */
+.isi-rekap form button {
+  margin: 25px 36%;
+  padding: 14px;
+  background-color: #0088ff;
+  border: 2px solid white;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
