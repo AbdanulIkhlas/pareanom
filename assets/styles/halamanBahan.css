@@ -193,6 +193,7 @@ nav a {
 /*? Menu bahan Blok Kuning */
 nav ul a:nth-child(2) li {
   background-color: #ffee98;
+  position: relative;
 }
 
 nav ul a:nth-child(2) li .kotak-ikon {

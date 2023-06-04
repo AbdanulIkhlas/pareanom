@@ -17,6 +17,7 @@
 <body>
   <main>
     <?php
+    include "database.php";
     //! menampilkan notifikasi (berhasil)
     if (isset($_GET['pesanBerhasil'])) { ?>
     <div class="notif-berhasil">
@@ -60,12 +61,32 @@
             <p>PRODUK</p>
           </li>
         </a>
+        <?php 
+        $sql = "SELECT * FROM bahan_baku WHERE stok_bahan <= 5 ORDER BY stok_bahan ASC";
+        $query = mysqli_query($connect, $sql);
+        ?>
         <a href="halamanBahan.php">
           <li>
             <div class="kotak-ikon">
               <img src="assets/image/Bahan.png">
             </div>
-            <p>BAHAN</p>
+            <p>
+              BAHAN
+            </p>
+            <?php 
+            if(mysqli_num_rows($query) != 0){ ?>
+            <div style="color: red; 
+                  width: 10px;
+                  height: 10px;
+                  border: 1px solid black;
+                  border-radius: 50%;
+                  position: absolute;
+                  z-index: 99;
+                  top: 14px;
+                  right: 18px;
+                  background-color: red;
+            "></div>
+            <?php }?>
           </li>
         </a>
         <a href="halamanRekap.php">
@@ -87,135 +108,104 @@
       </ul>
     </nav>
     <article>
-
       <div class="judul">
         <h1>DATA BAHAN</h1>
       </div>
-
       <a href="tambahBahan.php" style="float: left;"><button type="submit"> Tambah </button> </a>
-
       <section>
-
-
         <div class="tabel">
-          <h2 style="margin-top: 0px;">BAHAN YANG HAMPIR HABIS :</h2>
-          <table class="table table-striped">
-
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Bahan</th>
-                <th scope="col">Stok</th>
-                <th scope="col">Satuan</th>
-                <th scope="col">Jenis</th>
-              </tr>
-            </thead>
-
-            <?php
-
-            include('database.php');
-
+          <h2 style="margin-top: 0px;">BAHAN YANG HAMPIR HABIS ( < 5):</h2>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama Bahan</th>
+                    <th scope="col">Stok</th>
+                    <th scope="col">Satuan</th>
+                    <th scope="col">Jenis</th>
+                  </tr>
+                </thead>
+                <?php
             $sql = "SELECT * FROM bahan_baku WHERE stok_bahan <= 5 ORDER BY stok_bahan ASC";
             $query = mysqli_query($connect, $sql);
-
             $id = 1;
-
             while ($data = mysqli_fetch_array($query)) {
-
             ?>
-
-            <tbody>
-              <tr class="bahan_hampir_habis">
-                <td><?php echo $id ?></td>
-                <td><?php echo $data['nama_bahan'] ?></td>
-                <td><?php echo $data['satuan_bahan'] ?></td>
-                <td><?php echo $data['stok_bahan'] ?></td>
-                <td><?php echo $data['jenis_bahan'] ?></td>
-              </tr>
-            </tbody>
-            <?php
+                <tbody>
+                  <tr class="bahan_hampir_habis">
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $data['nama_bahan'] ?></td>
+                    <td><?php echo $data['satuan_bahan'] ?></td>
+                    <td><?php echo $data['stok_bahan'] ?></td>
+                    <td><?php echo $data['jenis_bahan'] ?></td>
+                  </tr>
+                </tbody>
+                <?php
               $id++;
             } ?>
-          </table>
-
-          <h2>JENIS BAHAN OTOMATIS :</h2>
-          <table class="table table-striped">
-
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Bahan</th>
-                <th scope="col">Stok</th>
-                <th scope="col">Satuan</th>
-                <th scope="col">Edit</th>
-              </tr>
-            </thead>
-
-            <?php
+              </table>
+              <h2>JENIS BAHAN OTOMATIS :</h2>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama Bahan</th>
+                    <th scope="col">Stok</th>
+                    <th scope="col">Satuan</th>
+                    <th scope="col">Edit</th>
+                  </tr>
+                </thead>
+                <?php
             $sql = "SELECT * FROM bahan_baku WHERE jenis_bahan = 'Otomatis' ORDER BY nama_bahan ASC";
             $query = mysqli_query($connect, $sql);
-
             $id = 1;
-
             while ($data = mysqli_fetch_array($query)) {
-
             ?>
-
-            <tbody>
-              <tr>
-                <td><?php echo $id ?></td>
-                <td><?php echo $data['nama_bahan'] ?></td>
-                <td><?php echo $data['satuan_bahan'] ?></td>
-                <td><?php echo $data['stok_bahan'] ?></td>
-                <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
-              </tr>
-            </tbody>
-            <?php
+                <tbody>
+                  <tr>
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $data['nama_bahan'] ?></td>
+                    <td><?php echo $data['satuan_bahan'] ?></td>
+                    <td><?php echo $data['stok_bahan'] ?></td>
+                    <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
+                  </tr>
+                </tbody>
+                <?php
               $id++;
             } ?>
-          </table>
-
-          <h2>JENIS BAHAN MANUAL :</h2>
-          <table class="table table-striped">
-
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Bahan</th>
-                <th scope="col">Stok</th>
-                <th scope="col">Satuan</th>
-                <th scope="col">Edit</th>
-              </tr>
-            </thead>
-
-            <?php
+              </table>
+              <h2>JENIS BAHAN MANUAL :</h2>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama Bahan</th>
+                    <th scope="col">Stok</th>
+                    <th scope="col">Satuan</th>
+                    <th scope="col">Edit</th>
+                  </tr>
+                </thead>
+                <?php
             $sql = "SELECT * FROM bahan_baku WHERE jenis_bahan = 'Manual' ORDER BY nama_bahan ASC";
             $query = mysqli_query($connect, $sql);
-
             $id = 1;
-
             while ($data = mysqli_fetch_array($query)) {
-
             ?>
-
-            <tbody>
-              <tr>
-                <td><?php echo $id ?></td>
-                <td><?php echo $data['nama_bahan'] ?></td>
-                <td><?php echo $data['satuan_bahan'] ?></td>
-                <td><?php echo $data['stok_bahan'] ?></td>
-                <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
-              </tr>
-            </tbody>
-            <?php
+                <tbody>
+                  <tr>
+                    <td><?php echo $id ?></td>
+                    <td><?php echo $data['nama_bahan'] ?></td>
+                    <td><?php echo $data['satuan_bahan'] ?></td>
+                    <td><?php echo $data['stok_bahan'] ?></td>
+                    <td><a href="editBahan.php?id=<?php echo $data['id_bahan_baku'] ?>">Edit</a></td>
+                  </tr>
+                </tbody>
+                <?php
               $id++;
             } ?>
-          </table>
-
+              </table>
         </div>
-
       </section>
-
     </article>
   </main>
   <script src="assets/scripts/notifikasi.js"></script>
