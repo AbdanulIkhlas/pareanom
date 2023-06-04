@@ -447,7 +447,7 @@ section .menu-kanan a :hover {
 
 /*! date picker  */
 .calendar-input {
-  width: 170px;
+  width: 198px;
   cursor: pointer;
   padding: 5px 5px;
   border: 1px solid #1b9046;
@@ -461,7 +461,7 @@ section .menu-kanan a :hover {
 .calendar-input input {
   margin: 0;
   padding: 4px;
-  width: 157px;
+  width: 182px;
 }
 
 /* ! BUTTON DOWNLOAD REKAP */

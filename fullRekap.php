@@ -107,6 +107,18 @@
                                     $query = mysqli_query($connect, $sql);
                                     $id = 1;
                                     $TOTAL = 0;
+                                if(mysqli_num_rows($query) == 0){
+                                ?>
+                                <tbody>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                                <?php
+                                }
                                 while ($data = mysqli_fetch_array($query)) {
                                     $harga_satuan = $data['harga_satuan'];
                                     $jumlah_produk_terjual = $data['jumlah_produk_terjual'];
@@ -136,10 +148,21 @@
                                     </tr>
                                 </thead>
                                 <?php
-                                    $sql = "SELECT p.id_bahan_baku,b.nama_bahan,  SUM(p.jumlah_produk_terjual) as total_jumlah FROM produk_terjual p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku WHERE p.tanggal_terjual = '$tanggalDB' GROUP BY p.id_bahan_baku";
-                                    $query = mysqli_query($connect, $sql);
-                                    $id = 1;
-                                    while ($data = mysqli_fetch_array($query)) {
+                                $sql = "SELECT p.id_bahan_baku,b.nama_bahan,  SUM(p.jumlah_produk_terjual) as total_jumlah FROM produk_terjual p INNER JOIN bahan_baku b ON p.id_bahan_baku = b.id_bahan_baku WHERE p.tanggal_terjual = '$tanggalDB' GROUP BY p.id_bahan_baku";
+                                $query = mysqli_query($connect, $sql);
+                                if(mysqli_num_rows($query) == 0){
+                                    ?>
+                                <tbody>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                                <?php
+                                }
+                                $id = 1;
+                                while ($data = mysqli_fetch_array($query)) {
                                 ?>
                                 <tbody>
                                     <tr>
@@ -168,6 +191,18 @@
                                 ON bahan_baku.id_bahan_baku = reject.id_bahan_baku 
                                 WHERE reject.tanggal_reject = '$tanggalDB' GROUP BY reject.id_bahan_baku, reject.keterangan";
                                 $query = mysqli_query($connect, $sql);
+                                if(mysqli_num_rows($query) == 0){
+                                    ?>
+                                <tbody>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                                <?php
+                                }
                                 $id = 1;
                                 while ($data = mysqli_fetch_array($query)) {
                                 ?>
@@ -194,11 +229,24 @@
                                     </tr>
                                 </thead>
                                 <?php
-                                    $sql = "SELECT * FROM saldo WHERE tanggal_update = '$tanggalDB'";
-                                    $query = mysqli_query($connect, $sql);
-                                    $id = 1;
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        $tanggal_update = date("d - F - Y", strtotime($data['tanggal_update']));
+                                $sql = "SELECT * FROM saldo WHERE tanggal_update = '$tanggalDB'";
+                                $query = mysqli_query($connect, $sql);
+                                if(mysqli_num_rows($query) == 0){
+                                ?>
+                                <tbody>
+                                    <tr>
+                                        <td style="background-color: white;">-</td>
+                                        <td style="background-color: white;">-</td>
+                                        <td style="background-color: white;">-</td>
+                                        <td style="background-color: white;">-</td>
+                                        <td style="background-color: white;">-</td>
+                                    </tr>
+                                </tbody>
+                                <?php
+                                }
+                                $id = 1;
+                                while ($data = mysqli_fetch_array($query)) {
+                                $tanggal_update = date("d - F - Y", strtotime($data['tanggal_update']));
                                 ?>
                                 <?php if ($data['jenis'] == "Pemasukan") { ?>
                                 <tbody>

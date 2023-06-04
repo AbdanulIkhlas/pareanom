@@ -6,6 +6,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 $mpdf = new \Mpdf\Mpdf();
 $tanggalCetak = $_POST['tanggalCetak'];
 $catatan = $_POST['catatan'];
+if(empty($catatan)){
+    $catatan = "-";
+}
 $tanggalDB = $_POST['tanggalDB'];
 
 $filename = "FullRekap(".$tanggalCetak.").pdf";
@@ -47,6 +50,16 @@ $html = '<!DOCTYPE html>
                 </tr>
             </thead>';
             $query = mysqli_query($connect, $queryPenjualanProduk);
+            if(mysqli_num_rows($query) == 0){
+        $html.='<tbody>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>';       
+            }
             $id = 1;
             $TOTAL = 0;
             while ($data = mysqli_fetch_array($query)) {
@@ -79,6 +92,15 @@ $html.='</table>
             </thead>';
             $query = mysqli_query($connect, $queryBahanBaku);
             $id = 1;
+            if(mysqli_num_rows($query) == 0){
+        $html.='<tbody>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>';       
+            }
             while ($data = mysqli_fetch_array($query)) {
         $html.='<tbody>
                 <tr>
@@ -101,6 +123,16 @@ $html.='</table>
                     </tr>
                 </thead>';            
                 $query = mysqli_query($connect, $queryReject);
+                if(mysqli_num_rows($query) == 0){
+        $html.='<tbody>
+                <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>';       
+                }
                 $id = 1;
                 while ($data = mysqli_fetch_array($query)) {
         $html.='<tbody>
@@ -126,6 +158,17 @@ $html.='</table>
                     </tr>
                 </thead>';
         $query = mysqli_query($connect, $queryKeuangan);
+        if(mysqli_num_rows($query) == 0){
+        $html.='<tbody>
+                <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </tbody>';       
+                }
         $id = 1;
         while ($data = mysqli_fetch_array($query)) {
             $tanggal_update = date("d - F - Y", strtotime($data["tanggal_update"]));
