@@ -1,4 +1,5 @@
 <?php
+// ! mencetak full rekas
 include 'database.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
