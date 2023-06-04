@@ -425,3 +425,7 @@ article button:hover {
     font-size: 14px;
   }
 }
+
+.bahan_hampir_habis {
+  background-color: #ca2929;
+}

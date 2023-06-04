@@ -125,7 +125,7 @@
             ?>
 
             <tbody>
-              <tr>
+              <tr class="bahan_hampir_habis">
                 <td><?php echo $id ?></td>
                 <td><?php echo $data['nama_bahan'] ?></td>
                 <td><?php echo $data['satuan_bahan'] ?></td>
