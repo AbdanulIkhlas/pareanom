@@ -2,7 +2,7 @@
 setTimeout(function() {
     const notifBerhasil = document.querySelector('.notif-berhasil');
     notifBerhasil.classList.remove('show');
-}, 8000);
+}, 6000);
 
 window.addEventListener('load', function() {
     const notifBerhasil = document.querySelector('.notif-berhasil');
@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
 setTimeout(function() {
     const notifGagal = document.querySelector('.notif-gagal');
     notifGagal.classList.remove('show');
-}, 8000);
+}, 6000);
 
 window.addEventListener('load', function() {
     const notifGagal = document.querySelector('.notif-gagal');
