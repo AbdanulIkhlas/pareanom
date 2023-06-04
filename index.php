@@ -100,7 +100,10 @@
                 <h2>PRODUK</h2>
                 <div class="container-button-tambahProduk">
                     <a href="tambahProduk.php">
-                        <button>Tambah</button>
+                        <button class="tambah">Tambah</button>
+                    </a>
+                    <a href="informasiProduk.php">
+                        <button class="informasi">Informasi Produk</button>
                     </a>
                 </div>
                 <div class="container-card-produk">

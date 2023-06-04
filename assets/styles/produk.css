@@ -300,13 +300,25 @@ section.produk a {
 	cursor: pointer;
 }
 
-section.produk button {
+section.produk .tambah {
 	color: white;
 	background-color: #1b9046;
 	padding: 2px 54px 2px 56px;
 	border: 2px solid white;
 	border-radius: 5px;
 	margin: 5px 20px 0px 0;
+	font-weight: 800;
+	cursor: pointer;
+	box-shadow: 2px 3px 2px black;
+}
+
+section.produk .informasi {
+	color: white;
+	background-color: #1b9046;
+	padding: 2px 54px 2px 56px;
+	border: 2px solid white;
+	border-radius: 5px;
+	margin: 5px 116px 0px 0;
 	font-weight: 800;
 	cursor: pointer;
 	box-shadow: 2px 3px 2px black;
@@ -325,6 +337,7 @@ section.produk button:active {
 .container-button-tambahProduk {
 	border: 1px solid transparent;
 	height: 30px;
+	margin-bottom: 20px;
 }
 
 .container-card-produk {

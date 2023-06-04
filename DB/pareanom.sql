@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Jun 2023 pada 07.13
+-- Waktu pembuatan: 03 Jun 2023 pada 03.35
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.23
 
@@ -40,8 +40,17 @@ CREATE TABLE `add_ons` (
 --
 
 INSERT INTO `add_ons` (`id_add_ons`, `id_bahan_baku`, `nama_add_ons`, `harga`, `foto`) VALUES
-(1, 54, 'Nasi', 3000, 'Nasi.png'),
-(3, 24, 'Air Mineral', 3000, 'AirMineral.png');
+(6, 29, 'Telur', 3000, 'Telur.png'),
+(7, 54, 'Nasi', 3000, 'Nasi.png'),
+(8, 24, 'Air Mineral', 3000, 'AirMineral.png'),
+(9, 61, 'Dada', 12000, 'Dada.png'),
+(10, 11, 'Kulit Ayam', 14000, 'KulitAyam.png'),
+(12, 8, 'Sayap', 12000, 'Sayap.png'),
+(13, 9, 'Paha Bawah', 10000, 'PahaBawah.png'),
+(14, 58, 'Paha Atas', 12000, 'PahaAtas.png'),
+(15, 25, 'Teh Kotak', 3000, 'TehKotak.png'),
+(16, 31, 'Veggie Crumbs', 3000, 'VeggieCrumbs.png'),
+(17, 55, 'Veggie Crumbs', 3000, 'VeggieCrumbs.png');
 
 -- --------------------------------------------------------
 
@@ -64,9 +73,9 @@ CREATE TABLE `bahan_baku` (
 INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_bahan`, `stok_bahan`) VALUES
 (8, 'Sayap', 'Otomatis', 'Pcs', 10),
 (9, 'Paha Bawah', 'Otomatis', 'Pcs', 10),
-(10, 'Ayam Fillet', 'Otomatis', 'Pcs', 10),
+(10, 'Ayam Fillet', 'Otomatis', 'Pcs', 7),
 (11, 'Kulit', 'Otomatis', 'Kg', 10),
-(12, 'Kulit /45 Gram', 'Otomatis', 'Pcs', 10),
+(12, 'Kulit /45 Gram', 'Otomatis', 'Pcs', 9),
 (13, 'Tepung Ayam', 'Manual', 'Kg', 10),
 (14, 'Tepung Kulit', 'Manual', 'Kg', 10),
 (15, 'Tepung Kasar', 'Manual', 'Kg', 10),
@@ -78,8 +87,8 @@ INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_
 (21, 'Box Dine in', 'Otomatis', 'Kg', 10),
 (22, 'Box Alacarte', 'Otomatis', 'Pcs', 10),
 (23, 'Paperbag', 'Manual', 'Pcs', 10),
-(24, 'Air Mineral', 'Otomatis', 'Pcs', 5),
-(25, 'Teh Botol', 'Otomatis', 'Pcs', 10),
+(24, 'Air Mineral', 'Otomatis', 'Pcs', 19),
+(25, 'Teh Kotak', 'Otomatis', 'Pcs', 10),
 (26, 'Spicy Sauce', 'Otomatis', 'Pcs', 10),
 (27, 'Red Sauce', 'Manual', 'Mg', 10),
 (28, 'Curry Blok', 'Manual', 'Mg', 10),
@@ -108,9 +117,11 @@ INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_
 (51, 'Teh Bubuk', 'Manual', 'Pack', 10),
 (52, 'Gula Pasir', 'Manual', 'Kg', 10),
 (53, 'Trash Bag', 'Manual', 'Pcs', 10),
-(54, 'Nasi', 'Otomatis', 'Pcs', 8),
-(55, 'Veggie Crumbs', 'Otomatis', 'Pcs', 10),
-(58, 'Paha Atas', 'Otomatis', 'Pcs', 8);
+(54, 'Nasi', 'Otomatis', 'Pcs', 5),
+(55, 'Veggie Crumbs', 'Otomatis', 'Pcs', 9),
+(58, 'Paha Atas', 'Otomatis', 'Pcs', 8),
+(60, 'Sambal Sachet', 'Otomatis', 'Pcs', 30),
+(61, 'Dada', 'Otomatis', 'Pcs', 30);
 
 -- --------------------------------------------------------
 
@@ -131,13 +142,30 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `id_bahan_baku`, `nama_produk`, `harga`, `foto`) VALUES
-(1, 12, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
-(2, 54, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
-(5, 55, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
-(7, 9, 'Pareanom Mantap Kecil', 16000, 'PareanomMantapKecil.png'),
-(8, 55, 'Pareanom Mantap Kecil', 16000, 'PareanomMantapKecil.png'),
-(9, 54, 'Pareanom Mantap Besar', 18000, 'PareanomMantapBesar.png'),
-(10, 58, 'Pareanom Mantap Besar', 18000, 'PareanomMantapBesar.png');
+(17, 12, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(18, 21, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(19, 31, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(20, 54, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(21, 55, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(22, 60, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
+(33, 10, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(34, 21, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(35, 25, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(36, 31, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(37, 54, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(38, 55, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(39, 8, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
+(40, 21, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
+(41, 26, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
+(42, 31, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
+(43, 54, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
+(44, 55, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
+(45, 21, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
+(46, 26, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
+(47, 31, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
+(48, 54, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
+(49, 55, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
+(50, 61, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png');
 
 -- --------------------------------------------------------
 
@@ -154,29 +182,6 @@ CREATE TABLE `produk_terjual` (
   `tanggal_terjual` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `produk_terjual`
---
-
-INSERT INTO `produk_terjual` (`id_produk_terjual`, `id_bahan_baku`, `nama_produk_terjual`, `harga_satuan`, `jumlah_produk_terjual`, `tanggal_terjual`) VALUES
-(25, 12, 'Pareanom Puas', 10000, 2, '2023-05-28'),
-(26, 54, 'Pareanom Puas', 10000, 2, '2023-05-28'),
-(27, 55, 'Pareanom Puas', 10000, 2, '2023-05-28'),
-(28, 12, 'Pareanom Puas', 10000, 1, '2023-05-28'),
-(29, 54, 'Pareanom Puas', 10000, 1, '2023-05-28'),
-(30, 55, 'Pareanom Puas', 10000, 1, '2023-05-28'),
-(64, 12, 'Pareanom Puas', 10000, 2, '2023-05-31'),
-(65, 54, 'Pareanom Puas', 10000, 2, '2023-05-31'),
-(66, 55, 'Pareanom Puas', 10000, 2, '2023-05-31'),
-(67, 24, 'Air Mineral', 3000, 3, '2023-05-31'),
-(68, 12, 'Pareanom Puas', 10000, 3, '2023-05-31'),
-(69, 54, 'Pareanom Puas', 10000, 3, '2023-05-31'),
-(70, 55, 'Pareanom Puas', 10000, 3, '2023-05-31'),
-(71, 24, 'Air Mineral', 3000, 3, '2023-05-31'),
-(72, 54, 'Pareanom Mantap Besar', 18000, 2, '2023-06-01'),
-(73, 58, 'Pareanom Mantap Besar', 18000, 2, '2023-06-01'),
-(74, 24, 'Air Mineral', 3000, 5, '2023-06-01');
-
 -- --------------------------------------------------------
 
 --
@@ -185,7 +190,7 @@ INSERT INTO `produk_terjual` (`id_produk_terjual`, `id_bahan_baku`, `nama_produk
 
 CREATE TABLE `reject` (
   `id_reject` int(11) NOT NULL,
-  `id_produk_terjual` int(11) NOT NULL,
+  `id_bahan_baku` int(11) NOT NULL,
   `jumlah_reject` int(25) NOT NULL,
   `tanggal_reject` date NOT NULL,
   `keterangan` varchar(50) NOT NULL
@@ -212,11 +217,10 @@ CREATE TABLE `rekap` (
 
 CREATE TABLE `saldo` (
   `id_saldo` int(11) NOT NULL,
-  `id_produk_terjual` int(11) NOT NULL,
-  `total_saldo` double NOT NULL,
-  `saldo_masuk_keluar` double NOT NULL,
+  `nominal_saldo` double NOT NULL,
   `tanggal_update` date NOT NULL,
-  `keterangan` varchar(100) NOT NULL
+  `keterangan` varchar(100) NOT NULL,
+  `jenis` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -249,7 +253,7 @@ CREATE TABLE `total_saldo` (
 --
 
 INSERT INTO `total_saldo` (`id_total_saldo`, `total_saldo`) VALUES
-(1, 71000);
+(1, 20000);
 
 --
 -- Indexes for dumped tables
@@ -288,7 +292,7 @@ ALTER TABLE `produk_terjual`
 --
 ALTER TABLE `reject`
   ADD PRIMARY KEY (`id_reject`),
-  ADD KEY `id_produk` (`id_produk_terjual`);
+  ADD KEY `id_produk` (`id_bahan_baku`);
 
 --
 -- Indeks untuk tabel `rekap`
@@ -300,8 +304,7 @@ ALTER TABLE `rekap`
 -- Indeks untuk tabel `saldo`
 --
 ALTER TABLE `saldo`
-  ADD PRIMARY KEY (`id_saldo`),
-  ADD KEY `id_produk_terjual` (`id_produk_terjual`);
+  ADD PRIMARY KEY (`id_saldo`);
 
 --
 -- Indeks untuk tabel `temp_produk`
@@ -323,31 +326,31 @@ ALTER TABLE `total_saldo`
 -- AUTO_INCREMENT untuk tabel `add_ons`
 --
 ALTER TABLE `add_ons`
-  MODIFY `id_add_ons` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_add_ons` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `bahan_baku`
 --
 ALTER TABLE `bahan_baku`
-  MODIFY `id_bahan_baku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id_bahan_baku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk_terjual`
 --
 ALTER TABLE `produk_terjual`
-  MODIFY `id_produk_terjual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_produk_terjual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT untuk tabel `reject`
 --
 ALTER TABLE `reject`
-  MODIFY `id_reject` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_reject` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekap`
@@ -365,7 +368,7 @@ ALTER TABLE `saldo`
 -- AUTO_INCREMENT untuk tabel `temp_produk`
 --
 ALTER TABLE `temp_produk`
-  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `total_saldo`
@@ -399,13 +402,7 @@ ALTER TABLE `produk_terjual`
 -- Ketidakleluasaan untuk tabel `reject`
 --
 ALTER TABLE `reject`
-  ADD CONSTRAINT `fk_reject_produk_terjual` FOREIGN KEY (`id_produk_terjual`) REFERENCES `produk_terjual` (`id_produk_terjual`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Ketidakleluasaan untuk tabel `saldo`
---
-ALTER TABLE `saldo`
-  ADD CONSTRAINT `fk_saldo_produk_terjual` FOREIGN KEY (`id_produk_terjual`) REFERENCES `produk_terjual` (`id_produk_terjual`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_reject_bahan_baku` FOREIGN KEY (`id_bahan_baku`) REFERENCES `bahan_baku` (`id_bahan_baku`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
