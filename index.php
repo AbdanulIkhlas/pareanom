@@ -46,6 +46,8 @@
             <p> GAGAL MENGHAPUS PRODUK <br> YANG AKAN DI BELI</p>
             <?php } else if ($_GET['pesanGagal'] == "pembelian_gagal") { ?>
             <p> PEMBELIAN GAGAL</p>
+            <?php } else if ($_GET['pesanGagal'] == "jumlah_overflow") { ?>
+            <p> SALAH SATU <br> BAHAN BAKU HABIS</p>
             <?php } ?>
         </div>
         <?php } ?>
