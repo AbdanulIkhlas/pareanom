@@ -87,8 +87,10 @@
                         </form>
                     </div>
                     <div class="isi-rekap">
-                        <form action="downloadRekap.php" method="post">
+                        <form action="cetakFullRekap.php" method="post" target="_blank">
                             <h1>REKAP <?php echo $tanggalSekarang ?></h1>
+                            <input type="hidden" name="tanggalCetak" value="<?php echo $tanggalSekarang ?>">
+                            <input type="hidden" name="tanggalDB" value="<?php echo $tanggalDB ?>">
                             <h2>PENJUALAN PRODUK :</h2>
                             <table class="table table-striped">
                                 <thead>
@@ -123,12 +125,6 @@
                                 }
                                 ?>
                             </table>
-                            <!-- POST : produk terjual -->
-                            <input type="hidden" name="nama_produk_terjual"
-                                value="<?php echo $data['nama_produk_terjual'] ?>">
-                            <input type="hidden" name="jumlah_produk_terjual"
-                                value="<?php echo $data['jumlah_produk_terjual'] ?>">
-                            <input type="hidden" name="total" value="<?php echo $total ?>">
                             <h3 style="border: 1px solid transparent;">TOTAL : Rp. <?php echo $TOTAL ?></h3>
                             <h2>BAHAN TERPAKAI :</h2>
                             <table class="table table-striped">
@@ -156,10 +152,6 @@
                                 }
                                 ?>
                             </table>
-                            <!-- POST : Bahan Terpakai -->
-                            <input type="hidden" name="nama_bahan" value="<?php echo $data['nama_bahan'] ?>">
-                            <input type="hidden" name="jumlah_bahan_terpakai"
-                                value="<?php echo $data['total_jumlah'] ?>">
                             <h2>REJECT :</h2>
                             <table class="table table-striped">
                                 <thead>
@@ -190,10 +182,6 @@
                                 <?php $id++;
                                 } ?>
                             </table>
-                            <!-- POST : Reject -->
-                            <input type="hidden" name="nama_bahan_reject" value="<?php echo $data['nama_bahan'] ?>">
-                            <input type="hidden" name="jumlah_reject" value="<?php echo $data['jumlah_reject'] ?>">
-                            <input type="hidden" name="keterangan" value="<?php echo $data['keterangan'] ?>">
                             <h2>KEUANGAN :</h2>
                             <table class="table table-striped">
                                 <thead>
@@ -247,11 +235,6 @@
                                 <?php $id++;
                                 } ?>
                             </table>
-                            <!-- POST : Keuangan -->
-                            <input type="hidden" name="nominal_saldo" value="<?php echo $data['nominal_saldo'] ?>">
-                            <input type="hidden" name="tanggal_update" value="<?php echo $tanggal_update ?>">
-                            <input type="hidden" name="keterangan_keuangan" value="<?php echo $data['keterangan'] ?>">
-                            <input type="hidden" name="jenis_keuangan" value="<?php echo $data['jenis'] ?>">
                             <h2> CATATAN </h2>
                             <div class="form-catatan">
                                 <textarea class="form-control" name="catatan" placeholder="Tambahkan Catatan"
