@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 03 Jun 2023 pada 03.35
+-- Waktu pembuatan: 05 Jun 2023 pada 04.17
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.23
 
@@ -73,8 +73,8 @@ CREATE TABLE `bahan_baku` (
 INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_bahan`, `stok_bahan`) VALUES
 (8, 'Sayap', 'Otomatis', 'Pcs', 10),
 (9, 'Paha Bawah', 'Otomatis', 'Pcs', 10),
-(10, 'Ayam Fillet', 'Otomatis', 'Pcs', 7),
-(11, 'Kulit', 'Otomatis', 'Kg', 10),
+(10, 'Ayam Fillet', 'Otomatis', 'Pcs', 40),
+(11, 'Kulit', 'Otomatis', 'Pcs', 50),
 (12, 'Kulit /45 Gram', 'Otomatis', 'Pcs', 9),
 (13, 'Tepung Ayam', 'Manual', 'Kg', 10),
 (14, 'Tepung Kulit', 'Manual', 'Kg', 10),
@@ -84,17 +84,17 @@ INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_
 (18, 'Bumbu Veggie', 'Manual', 'Kg', 10),
 (19, 'Bumbu Telur', 'Manual', 'Kg', 10),
 (20, 'Box Takeaway', 'Otomatis', 'Pcs', 10),
-(21, 'Box Dine in', 'Otomatis', 'Kg', 10),
+(21, 'Box Dine in', 'Otomatis', 'Kg', 7),
 (22, 'Box Alacarte', 'Otomatis', 'Pcs', 10),
 (23, 'Paperbag', 'Manual', 'Pcs', 10),
 (24, 'Air Mineral', 'Otomatis', 'Pcs', 19),
-(25, 'Teh Kotak', 'Otomatis', 'Pcs', 10),
+(25, 'Teh Kotak', 'Otomatis', 'Pcs', 6),
 (26, 'Spicy Sauce', 'Otomatis', 'Pcs', 10),
 (27, 'Red Sauce', 'Manual', 'Mg', 10),
 (28, 'Curry Blok', 'Manual', 'Mg', 10),
 (29, 'Telur', 'Otomatis', 'Pcs', 10),
 (30, 'Kangkung', 'Manual', 'Ikat', 10),
-(31, 'Cup 15 ml', 'Otomatis', 'Pcs', 10),
+(31, 'Cup 15 ml', 'Otomatis', 'Pcs', 7),
 (32, 'Cup 30 ml', 'Otomatis', 'Pcs', 10),
 (33, 'Saos Sachet', 'Manual', 'Pack', 10),
 (34, 'Sendok', 'Otomatis', 'Pcs', 10),
@@ -117,8 +117,8 @@ INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_
 (51, 'Teh Bubuk', 'Manual', 'Pack', 10),
 (52, 'Gula Pasir', 'Manual', 'Kg', 10),
 (53, 'Trash Bag', 'Manual', 'Pcs', 10),
-(54, 'Nasi', 'Otomatis', 'Pcs', 5),
-(55, 'Veggie Crumbs', 'Otomatis', 'Pcs', 9),
+(54, 'Nasi', 'Otomatis', 'Pcs', 20),
+(55, 'Veggie Crumbs', 'Otomatis', 'Pcs', 6),
 (58, 'Paha Atas', 'Otomatis', 'Pcs', 8),
 (60, 'Sambal Sachet', 'Otomatis', 'Pcs', 30),
 (61, 'Dada', 'Otomatis', 'Pcs', 30);
@@ -182,6 +182,25 @@ CREATE TABLE `produk_terjual` (
   `tanggal_terjual` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `produk_terjual`
+--
+
+INSERT INTO `produk_terjual` (`id_produk_terjual`, `id_bahan_baku`, `nama_produk_terjual`, `harga_satuan`, `jumlah_produk_terjual`, `tanggal_terjual`) VALUES
+(83, 10, 'Pareanom Combo', 20000, 1, '2023-06-03'),
+(84, 21, 'Pareanom Combo', 20000, 1, '2023-06-03'),
+(85, 25, 'Pareanom Combo', 20000, 1, '2023-06-03'),
+(86, 31, 'Pareanom Combo', 20000, 1, '2023-06-03'),
+(87, 54, 'Pareanom Combo', 20000, 1, '2023-06-03'),
+(88, 55, 'Pareanom Combo', 20000, 1, '2023-06-03'),
+(89, 10, 'Pareanom Combo', 20000, 2, '2023-06-04'),
+(90, 21, 'Pareanom Combo', 20000, 2, '2023-06-04'),
+(91, 25, 'Pareanom Combo', 20000, 2, '2023-06-04'),
+(92, 31, 'Pareanom Combo', 20000, 2, '2023-06-04'),
+(93, 54, 'Pareanom Combo', 20000, 2, '2023-06-04'),
+(94, 55, 'Pareanom Combo', 20000, 2, '2023-06-04'),
+(96, 11, 'Kulit Ayam', 14000, 5, '2023-06-04');
+
 -- --------------------------------------------------------
 
 --
@@ -195,6 +214,13 @@ CREATE TABLE `reject` (
   `tanggal_reject` date NOT NULL,
   `keterangan` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `reject`
+--
+
+INSERT INTO `reject` (`id_reject`, `id_bahan_baku`, `jumlah_reject`, `tanggal_reject`, `keterangan`) VALUES
+(14, 25, 1, '2023-06-04', 'Bocor');
 
 -- --------------------------------------------------------
 
@@ -222,6 +248,14 @@ CREATE TABLE `saldo` (
   `keterangan` varchar(100) NOT NULL,
   `jenis` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `saldo`
+--
+
+INSERT INTO `saldo` (`id_saldo`, `nominal_saldo`, `tanggal_update`, `keterangan`, `jenis`) VALUES
+(1, 10000, '2023-06-04', 'Dapat Dari Bos', 'Pemasukan'),
+(2, 5000, '2023-06-04', 'Jajan Dulu Gak Sih', 'Pengeluaran');
 
 -- --------------------------------------------------------
 
@@ -253,7 +287,7 @@ CREATE TABLE `total_saldo` (
 --
 
 INSERT INTO `total_saldo` (`id_total_saldo`, `total_saldo`) VALUES
-(1, 20000);
+(1, 155000);
 
 --
 -- Indexes for dumped tables
@@ -344,13 +378,13 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `produk_terjual`
 --
 ALTER TABLE `produk_terjual`
-  MODIFY `id_produk_terjual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id_produk_terjual` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT untuk tabel `reject`
 --
 ALTER TABLE `reject`
-  MODIFY `id_reject` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_reject` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekap`
@@ -362,13 +396,13 @@ ALTER TABLE `rekap`
 -- AUTO_INCREMENT untuk tabel `saldo`
 --
 ALTER TABLE `saldo`
-  MODIFY `id_saldo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_saldo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `temp_produk`
 --
 ALTER TABLE `temp_produk`
-  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT untuk tabel `total_saldo`
