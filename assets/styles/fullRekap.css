@@ -378,7 +378,7 @@ section .saldo-kanan .bg-kuning .tombol-ubah {
 
 section .saldo-kanan .bg-kuning .tombol-ubah .constaint-ubah {
   width: 86%;
-  margin: 5% auto;
+  margin: 20px auto 5px;
   border: 1px solid transparent;
   text-align: right;
 }
@@ -395,8 +395,8 @@ section .saldo-kanan .bg-kuning .tombol-ubah .saldo-uang {
   margin: auto;
   margin-top: 20%;
   border: 1px solid transparent;
-  font-size: 19px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 section .saldo-kanan .bg-kuning {
@@ -408,9 +408,10 @@ section .saldo-kanan .bg-kuning {
 }
 
 section .saldo-kanan .bg-kuning img {
-  width: 168px;
+  width: 200px;
   background-size: auto;
   margin-top: -20px;
+  margin-left: -20px;
   margin-bottom: -20px;
 }
 

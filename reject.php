@@ -90,7 +90,18 @@
             INNER JOIN reject ON bahan_baku.id_bahan_baku = reject.id_bahan_baku WHERE 
             reject.tanggal_reject = '$tanggalDB' GROUP BY reject.id_bahan_baku, reject.keterangan;";
             $query = mysqli_query($connect, $sql);
-
+            if(mysqli_num_rows($query) == 0){
+            ?>
+            <tbody>
+              <tr>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+              </tr>
+            </tbody>
+            <?php
+            }
             $id = 1;
 
             while ($data = mysqli_fetch_array($query)) {

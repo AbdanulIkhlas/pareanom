@@ -1052,9 +1052,9 @@ button.confirm:active {
 	top: -200px;
 	left: 50%;
 	transform: translateX(-50%);
+	transition: top 1s ease-in-out;
 	text-align: center;
 	padding: 20px;
-	transition: top 1s ease-in-out;
 	box-sizing: border-box;
 	border-radius: 8px;
 	border: 2px solid white;

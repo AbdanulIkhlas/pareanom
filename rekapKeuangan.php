@@ -118,6 +118,19 @@
             $sql = "SELECT * FROM saldo WHERE tanggal_update = '$tanggalDB'";
             $query = mysqli_query($connect, $sql);
             $id = 1;
+            if(mysqli_num_rows($query) == 0){
+            ?>
+            <tbody>
+              <tr>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+                <td style="background-color: white;">-</td>
+              </tr>
+            </tbody>
+            <?php
+            }
 
             while ($data = mysqli_fetch_array($query)) {
 

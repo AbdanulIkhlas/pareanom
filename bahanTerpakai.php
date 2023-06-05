@@ -90,7 +90,19 @@
             $query = mysqli_query($connect, $sql);
             $id = 1;
             ?>
-
+            <?php
+            if(mysqli_num_rows($query) == 0){
+            ?>
+            <tbody>
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+            <?php
+            }
+            ?>
             <tbody>
               <!-- sql : untuk menampilkan bahan baku berdasarkan produk terjual -->
               <?php  while ($data = mysqli_fetch_array($query)) { ?>
