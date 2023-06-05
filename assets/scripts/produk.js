@@ -2,8 +2,8 @@ const cardProduk = document.querySelectorAll(".card-produk");
 const cardAddOns = document.querySelectorAll(".card-addOns");
 
 cardProduk.forEach(function (card) {
-    const containerPopUpProduk = card.querySelector(".container-popUp-produk");
-    const closeProduk = containerPopUpProduk.querySelector(".close-produk");
+    let containerPopUpProduk = card.querySelector(".container-popUp-produk");
+    let closeProduk = containerPopUpProduk.querySelector(".close-produk");
 
     card.addEventListener("click", function () {
         containerPopUpProduk.style.display = 'block';
@@ -11,6 +11,21 @@ cardProduk.forEach(function (card) {
 
     closeProduk.addEventListener('click', function () {
         containerPopUpProduk.style.display = 'none';
+    });
+
+    //? Ambil elemen-elemen yang dibutuhkan di dalam setiap card-produk
+    let deleteButton = containerPopUpProduk.querySelector('#delete');
+    let popUpDelete = containerPopUpProduk.querySelector('#popUp-delete');
+    let tidakButton = containerPopUpProduk.querySelector('.tidak');
+
+    //? Tambahkan event listener untuk tombol delete
+    deleteButton.addEventListener('click', function() {
+    popUpDelete.style.display = 'block';
+    });
+
+    //? Tambahkan event listener untuk tombol tidak
+    tidakButton.addEventListener('click', function() {
+    popUpDelete.style.display = 'none';
     });
 });
 

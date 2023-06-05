@@ -129,6 +129,19 @@
             $sql = "SELECT * FROM bahan_baku WHERE stok_bahan <= 5 ORDER BY stok_bahan ASC";
             $query = mysqli_query($connect, $sql);
             $id = 1;
+            if(mysqli_num_rows($query) == 0){
+            ?>
+                <tbody>
+                  <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                  </tr>
+                </tbody>
+                <?php
+            }
             while ($data = mysqli_fetch_array($query)) {
             ?>
                 <tbody>

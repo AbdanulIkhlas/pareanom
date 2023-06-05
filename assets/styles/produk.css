@@ -309,7 +309,9 @@ section.produk .tambah {
 	margin: 5px 20px 0px 0;
 	font-weight: 800;
 	cursor: pointer;
-	box-shadow: 2px 3px 2px black;
+	box-shadow: 4px 4px 4px black;
+	transition: transform 0.3s, box-shadow 0.3s;
+	position: relative;
 }
 
 section.produk .informasi {
@@ -321,18 +323,23 @@ section.produk .informasi {
 	margin: 5px 205px 0px 0;
 	font-weight: 800;
 	cursor: pointer;
-	box-shadow: 2px 3px 2px black;
+	box-shadow: 4px 4px 4px black;
+	transition: transform 0.3s, box-shadow 0.3s;
+	position: relative;
 }
 
 section.produk button:hover {
 	background-color: rgba(255, 255, 255, 0.649);
 	color: #1b9046;
-	box-shadow: 3px 4px 2.5px black;
+	box-shadow: 5px 5px 5px black;
+	transform: translateY(-3px) scale(1.02);
 }
 
 section.produk button:active {
-	box-shadow: 2px 1.5px 2px black;
+	box-shadow: 2px 2px 2px black;
 }
+
+
 
 .container-button-tambahProduk {
 	border: 1px solid transparent;
@@ -472,13 +479,16 @@ section.addOns button {
 	margin: 3px 18px 0px 0;
 	font-weight: 800;
 	cursor: pointer;
-	box-shadow: 2px 3px 2px black;
+	box-shadow: 4px 4px 4px black;
+	transition: transform 0.3s, box-shadow 0.3s;
+	position: relative;
 }
 
 section.addOns button:hover {
 	background-color: rgba(255, 255, 255, 0.649);
 	color: #1b9046;
-	box-shadow: 2px 5px 3px black;
+	box-shadow: 5px 5px 5px black;
+	transform: translateY(-3px) scale(1.02);
 }
 
 section.addOns button:active {
@@ -694,6 +704,57 @@ section.total .container-total .box-awal-total {
 	font-weight: 900;
 }
 
+#popUp-delete {
+	display: none;
+	position: absolute;
+	top: -157px;
+	padding: 12px;
+	padding-top: 24px;
+	z-index: 12;
+	background-color: #1b9046;
+	border: 3px solid white;
+	border-radius: 17px;
+	text-align: center;
+	color: white;
+}
+
+#popUp-delete p {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+#popUp-delete .container-button-delete {
+	display: inline;
+}
+
+#popUp-delete .iya,
+#popUp-delete .tidak {
+	width: 90px;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #1b9046;
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 20px;
+	box-shadow: 4px 4px 4px black;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#popUp-delete div.iya:hover,
+#popUp-delete div.tidak:hover {
+	color: white;
+	background-color: rgba(255, 255, 255, 0.649);
+	box-shadow: 5px 5px 5px black;
+	transform: translateY(-3px) scale(1.02);
+}
+
+#popUp-delete div.iya {
+	background-color: red;
+}
+
+
+
 
 
 .total-harga {
@@ -716,13 +777,16 @@ button.confirm {
 	font-weight: 800;
 	border: 2px solid white;
 	border-radius: 10px;
-	box-shadow: 2px 3px 2px black;
+	box-shadow: 4px 4px 4px black;
+	transition: transform 0.3s, box-shadow 0.3s;
+	position: relative;
 }
 
 button.confirm:hover {
 	background-color: rgba(255, 255, 255, 0.649);
 	color: #1b9046;
-	box-shadow: 2px 5px 3px black;
+	box-shadow: 5px 5px 5px black;
+	transform: translateY(-3px) scale(1.02);
 }
 
 button.confirm:active {
@@ -835,7 +899,7 @@ button.confirm:active {
 	cursor: pointer;
 }
 
-.delete {
+#delete {
 	/*? css menghapus card produk/addons  */
 	border: 1px solid white;
 	position: absolute;

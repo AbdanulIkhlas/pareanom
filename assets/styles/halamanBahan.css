@@ -341,8 +341,8 @@ section .tabel table tbody tr td a:hover {
   color: #1b9046;
 }
 
-article button {
-  float: right;
+/* article button {
+  
   margin: 15px 63px 0;
   background-color: transparent;
   border: 2px solid white;
@@ -356,6 +356,33 @@ article button {
 article button:hover {
   color: #1b9046;
   background-color: white;
+} */
+
+article button {
+  float: right;
+  padding: 5px 8px;
+  background-color: transparent;
+  color: white;
+  margin: 15px 63px 0;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 4px 4px 4px black;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+article button:active {
+  margin-bottom: 0;
+  box-shadow: 3px 3px 3px black;
+}
+
+article button:hover {
+  background-color: white;
+  color: #1b9046;
+  border: 2px solid white;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 5px 5px 5px black;
 }
 
 /*! NOTIF HANDLING  */
