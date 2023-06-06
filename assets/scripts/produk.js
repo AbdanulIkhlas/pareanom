@@ -20,12 +20,12 @@ cardProduk.forEach(function (card) {
 
     //? Tambahkan event listener untuk tombol delete
     deleteButton.addEventListener('click', function() {
-    popUpDelete.style.display = 'block';
+        popUpDelete.style.display = 'block';
     });
 
     //? Tambahkan event listener untuk tombol tidak
     tidakButton.addEventListener('click', function() {
-    popUpDelete.style.display = 'none';
+        popUpDelete.style.display = 'none';
     });
 });
 
@@ -39,6 +39,21 @@ cardAddOns.forEach(function (card) {
 
     closeAddOns.addEventListener('click', function () {
         containerPopUpAddOns.style.display = 'none';
+    });
+
+    //? Ambil elemen-elemen yang dibutuhkan di dalam setiap card-add-ons
+    let deleteButton = containerPopUpAddOns.querySelector('#delete');
+    let popUpDelete = containerPopUpAddOns.querySelector('#popUp-delete');
+    let tidakButton = containerPopUpAddOns.querySelector('.tidak');
+
+    //? Tambahkan event listener untuk tombol delete
+    deleteButton.addEventListener('click', function() {
+    popUpDelete.style.display = 'block';
+    });
+
+    //? Tambahkan event listener untuk tombol tidak
+    tidakButton.addEventListener('click', function() {
+    popUpDelete.style.display = 'none';
     });
 });
 

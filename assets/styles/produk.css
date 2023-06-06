@@ -721,22 +721,28 @@ section.total .container-total .box-awal-total {
 #popUp-delete p {
 	font-size: 16px;
 	font-weight: 700;
+	margin-bottom: 22px;
 }
 
 #popUp-delete .container-button-delete {
 	display: inline;
 }
 
+#popUp-delete .container-button-delete a {
+	text-decoration: none;
+	color: white;
+}
+
 #popUp-delete .iya,
 #popUp-delete .tidak {
-	width: 90px;
+	width: 84px;
 	font-size: 14px;
 	font-weight: 700;
 	background-color: #1b9046;
 	border: 1px solid white;
 	border-radius: 5px;
-	padding: 10px;
-	margin: 20px;
+	padding: 9px;
+	margin: 6px;
 	box-shadow: 4px 4px 4px black;
 	transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -751,6 +757,7 @@ section.total .container-total .box-awal-total {
 
 #popUp-delete div.iya {
 	background-color: red;
+	margin-top: 0;
 }
 
 
