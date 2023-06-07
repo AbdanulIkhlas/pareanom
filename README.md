@@ -8,5 +8,4 @@ Nama Anggota :
 
 Note : <br>
 Untuk menjalankan fitur cetak rekap ke pdf silahkan mengunduh dulu composer di https://getcomposer.org/download/ <br>
-kemudian menjalankan package mpdf : <br>
-```composer require mpdf/mpd```
+kemudian menjalankan package mpdf : ```composer require mpdf/mpd```
