@@ -278,10 +278,18 @@ section form button {
   padding: 7px;
   color: white;
   border-radius: 5px;
+  box-shadow: 4px 4px 4px black;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 section form button:hover {
-  background-color: white;
-  border-color: white;
+  background-color: rgba(255, 255, 255, 0.649);
   color: #1b9046;
+  box-shadow: 5px 5px 5px black;
+  transform: translateY(-3px) scale(1.02);
+}
+
+section form button:active {
+  box-shadow: 2px 2px 2px black;
 }
