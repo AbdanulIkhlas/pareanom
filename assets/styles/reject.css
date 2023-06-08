@@ -224,6 +224,10 @@ nav ul li:hover .kotak-ikon {
   background-color: #ffde38;
 }
 
+nav ul a:nth-child(2) li {
+  position: relative;
+}
+
 nav .kotak-ikon img {
   width: 27px;
   position: relative;

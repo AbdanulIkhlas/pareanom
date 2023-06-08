@@ -57,12 +57,33 @@
                         <p>PRODUK</p>
                     </li>
                 </a>
+                <?php 
+                include 'database.php';
+                $sql = "SELECT * FROM bahan_baku WHERE stok_bahan <= 5 ORDER BY stok_bahan ASC";
+                $query = mysqli_query($connect, $sql);
+                ?>
                 <a href="halamanBahan.php">
                     <li>
                         <div class="kotak-ikon">
                             <img src="assets/image/Bahan.png">
                         </div>
-                        <p>BAHAN</p>
+                        <p>
+                            BAHAN
+                        </p>
+                        <?php 
+                    if(mysqli_num_rows($query) != 0){ ?>
+                        <div style="color: red; 
+                        width: 10px;
+                        height: 10px;
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        position: absolute;
+                        z-index: 99;
+                        top: 14px;
+                        right: 18px;
+                        background-color: red;
+                    "></div>
+                        <?php }?>
                     </li>
                 </a>
                 <a href="halamanRekap.php">
@@ -88,7 +109,6 @@
                 <h2>PRODUK</h2>
                 <div class="container-card-produk">
                     <?php 
-                    include 'database.php';
                     $query = mysqli_query($connect, "SELECT DISTINCT nama_produk, harga, foto FROM produk ORDER BY harga ASC");
                     while($data = mysqli_fetch_array($query)) :
                     ?>

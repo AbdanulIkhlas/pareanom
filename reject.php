@@ -36,12 +36,33 @@
             <p>PRODUK</p>
           </li>
         </a>
+        <?php 
+        include 'database.php';
+        $sql = "SELECT * FROM bahan_baku WHERE stok_bahan <= 5 ORDER BY stok_bahan ASC";
+        $query = mysqli_query($connect, $sql);
+        ?>
         <a href="halamanBahan.php">
           <li>
             <div class="kotak-ikon">
               <img src="assets/image/Bahan.png">
             </div>
-            <p>BAHAN</p>
+            <p>
+              BAHAN
+            </p>
+            <?php 
+                    if(mysqli_num_rows($query) != 0){ ?>
+            <div style="color: red; 
+                        width: 10px;
+                        height: 10px;
+                        border: 1px solid black;
+                        border-radius: 50%;
+                        position: absolute;
+                        z-index: 99;
+                        top: 14px;
+                        right: 18px;
+                        background-color: red;
+                    "></div>
+            <?php }?>
           </li>
         </a>
         <a href="halamanRekap.php">
@@ -83,7 +104,6 @@
             date_default_timezone_set('Asia/Jakarta');
             $tanggalSekarang = date("d/m/Y");
             $tanggalDB = date("Y-m-d");
-            include('database.php');
 
             $sql = "SELECT bahan_baku.nama_bahan, SUM(reject.jumlah_reject) AS jumlah_reject, 
             reject.keterangan FROM bahan_baku  
