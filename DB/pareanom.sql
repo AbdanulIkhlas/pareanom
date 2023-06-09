@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jun 2023 pada 04.17
+-- Waktu pembuatan: 09 Jun 2023 pada 08.14
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 7.4.23
 
@@ -42,9 +42,7 @@ CREATE TABLE `add_ons` (
 INSERT INTO `add_ons` (`id_add_ons`, `id_bahan_baku`, `nama_add_ons`, `harga`, `foto`) VALUES
 (6, 29, 'Telur', 3000, 'Telur.png'),
 (7, 54, 'Nasi', 3000, 'Nasi.png'),
-(8, 24, 'Air Mineral', 3000, 'AirMineral.png'),
 (9, 61, 'Dada', 12000, 'Dada.png'),
-(10, 11, 'Kulit Ayam', 14000, 'KulitAyam.png'),
 (12, 8, 'Sayap', 12000, 'Sayap.png'),
 (13, 9, 'Paha Bawah', 10000, 'PahaBawah.png'),
 (14, 58, 'Paha Atas', 12000, 'PahaAtas.png'),
@@ -84,7 +82,7 @@ INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_
 (18, 'Bumbu Veggie', 'Manual', 'Kg', 10),
 (19, 'Bumbu Telur', 'Manual', 'Kg', 10),
 (20, 'Box Takeaway', 'Otomatis', 'Pcs', 10),
-(21, 'Box Dine in', 'Otomatis', 'Kg', 7),
+(21, 'Box Dine in', 'Otomatis', 'Kg', 30),
 (22, 'Box Alacarte', 'Otomatis', 'Pcs', 10),
 (23, 'Paperbag', 'Manual', 'Pcs', 10),
 (24, 'Air Mineral', 'Otomatis', 'Pcs', 19),
@@ -94,7 +92,7 @@ INSERT INTO `bahan_baku` (`id_bahan_baku`, `nama_bahan`, `jenis_bahan`, `satuan_
 (28, 'Curry Blok', 'Manual', 'Mg', 10),
 (29, 'Telur', 'Otomatis', 'Pcs', 10),
 (30, 'Kangkung', 'Manual', 'Ikat', 10),
-(31, 'Cup 15 ml', 'Otomatis', 'Pcs', 7),
+(31, 'Cup 15 ml', 'Otomatis', 'Pcs', 2),
 (32, 'Cup 30 ml', 'Otomatis', 'Pcs', 10),
 (33, 'Saos Sachet', 'Manual', 'Pack', 10),
 (34, 'Sendok', 'Otomatis', 'Pcs', 10),
@@ -148,12 +146,6 @@ INSERT INTO `produk` (`id_produk`, `id_bahan_baku`, `nama_produk`, `harga`, `fot
 (20, 54, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
 (21, 55, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
 (22, 60, 'Pareanom Puas', 10000, 'PareanomPuas.png'),
-(33, 10, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
-(34, 21, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
-(35, 25, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
-(36, 31, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
-(37, 54, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
-(38, 55, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
 (39, 8, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
 (40, 21, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
 (41, 26, 'Pareanom Mantap Kecil ( Sayap )', 16000, 'PareanomMantapKecil.png'),
@@ -165,7 +157,14 @@ INSERT INTO `produk` (`id_produk`, `id_bahan_baku`, `nama_produk`, `harga`, `fot
 (47, 31, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
 (48, 54, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
 (49, 55, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
-(50, 61, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png');
+(50, 61, 'Pareanom Mantap Besar( Dada)', 18000, 'PareanomMantapBesar.png'),
+(52, 10, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(53, 21, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(54, 25, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(55, 31, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(56, 54, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(57, 55, 'Pareanom Combo', 20000, 'PareanomCombo.png'),
+(59, 10, 'Chicken Pops', 20000, 'ChickenPops.png');
 
 -- --------------------------------------------------------
 
@@ -372,7 +371,7 @@ ALTER TABLE `bahan_baku`
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk_terjual`
@@ -402,7 +401,7 @@ ALTER TABLE `saldo`
 -- AUTO_INCREMENT untuk tabel `temp_produk`
 --
 ALTER TABLE `temp_produk`
-  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_temp_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT untuk tabel `total_saldo`
