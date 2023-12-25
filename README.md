@@ -2,7 +2,7 @@
 
 ### Manajemen Gudang Pareanom  
            
-Nama Anggota :  
+Nama Anggota :     
 * Muhammad Abdanul Ikhlas / 123210009  
 * Tegar Wibisana / 123210024
 
