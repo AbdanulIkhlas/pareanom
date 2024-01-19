@@ -12,3 +12,4 @@ Note : <br>
 Untuk menjalankan fitur cetak rekap ke pdf <br> silahkan mengunduh dulu composer di https://getcomposer.org/download/ <br>
 kemudian menjalankan package mpdf pada cmd : ```composer require mpdf/mpd```
   
+  
