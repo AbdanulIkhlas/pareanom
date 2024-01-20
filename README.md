@@ -4,7 +4,7 @@
              
 Nama Anggota :        
 * Muhammad Abdanul Ikhlas / 123210009          
-* Tegar Wibisana / 123210024
+* Tegar Wibisana / 123210024    
 
 Link Video Presentasi : https://drive.google.com/drive/folders/1L16ClSCmxRb1uVrMTELu87LRmYKM_CD1?usp=sharing <br>   
 
