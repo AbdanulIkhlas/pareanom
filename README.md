@@ -1,7 +1,7 @@
 # PROJECT REKAYASA PERANGKAT LUNAK    
 
 ### Manajemen Gudang Pareanom          
-                
+                   
 Nama Anggota :           
 * Muhammad Abdanul Ikhlas / 123210009          
 * Tegar Wibisana / 123210024    
